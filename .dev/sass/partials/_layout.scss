@@ -17,7 +17,8 @@
 #primary{
 	@extend .columns;
 	@extend .large-8;
-
+	float: none;
+	margin: 0 auto;
 	body.layout-one-column-full & {
 		margin: 0;
 		padding: 0;

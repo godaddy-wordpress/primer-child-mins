@@ -15,10 +15,6 @@ $menu-background-color: transparent;
 		padding: 0;
 	}
 
-	a{
-		color: contrast-color($menu-background-color, #000, #fff, 50%);
-	}
-
 	li {
 		display:block;
 		float:none;
@@ -26,7 +22,6 @@ $menu-background-color: transparent;
 		padding: 0;
 		list-style: none;
 		text-align: center;
-
 		a {
 			display: block;
 			font-family: $menu-font-family;
@@ -34,7 +29,7 @@ $menu-background-color: transparent;
 			font-weight: normal;
 			color: #b0b0b0;
 			padding: 0 1em;
-			padding: 2.5rem 1rem;
+			padding: 1rem 1rem;
 			position: relative;
 			text-transform: uppercase;
 			font-weight: 700;
@@ -66,10 +61,13 @@ $menu-background-color: transparent;
 		}
 	}
 
-	@media all and ( min-width: 480px ){
+	@media all and ( min-width: 800px ){
 		float: right;
 		li{
 			text-align: left;
+			a {
+				padding: 2.5rem 1rem;
+			}
 		}
 
 		ul {
@@ -112,7 +110,6 @@ $menu-background-color: transparent;
 						width: 100%;
 						box-sizing: border-box;
 						&:focus {
-							background: none;
 						}
 					}
 					input[type="submit"] {
@@ -177,29 +174,44 @@ $menu-background-color: transparent;
 .menu-toggle {
 	display: none;
 	float: right;
-	width: 65px;
-	padding: 10px;
+	padding: 23px 0 10px 10px;
+	position: absolute;
+    right: 10px;
+    width: 55px;
 	cursor: pointer;
 
 	div {
-		background: #fff;
+		background: #000;
 		height: 4px;
 		margin: 6px;
 		border-radius: 1px;
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
+	.main-navigation.toggled {
 		display: block;
 	}
 
-	.main-navigation {
+	.main-navigation.toggled {
+		position: absolute;
+		right: -1px;
+		left: 0;
+	}
 
+	.main-navigation {
+		display: none;
+		top: 86px;
+		.admin-bar &{
+			top: 130px;
+		}
 		ul {
-			display: none;
 			clear: both;
+			background: #fff;
+			.sub-menu {
+				padding-left: 1.5rem;
+			}
 		}
 
 		li {
@@ -208,8 +220,11 @@ $menu-background-color: transparent;
 
 			a {
 				display: block;
-				background: #222;
 				text-align: left;
+				padding: 0.5rem 1rem;
+				&.search-toggle {
+					display: none;
+				}
 			}
 
 			&.menu-item-has-children {
@@ -235,6 +250,16 @@ $menu-background-color: transparent;
 					width:0;
 					margin-left:10px;
 				}
+			}
+			.search-submit {
+				display: none;
+			}
+			.search-form {
+				@include clearfix;
+			}
+			.search-field {
+				margin: 1rem;
+				float: left;
 			}
 		}
 	}

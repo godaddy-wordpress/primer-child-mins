@@ -121,6 +121,16 @@ function mins_update_fonts() {
 }
 add_filter( 'primer_fonts', 'mins_update_fonts' );
 
+function mins_custom_logo() {
+	return array(
+		'height'      => 86,
+		'width'       => 400,
+		'flex-height' => false,
+		'flex-width'  => false
+	);
+}
+add_filter( 'primer_custom_logo_args', 'mins_custom_logo' );
+
 /**
  * Update font types
  *

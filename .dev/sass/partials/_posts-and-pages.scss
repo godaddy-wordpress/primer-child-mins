@@ -11,7 +11,7 @@
 
 .hentry {
 	@include panel;
-
+	background: none;
 	.attachment-primer-featured{
 		width: 100%;
 		height: auto;
@@ -19,6 +19,53 @@
 
 	.entry-header {
 		color: $header-color;
+	}
+
+	.page-title {
+		color: $header-color;
+		font-size: emCalc(48);
+		font-weight: 100;
+		line-height: 60px;
+		margin-bottom: 45px;
+		position: relative;
+		&:after {
+			content: " ";
+			height: 2px;
+			background: #181818;
+			width: 25%;
+			position: absolute;
+			bottom: -15px;
+			left: 0;
+		}
+		@media all and ( min-width: 769px ){
+			font-size: emCalc(60);
+			line-height: 60px;
+			margin-bottom: 60px;
+			&:after {
+				content: " ";
+				height: 2px;
+				background: #181818;
+				width: 25%;
+				position: absolute;
+				bottom: -25px;
+				left: 0;
+			}
+		}
+		@media all and ( min-width: 1000px ){
+			font-weight: 100;
+			font-size: emCalc(72);
+			line-height: 72px;
+			margin-bottom: 60px;
+			&:after {
+				content: " ";
+				height: 2px;
+				background: #181818;
+				width: 25%;
+				position: absolute;
+				bottom: -25px;
+				left: 0;
+			}
+		}
 	}
 }
 
@@ -58,6 +105,17 @@
 	.single &{
 		font-weight: 300;
 		font-size: rem-calc(36);
+	}
+}
+
+.page-content {
+	p {
+		font-size: 18px;
+		line-height: 36px;
+		margin: 0 0 30px 0;
+		&.expand {
+			margin: 50px -10%;
+		}
 	}
 }
 

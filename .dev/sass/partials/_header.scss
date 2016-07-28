@@ -1,5 +1,12 @@
 $entry-title-bg: rgba(0,0,0,.6) !default;
 
+body {
+	background: #f4f4f4;
+	&.home {
+		background: #fff;
+	}
+}
+
 .site-title-wrapper{
 	@extend .row;
 	margin-bottom: 40px;
@@ -12,7 +19,23 @@ $entry-title-bg: rgba(0,0,0,.6) !default;
 
 .site-title-contain {
 	float: left;
-	margin-top: 29px;
+	margin: 20px 0;
+	@media all and ( min-width: 600px ){
+		margin-top: 29px;
+	}
+}
+
+.site-logo {
+	float: left;
+	margin: 21px 0;
+	@media all and ( min-width: 800px ){
+		margin: 28px 0;
+	}
+	img {
+		display: block;
+		max-height: 43px;
+		max-width: 200px;
+	}
 }
 
 .site-title {
@@ -45,6 +68,12 @@ $entry-title-bg: rgba(0,0,0,.6) !default;
 	background-color: $header-bg-color;
 	letter-spacing: -.01em;
 	padding: 0 2rem;
+	@media screen and (max-width: 800px) {
+		width: 100%;
+		background: #fff;
+		z-index: 1;
+		max-height: 86px;
+	}
 }
 
 .featured-content{
@@ -143,14 +172,10 @@ html {
 	background: #f4f4f4;
 	@include clearfix;
 	.left-img {
-		max-width: 50%;
 		display: block;
-		float: left;
 	}
 	.hero-widget {
-		width: 50%;
-		float: left;
-		padding: 7%;
+		padding: 4%;
 		.textwidget {
 			line-height: 30px;
 			font-size: 18px;
@@ -161,17 +186,82 @@ html {
 		}
 		h2.widget-title {
 			font-weight: 100;
-			font-size: emCalc(72);
-			line-height: 72px;
-			margin-bottom: 60px;
+			font-size: emCalc(48);
+			line-height: 60px;
+			margin-bottom: 45px;
 			&:after {
 				content: " ";
 				height: 2px;
 				background: #181818;
 				width: 25%;
 				position: absolute;
-				bottom: -30px;
+				bottom: -15px;
 				left: 0;
+			}
+		}
+	}
+	@media screen and (min-width: 1000px) {
+		.left-img {
+			max-width: 50%;
+			display: block;
+			float: left;
+		}
+		.hero-widget {
+			width: 50%;
+			float: left;
+			padding: 3%;
+			.textwidget {
+				line-height: 30px;
+				font-size: 18px;
+				p {
+					line-height: 30px;
+					font-size: 18px;
+				}
+			}
+			h2.widget-title {
+				font-weight: 100;
+				font-size: emCalc(48);
+				line-height: 60px;
+				margin-bottom: 45px;
+				&:after {
+					content: " ";
+					height: 2px;
+					background: #181818;
+					width: 25%;
+					position: absolute;
+					bottom: -15px;
+					left: 0;
+				}
+			}
+		}
+	}
+	@media screen and (min-width: 1500px) {
+		.hero-widget {
+			width: 50%;
+			float: left;
+			padding: 7%;
+			.textwidget {
+				line-height: 30px;
+				font-size: 18px;
+				p {
+					line-height: 30px;
+					font-size: 18px;
+				}
+			}
+			h2.widget-title {
+				font-weight: 100;
+				font-size: emCalc(72);
+				line-height: 72px;
+				margin-bottom: 60px;
+				&:after {
+					content: " ";
+					height: 2px;
+					background: #181818;
+					width: 25%;
+					position: absolute;
+					bottom: -30px;
+					left: 0;
+				}
 			}
 		}
 	}

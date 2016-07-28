@@ -17,12 +17,12 @@ $header-bottom-margin: 1rem !default;
 $header-text-rendering: optimizeLegibility !default;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(44) !default;
-$h2-font-size: rem-calc(28) !default;
-$h3-font-size: rem-calc(24) !default;
-$h4-font-size: rem-calc(20) !default;
-$h5-font-size: rem-calc(18) !default;
-$h6-font-size: 1rem !default;
+$h1-font-size: rem-calc(72) !default;
+$h2-font-size: rem-calc(48) !default;
+$h3-font-size: rem-calc(36) !default;
+$h4-font-size: rem-calc(24) !default;
+$h5-font-size: rem-calc(20) !default;
+$h6-font-size: rem-calc(18) !default;
 
 // We use these to control header size reduction on small screens
 $h1-font-reduction: rem-calc(10) !default;
@@ -95,7 +95,7 @@ $definition-list-margin-bottom: rem-calc(12) !default;
 // We use these to style blockquotes
 $blockquote-font-color: scale-color($header-font-color, $lightness: 35%) !default;
 $blockquote-padding: rem-calc(9 20 0 19) !default;
-$blockquote-border: 1px solid #ddd !default;
+$blockquote-border: none;
 $blockquote-cite-font-size: rem-calc(13) !default;
 $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%) !default;
 $blockquote-cite-link-color: $blockquote-cite-font-color !default;
@@ -244,12 +244,37 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-h1 { font-size: $h1-font-size - $h1-font-reduction; }
-h2 { font-size: $h2-font-size - $h2-font-reduction; }
-h3 { font-size: $h3-font-size - $h3-font-reduction; }
-h4 { font-size: $h4-font-size - $h4-font-reduction; }
-h5 { font-size: $h5-font-size - $h5-font-reduction; }
-h6 { font-size: $h6-font-size - $h6-font-reduction; }
+h1 {
+	font-size: $h1-font-size - $h1-font-reduction;
+	font-weight: lighter;
+}
+h2 {
+	font-size: $h2-font-size - $h2-font-reduction;
+	margin-top: 2rem;
+	font-weight: lighter;
+}
+h3 {
+	font-size: $h3-font-size - $h3-font-reduction;
+	text-transform: uppercase;
+	margin-top: 2rem;
+	font-weight: lighter;
+}
+h4 {
+	font-size: $h4-font-size - $h4-font-reduction;
+	text-transform: uppercase;
+	margin-top: 2rem;
+	font-weight: lighter;
+}
+h5 {
+	font-size: $h5-font-size - $h5-font-reduction;
+	font-weight: 700;
+	margin-top: 2rem;
+}
+h6 {
+	font-size: $h6-font-size - $h6-font-reduction;
+	font-weight: 700;
+	margin-top: 2rem;
+}
 
 .subheader { @include subheader; }
 

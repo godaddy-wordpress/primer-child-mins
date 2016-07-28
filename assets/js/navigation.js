@@ -12,7 +12,7 @@
 
 	button = container.getElementsByClassName( 'menu-toggle' )[0];
 
-	menu = container.getElementsByClassName( 'side-masthead' )[0];
+	menu = container.getElementsByClassName( 'main-navigation' )[0];
 
 	// Hide menu toggle button if menu is empty and return early.
 	if ( 'undefined' === typeof menu ) {
@@ -47,4 +47,14 @@
 		else
 			menu.className += ' toggled';
    });
+} )();
+
+/**
+ * For full width images, expand their parent container beyond column width
+ */
+( function() {
+	img = document.getElementsByClassName( 'size-full' )[0];
+
+    img.parentNode.classList.add( 'expand' );
+
 } )();
