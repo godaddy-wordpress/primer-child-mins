@@ -1,23 +1,13 @@
 $menu-font-family: $header-font-family !default;
-$menu-background-color: #222 !default;
-
-.main-navigation-container{
-	background-color: $menu-background-color;
-}
+$menu-background-color: transparent;
 
 .main-navigation{
 	position: relative;
 	z-index: 100;
-	@extend .row;
-
-	.menu{
-		@extend .large-12;
-		@extend .columns;
-	}
 
 	ul {
-		font-size: emCalc(15);
-		font-size: rem-calc(15);
+		font-size: emCalc(16);
+		font-size: rem-calc(16);
 		position:relative;
 		display: block;
 		z-index:1;
@@ -42,16 +32,28 @@ $menu-background-color: #222 !default;
 			font-family: $menu-font-family;
 			line-height: 1.2;
 			font-weight: normal;
-			color: contrast-color($menu-background-color,darken($menu-background-color,65%),lighten($menu-background-color,65%),50%);
-			padding: 1.5em 1em;
-			padding: 1.5rem 1rem;
+			color: #b0b0b0;
+			padding: 0 1em;
+			padding: 2.5rem 1rem;
 			position: relative;
-
+			text-transform: uppercase;
+			font-weight: 700;
 
 			&:hover {
-				background-color: rgba(0,0,0,.05);
 				text-decoration: none;
+				color: #181818;
 			}
+		}
+		
+		&.current-menu-item a {
+			color: #181818;
+		}
+		
+		&.menu-item-search span {
+			font-weight: 700;
+			font-size: 20px;
+			top: -2px;
+			position: relative;
 		}
 	}
 
@@ -61,16 +63,11 @@ $menu-background-color: #222 !default;
 			padding-top: 1rem;
 			padding-bottom: 1em;
 			padding-bottom: 1rem;
-
-			&:hover{
-				background-color: rgba(0,0,0,.05);
-			}
 		}
 	}
 
 	@media all and ( min-width: 480px ){
-		clear:both;
-
+		float: right;
 		li{
 			text-align: left;
 		}
@@ -85,6 +82,10 @@ $menu-background-color: #222 !default;
 				display:none;
 				position:absolute;
 			}
+			form {
+				display: none;
+				position: absolute;
+			}
 		}
 
 		a{
@@ -97,20 +98,28 @@ $menu-background-color: #222 !default;
 			margin: 0;
 			list-style: none;
 			position: relative;
-
-			&.current-menu-item,
-			&:hover {
-
-				> a {
-					color: contrast-color($menu-background-color,#000,#fff,50%);
-
-					&:after {
-						border-color: contrast-color($menu-background-color,#000,#fff,50%);
+			&.toggled {
+				a {
+					color: #181818;
+				}
+				> form {
+					display:block;
+					background-color: rgba(255,255,255,1);
+					width:250px;
+					padding: 15px;
+					right: 0;
+					input {
+						width: 100%;
+						box-sizing: border-box;
+						&:focus {
+							background: none;
+						}
+					}
+					input[type="submit"] {
+						display: none;
 					}
 				}
-
 			}
-
 			.sub-menu .menu-item-has-children {
 
 				&:hover {
@@ -140,10 +149,12 @@ $menu-background-color: #222 !default;
 
 				&:hover {
 					position:relative;
-
+					> a {
+						color: #181818;
+					}
 					> ul {
 						display:block;
-						background-color: $menu-background-color;
+						background-color: rgba(255,255,255,1);
 						width:250px;
 
 						ul {

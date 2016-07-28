@@ -66,8 +66,6 @@
 
 		<header id="masthead" class="site-header" role="banner">
 
-			<div class="site-header-wrapper">
-
 				<?php
 				/**
 				 * Fires inside the `<header>` element.
@@ -76,9 +74,7 @@
 				 */
 				do_action( 'primer_header' );
 				?>
-
-			</div><!-- .site-header-wrapper -->
-
+				
 		</header><!-- #masthead -->
 
 		<?php

@@ -4,7 +4,7 @@ $site-footer-border-color: contrast-color($site-footer-background, darken($site-
 $site-footer-anchor-color: contrast-color($site-footer-background, #222, #fff, 50%) !default;
 $site-footer-anchor-color-hover: contrast-color($site-footer-background, #222, #fff, 50%) !default;
 
-$site-footer-info-background: #fff;
+$site-footer-info-background: #f4f4f4;
 $site-footer-info-text-color: contrast-color($site-footer-info-background, #222, #fff, 50%) !default;
 $site-footer-info-anchor-color: contrast-color($site-footer-info-background, #222, #fff, 50%) !default;
 $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-background, #222, #fff, 50%) !default;
@@ -110,7 +110,7 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 }
 
 .site-info-wrapper{
-	padding: 20px 0;
+	padding: 0;
 	background: $site-footer-info-background;
 	color: $site-footer-info-text-color;
 	line-height: 1.5;
@@ -127,25 +127,59 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 		float: left;
 		width: 50%;
 		margin-top: 5px;
+		color: rgba(0,0,0,.5);
+		a[rel="designer"] {
+			color: rgba(0,0,0,.5);
+		}
+		.menu {
+			padding: 0;
+			margin: 0 0 10px 0;
+			list-style: none;
+			li {
+				display: inline;
+				padding-right: 30px;
+				a {
+					text-transform: uppercase;
+					font-weight: 700;
+					font-size: emCalc(14);
+				}
+			}
+		}
 	}
 
 	.site-info{
-		@extend .row;
+		padding: 2.5rem 2rem;
 		overflow: hidden;
-
 		.social-menu {
-
+			margin-top: 15px;
+			@media screen and (min-width: 769px) {
+				float: right;
+				width: 50%;
+				margin: 0;
+			}
 			ul{
+				text-align: center;
 				margin-right: 0;
+				li:last-child a {
+					margin-right: 0;
+				}
+				@media screen and (min-width: 769px) {
+					text-align: right;
+				}
+			}
+			
+			li {
+				padding: 0;
 			}
 
 			a{
-				color: $site-footer-info-background;
-				background-color: $site-footer-info-text-color;
-
-				&:hover{
-					color: $site-footer-info-background;
-					background-color: $primary-color;
+				margin-right: 15px;
+				color: #181818;
+				&:before {
+					font-size: 36px;
+					padding: 0;
+					width: 36px;
+					height: 36px;
 				}
 			}
 		}

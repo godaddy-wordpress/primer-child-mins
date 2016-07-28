@@ -10,16 +10,21 @@ $entry-title-bg: rgba(0,0,0,.6) !default;
 	@extend .columns;
 }
 
+.site-title-contain {
+	float: left;
+	margin-top: 29px;
+}
+
 .site-title {
 	font-family: $sans-font-family;
-	font-size: emCalc(32);
-	font-size: rem-calc(32);
+	font-size: emCalc(22);
+	font-size: rem-calc(22);
 	font-weight: normal;
 	color: contrast-color($menu-background-color, #fff, #000, 50%);
 	line-height: 1;
-	letter-spacing: -.03em;
 	font-weight: 700;
-	margin-bottom: .25em;
+	text-transform: uppercase;
+	margin: 0;
 
 	a{
 		color: $body-font-color;
@@ -27,16 +32,19 @@ $entry-title-bg: rgba(0,0,0,.6) !default;
 }
 
 .site-description{
-	font-size: emCalc(16);
-	font-size: rem-calc(16);
-	color: lighten($body-font-color,20%);
+	font-size: emCalc(14);
+	font-size: rem-calc(14);
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	color: lighten($body-font-color,50%);
 	font-family: $sans-font-family;
+	float: left;
 }
 
 .site-header {
-	padding: 40px 0 0;
 	background-color: $header-bg-color;
 	letter-spacing: -.01em;
+	padding: 0 2rem;
 }
 
 .featured-content{
@@ -124,6 +132,46 @@ $entry-title-bg: rgba(0,0,0,.6) !default;
 
 			&:hover{
 				background-color: darken($primary-color,10%);
+			}
+		}
+	}
+}
+html {
+	-webkit-font-smoothing: antialiased;
+}
+.hero-area {
+	background: #f4f4f4;
+	@include clearfix;
+	.left-img {
+		max-width: 50%;
+		display: block;
+		float: left;
+	}
+	.hero-widget {
+		width: 50%;
+		float: left;
+		padding: 7%;
+		.textwidget {
+			line-height: 30px;
+			font-size: 18px;
+			p {
+				line-height: 30px;
+				font-size: 18px;
+			}
+		}
+		h2.widget-title {
+			font-weight: 100;
+			font-size: emCalc(72);
+			line-height: 72px;
+			margin-bottom: 60px;
+			&:after {
+				content: " ";
+				height: 2px;
+				background: #181818;
+				width: 25%;
+				position: absolute;
+				bottom: -30px;
+				left: 0;
 			}
 		}
 	}
