@@ -143,7 +143,7 @@ function mins_update_font_types() {
             'label'   => __( 'Primary Font', 'primer' ),
             'default' => 'Roboto',
             'css'     => array(
-	            '.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .site-title, .site-description, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
+	            '.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
 	        ),
             'weight'   => array(
                 100, 300, 700
@@ -212,7 +212,7 @@ function mins_colors() {
 			'label'   => __( 'Link Color', 'primer' ),
 			'default' => '#62b6cb',
 			'css'     => array(
-				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a' => array(
+				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a, .entry-title a' => array(
 					'color' => '%1$s',
 				)
 			),
@@ -227,7 +227,7 @@ function mins_colors() {
 			'label'   => __( 'Text Color', 'primer' ),
 			'default' => '#181818',
 			'css'     => array(
-				'body, .site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend, .footer-widget-area .footer-widget .widget-title, .footer-widget-area .footer-widget .widget, h1, h2, h3, h4, h5, h6, blockquote, blockquote p, blockquote cite' => array(
+				'body, .site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend, .footer-widget-area .footer-widget .widget-title, .footer-widget-area .footer-widget .widget, h1, h2, h3, h4, h5, h6, blockquote, blockquote p, blockquote cite, .entry-footer, .comment-notes, .form-allowed-tags, .comment-awaiting-moderation' => array(
 					'color' => '%1$s',
 				),
 				'.footer-widget-area .footer-widget .widget li a' => array(
@@ -243,7 +243,7 @@ function mins_colors() {
 			'label'   => __( 'Call to Action Color', 'primer' ),
 			'default' => '#181818',
 			'css'     => array(
-				'button, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"], a.button:after, .footer-widget-area .footer-widget .widget a.button' => array(
+				'button, a.button, body a.button:hover, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"], a.button:after, .footer-widget-area .footer-widget .widget a.button' => array(
 					'color' => '%1$s',
 				)
 			),
@@ -281,13 +281,13 @@ function mins_color_schemes() {
 			'colors' => array(
 				'background_color'        => '#eae9dc',
 				'link_color'              => '#ff4f4f',
-				'main_text_color'         => '#5e2c00',
+				'main_text_color'         => '#ff4f4f',
 				'w_bg'                    => '#d3d2c7',
-				'button_text_color'       => '#5e2c00'
+				'button_text_color'       => '#4a707a'
 			),
 		),
 		'melancholy' => array(
-			'label'  => esc_html__( 'Wheat', 'primer' ),
+			'label'  => esc_html__( 'Melancholy', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#b1b9bf',
 				'link_color'              => '#4e5972',
@@ -342,6 +342,9 @@ add_filter( 'primer_color_schemes', 'mins_color_schemes' );
 
 function mins_add_default_header_image($array) {
 	$array['default-image'] = get_stylesheet_directory_uri() . '/assets/images/default-header.jpg';
+	$array['width'] = 1300;
+	$array['height'] =1245;
+	$array['flex-height'] = false;
 	
 	return $array;
 }

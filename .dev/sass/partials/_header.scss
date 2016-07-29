@@ -35,7 +35,7 @@ body {
 	}
 }
 
-.site-title {
+.site-title-contain .site-title {
 	font-family: $sans-font-family;
 	font-size: emCalc(22);
 	font-size: rem-calc(22);
@@ -46,8 +46,8 @@ body {
 	text-transform: uppercase;
 	margin: 0;
 
-	a{
-		color: $body-font-color;
+	a, a:hover {
+		color: #181818;
 	}
 }
 
