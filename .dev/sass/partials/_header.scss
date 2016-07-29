@@ -1,0 +1,265 @@
+$entry-title-bg: rgba(0,0,0,.6) !default;
+
+body {
+	background: #f4f4f4;
+}
+
+.site-title-wrapper{
+	@extend .row;
+	margin-bottom: 40px;
+}
+
+.site-title-wrapper-inner{
+	@extend .large-12;
+	@extend .columns;
+}
+
+.site-title-contain {
+	float: left;
+	margin: 20px 0;
+	@media all and ( min-width: 800px ){
+		margin-top: 29px;
+	}
+}
+
+.site-logo {
+	float: left;
+	margin: 21px 0;
+	@media all and ( min-width: 800px ){
+		margin: 28px 0;
+	}
+	img {
+		display: block;
+		max-height: 43px;
+		max-width: 200px;
+	}
+}
+
+.site-title-contain .site-title {
+	font-family: $sans-font-family;
+	font-size: emCalc(22);
+	font-size: rem-calc(22);
+	font-weight: normal;
+	color: contrast-color($menu-background-color, #fff, #000, 50%);
+	line-height: 1;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin: 0;
+
+	a, a:hover {
+		color: #181818;
+	}
+}
+
+.site-description{
+	font-size: emCalc(14);
+	font-size: rem-calc(14);
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+	color: lighten($body-font-color,50%);
+	font-family: $sans-font-family;
+	float: left;
+}
+
+.site-header {
+	background-color: $header-bg-color;
+	letter-spacing: -.01em;
+	padding: 0 2rem;
+	@media screen and (max-width: 800px) {
+		width: 100%;
+		background: #fff;
+		z-index: 1;
+		max-height: 86px;
+	}
+}
+
+.featured-content{
+	.entry-header{
+		background-size: cover;
+
+		&,
+		.entry-title,
+		.entry-title a{
+			color: white;
+		}
+
+		.entry-header-row{
+			@extend .row;
+		}
+
+		.entry-header-column{
+			@extend .large-8;
+			@extend .medium-12;
+			@extend .small-12;
+			@extend .columns;
+
+			background-color: $entry-title-bg;
+			color: contrast-color($entry-title-bg,#000,#fff,50%);
+			margin-top: 6em;
+			margin-top: 6rem;
+			padding: 1.5em 4em 0;
+			margin-bottom: 0;
+			border-bottom: 0;
+
+			@media screen and (max-width: 600px) {
+				margin-top: 0;
+				padding: 0em 1em;
+				padding: 0rem 1rem;
+			}
+		}
+
+		.entry-meta,
+		.entry-title,
+		.entry-excerpt{
+			margin-bottom: 1.5rem;
+		}
+
+		.entry-meta{
+			color: contrast-color($entry-title-bg,#000,#fff,50%);
+			border-bottom: 1px solid rgba(255,255,255,.2);
+			line-height: 3rem;
+
+			.entry-date{
+				float: right;
+			}
+		}
+
+		.entry-title{
+			font-size: rem-calc(42);
+			line-height: 1.2;
+			font-family: $sans-font-family;
+			font-weight: bold;
+		}
+
+		.entry-excerpt {
+			p{
+				font-style: italic;
+				font-size: emCalc(19);
+				font-size: rem-calc(19);
+				font-weight: 200;
+			}
+		}
+
+		.post-format{
+			color: $primary-color;
+		}
+
+		.read-more{
+			padding: .5em 1em;
+			padding: .5rem 1rem;
+			background-color: $primary-color;
+			color: contrast-color($primary-color,#fff,#000,50%);
+			display: inline-block;
+			font-family: $sans-font-family;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-size: emCalc(13);
+			font-size: rem-calc(13);
+
+			&:hover{
+				background-color: darken($primary-color,10%);
+			}
+		}
+	}
+}
+html {
+	-webkit-font-smoothing: antialiased;
+}
+.hero-area {
+	background: rgba(0,0,0,.1);
+	@include clearfix;
+	.left-img {
+		display: block;
+	}
+	.hero-widget {
+		padding: 4%;
+		.textwidget {
+			line-height: 30px;
+			font-size: 18px;
+			p {
+				line-height: 30px;
+				font-size: 18px;
+			}
+		}
+		h2.widget-title {
+			font-weight: 100;
+			font-size: emCalc(48);
+			line-height: 60px;
+			margin-bottom: 45px;
+			&:after {
+				content: " ";
+				height: 2px;
+				background: #181818;
+				width: 25%;
+				position: absolute;
+				bottom: -15px;
+				left: 0;
+			}
+		}
+	}
+	@media screen and (min-width: 1000px) {
+		.left-img {
+			max-width: 50%;
+			display: block;
+			float: left;
+		}
+		.hero-widget {
+			width: 50%;
+			float: left;
+			padding: 3%;
+			.textwidget {
+				line-height: 30px;
+				font-size: 18px;
+				p {
+					line-height: 30px;
+					font-size: 18px;
+				}
+			}
+			h2.widget-title {
+				font-weight: 100;
+				font-size: emCalc(48);
+				line-height: 60px;
+				margin-bottom: 45px;
+				&:after {
+					content: " ";
+					height: 2px;
+					background: #181818;
+					width: 25%;
+					position: absolute;
+					bottom: -15px;
+					left: 0;
+				}
+			}
+		}
+	}
+	@media screen and (min-width: 1500px) {
+		.hero-widget {
+			width: 50%;
+			float: left;
+			padding: 7%;
+			.textwidget {
+				line-height: 30px;
+				font-size: 18px;
+				p {
+					line-height: 30px;
+					font-size: 18px;
+				}
+			}
+			h2.widget-title {
+				font-weight: 100;
+				font-size: emCalc(72);
+				line-height: 72px;
+				margin-bottom: 60px;
+				&:after {
+					content: " ";
+					height: 2px;
+					background: #181818;
+					width: 25%;
+					position: absolute;
+					bottom: -30px;
+					left: 0;
+				}
+			}
+		}
+	}
+}
