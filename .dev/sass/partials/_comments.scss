@@ -58,7 +58,7 @@
 		.fn {
 			font-size: 1.1em;
 			font-style: normal;
-			font-weight: bold;
+			font-weight: 300;
 		}
 
 		.comment-author,
@@ -85,7 +85,6 @@
 
 	.comment-awaiting-moderation {
 		border-radius: 4px;
-		background-color: #d9d9d9;
 		color: #666;
 		padding: 10px 15px;
 		font-size: .9em;

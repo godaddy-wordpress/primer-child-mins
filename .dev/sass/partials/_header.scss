@@ -2,9 +2,6 @@ $entry-title-bg: rgba(0,0,0,.6) !default;
 
 body {
 	background: #f4f4f4;
-	&.home {
-		background: #fff;
-	}
 }
 
 .site-title-wrapper{
@@ -169,7 +166,7 @@ html {
 	-webkit-font-smoothing: antialiased;
 }
 .hero-area {
-	background: #f4f4f4;
+	background: rgba(0,0,0,.1);
 	@include clearfix;
 	.left-img {
 		display: block;

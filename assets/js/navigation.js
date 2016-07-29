@@ -36,6 +36,8 @@
  */
 ( function() {
 	search = document.getElementsByClassName( 'search-toggle' )[0];
+	if ( ! search )
+		return;
 
 	search.addEventListener('click', function(e){
         e.preventDefault();
@@ -54,7 +56,9 @@
  */
 ( function() {
 	img = document.getElementsByClassName( 'size-full' )[0];
-
+	if ( ! img )
+		return;
+    
     img.parentNode.classList.add( 'expand' );
 
 } )();

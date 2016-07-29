@@ -21,7 +21,7 @@
 		color: $header-color;
 	}
 
-	.page-title {
+	.page-title, .entry-title {
 		color: $header-color;
 		font-size: emCalc(48);
 		font-weight: 100;
@@ -102,9 +102,13 @@
 		color: $header-color;
 	}
 
-	.single &{
+	.blog &, .search &, .archive &{
 		font-weight: 300;
 		font-size: rem-calc(36);
+		&:after {
+			bottom: 0;
+			width: 15%;
+		}
 	}
 }
 

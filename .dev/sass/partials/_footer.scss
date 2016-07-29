@@ -91,6 +91,7 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 			font-weight: bold;
 			font-size: 30px;
 			font-weight: 300;
+			margin-top: 0;
 			margin-bottom: 30px;
 			&:after {
 				content: " ";
@@ -149,6 +150,7 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 				a {
 					text-transform: uppercase;
 					font-weight: 700;
+					color: #181818;
 					font-size: emCalc(14);
 				}
 			}

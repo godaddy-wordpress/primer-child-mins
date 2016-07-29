@@ -2250,6 +2250,7 @@ input[type="submit"] {
   -webkit-font-smoothing: auto;
   font-size: 1rem;
   line-height: 1;
+  background: transparent;
   padding: .75em 0;
   padding: .75rem 0;
   display: inline-block; }
@@ -2268,6 +2269,13 @@ input[type="submit"] {
     position: relative;
     -webkit-transition: .2s all;
             transition: .2s all; }
+  button:hover,
+  a.button:hover,
+  a.button:visited:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover {
+    background: transparent !important; }
   button:hover:after,
   a.button:hover:after,
   a.button:visited:hover:after,
@@ -2454,10 +2462,6 @@ legend {
 
 a {
   color: #62b6cb; }
-  a:visited {
-    color: #42a7c1; }
-  a:hover, a:focus, a:active {
-    color: #42a7c1; }
 
 .main-navigation {
   position: relative;
@@ -2902,8 +2906,7 @@ a {
   padding: 1.5em;
   padding: 1.5rem;
   margin: 0 0 1.5em;
-  margin: 0 0 1.5rem;
-  background-color: #fff; }
+  margin: 0 0 1.5rem; }
   @media only screen and (min-width: 40.063em) {
     .no-results,
     .not-found {
@@ -2918,7 +2921,6 @@ a {
   padding: 1.5rem;
   margin: 0 0 1.5em;
   margin: 0 0 1.5rem;
-  background-color: #fff;
   background: none; }
   @media only screen and (min-width: 40.063em) {
     .hentry {
@@ -2929,14 +2931,14 @@ a {
     height: auto; }
   .hentry .entry-header {
     color: inherit; }
-  .hentry .page-title {
+  .hentry .page-title, .hentry .entry-title {
     color: inherit;
     font-size: 3rem;
     font-weight: 100;
     line-height: 60px;
     margin-bottom: 45px;
     position: relative; }
-    .hentry .page-title:after {
+    .hentry .page-title:after, .hentry .entry-title:after {
       content: " ";
       height: 2px;
       background: #181818;
@@ -2945,11 +2947,11 @@ a {
       bottom: -15px;
       right: 0; }
     @media all and (min-width: 769px) {
-      .hentry .page-title {
+      .hentry .page-title, .hentry .entry-title {
         font-size: 3.75rem;
         line-height: 60px;
         margin-bottom: 60px; }
-        .hentry .page-title:after {
+        .hentry .page-title:after, .hentry .entry-title:after {
           content: " ";
           height: 2px;
           background: #181818;
@@ -2958,12 +2960,12 @@ a {
           bottom: -25px;
           right: 0; } }
     @media all and (min-width: 1000px) {
-      .hentry .page-title {
+      .hentry .page-title, .hentry .entry-title {
         font-weight: 100;
         font-size: 4.5rem;
         line-height: 72px;
         margin-bottom: 60px; }
-        .hentry .page-title:after {
+        .hentry .page-title:after, .hentry .entry-title:after {
           content: " ";
           height: 2px;
           background: #181818;
@@ -2997,9 +2999,12 @@ a {
   font-size: 1.75rem; }
   .entry-title a {
     color: inherit; }
-  .single .entry-title {
+  .blog .entry-title, .search .entry-title, .archive .entry-title {
     font-weight: 300;
     font-size: 2.25rem; }
+    .blog .entry-title:after, .search .entry-title:after, .archive .entry-title:after {
+      bottom: 0;
+      width: 15%; }
 
 .page-content p {
   font-size: 18px;
@@ -3141,8 +3146,7 @@ article.format-link {
   padding: 1.5em;
   padding: 1.5rem;
   margin: 0 0 1.5em;
-  margin: 0 0 1.5rem;
-  background-color: #fff; }
+  margin: 0 0 1.5rem; }
   @media only screen and (min-width: 40.063em) {
     .comments-area {
       padding: 2.5em 3.5em;
@@ -3182,7 +3186,7 @@ article.format-link {
     .comment-list li .fn {
       font-size: 1.1em;
       font-style: normal;
-      font-weight: bold; }
+      font-weight: 300; }
     .comment-list li .comment-author,
     .comment-list li .comment-metadata {
       font-family: "Roboto", sans-serif; }
@@ -3196,7 +3200,6 @@ article.format-link {
     content: " \2192"; }
   .comment-list .comment-awaiting-moderation {
     border-radius: 4px;
-    background-color: #d9d9d9;
     color: #666;
     padding: 10px 15px;
     font-size: .9em;
@@ -3432,8 +3435,6 @@ body.layout-one-column-narrow #content {
 
 body {
   background: #f4f4f4; }
-  body.home {
-    background: #fff; }
 
 .site-title-wrapper {
   margin-bottom: 40px; }
@@ -3548,7 +3549,7 @@ html {
   -webkit-font-smoothing: antialiased; }
 
 .hero-area {
-  background: #f4f4f4; }
+  background: rgba(0, 0, 0, 0.1); }
   .hero-area:before, .hero-area:after {
     content: " ";
     display: table; }
@@ -3676,6 +3677,7 @@ html {
       font-weight: bold;
       font-size: 30px;
       font-weight: 300;
+      margin-top: 0;
       margin-bottom: 30px; }
       .footer-widget-area .footer-widget .widget-title:after {
         content: " ";
@@ -3718,6 +3720,7 @@ html {
         .site-info-wrapper .site-info-text .menu li a {
           text-transform: uppercase;
           font-weight: 700;
+          color: #181818;
           font-size: 0.875rem; }
     @media screen and (min-width: 769px) {
       .site-info-wrapper .site-info-text {
