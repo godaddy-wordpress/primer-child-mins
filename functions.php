@@ -143,7 +143,7 @@ function mins_update_font_types() {
             'label'   => __( 'Primary Font', 'primer' ),
             'default' => 'Roboto',
             'css'     => array(
-	            '.cta, .site-info-wrapper, .comment-author, .comment-metadata, #respond, .entry-title, .read-more, button, a.button, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"], .featured-content .entry-title, .featured-content .read-more, .entry-meta li, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, header .social-menu a, .widget-title, label, header .main-navigation-container .menu li a, .entry-footer, .more-link, h1, h2, h3, h4' => array( 'font-family' => '"%s", sans-serif' )
+	            '.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .site-title, .site-description, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
 	        ),
             'weight'   => array(
                 100, 300, 700
@@ -154,7 +154,7 @@ function mins_update_font_types() {
             'label'   => __( 'Secondary Font', 'primer' ),
             'default' => 'Roboto',
             'css'     => array(
-				'body, input, select, textarea, .hero-widget div.textwidget, .widget, .widget p, .widget ul, .widget ol, .entry-content p, .entry-summary p, h5, h6' => array( 'font-family' => '"%s", sans-serif' )
+				'body, input, select, textarea, .hero-widget div.textwidget, .widget, .widget p, .widget ul, .widget ol, .entry-content p, .entry-summary p, h3, h4, h5, h6' => array( 'font-family' => '"%s", sans-serif' )
             )
         ),
     );
@@ -230,7 +230,10 @@ function mins_colors() {
 				'body, .site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend, .footer-widget-area .footer-widget .widget-title, .footer-widget-area .footer-widget .widget, h1, h2, h3, h4, h5, h6, blockquote, blockquote p, blockquote cite' => array(
 					'color' => '%1$s',
 				),
-				'.hero-area .hero-widget h2.widget-title:after, .hentry .page-title:after, .hentry .entry-title:after' => array(
+				'.footer-widget-area .footer-widget .widget li a' => array(
+					'border-color' => '%1$s',
+				),
+				'.hero-area .hero-widget h2.widget-title:after, .hentry .page-title:after, .hentry .entry-title:after, .footer-widget-area .footer-widget .widget-title:after' => array(
 					'background-color' => '%1$s',
 				),
 			),
@@ -263,6 +266,56 @@ define( 'NO_HEADER_TEXT', true );
 
 function mins_color_schemes() {
 	return array(
+		'seafoam' => array(
+			'label'  => esc_html__( 'Seafoam', 'primer' ),
+			'colors' => array(
+				'background_color'        => '#c9ede3',
+				'link_color'              => '#c96050',
+				'main_text_color'         => '#013f39',
+				'w_bg'                    => '#b5d6cd',
+				'button_text_color'       => '#013f39'
+			),
+		),
+		'wheat' => array(
+			'label'  => esc_html__( 'Wheat', 'primer' ),
+			'colors' => array(
+				'background_color'        => '#eae9dc',
+				'link_color'              => '#ff4f4f',
+				'main_text_color'         => '#5e2c00',
+				'w_bg'                    => '#d3d2c7',
+				'button_text_color'       => '#5e2c00'
+			),
+		),
+		'melancholy' => array(
+			'label'  => esc_html__( 'Wheat', 'primer' ),
+			'colors' => array(
+				'background_color'        => '#b1b9bf',
+				'link_color'              => '#4e5972',
+				'main_text_color'         => '#eae0c7',
+				'w_bg'                    => '#a0a7ac',
+				'button_text_color'       => '#4e5972'
+			),
+		),
+		'foliage' => array(
+			'label'  => esc_html__( 'Foliage', 'primer' ),
+			'colors' => array(
+				'background_color'        => '#a7caa9',
+				'link_color'              => '#fff1c6',
+				'main_text_color'         => '#4c684e',
+				'w_bg'                    => '#97b698',
+				'button_text_color'       => '#d15e5e'
+			),
+		),
+		'ocean' => array(
+			'label'  => esc_html__( 'Deep Sea', 'primer' ),
+			'colors' => array(
+				'background_color'        => '#051a5b',
+				'link_color'              => '#fff1c6',
+				'main_text_color'         => '#75ceda',
+				'w_bg'                    => '#051752',
+				'button_text_color'       => '#f6faef'
+			),
+		),
 		'negative' => array(
 			'label'  => esc_html__( 'Negative', 'primer' ),
 			'colors' => array(
@@ -271,6 +324,16 @@ function mins_color_schemes() {
 				'main_text_color'         => '#fff',
 				'w_bg'                    => '#212121',
 				'button_text_color'       => '#fff'
+			),
+		),
+		'immke' => array(
+			'label'  => esc_html__( 'Immke', 'primer' ),
+			'colors' => array(
+				'background_color'        => '#010e68',
+				'link_color'              => '#fced4b',
+				'main_text_color'         => '#f700ef',
+				'w_bg'                    => '#43039e',
+				'button_text_color'       => '#fced4b'
 			),
 		),
 	);

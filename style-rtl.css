@@ -3442,7 +3442,7 @@ body {
 .site-title-contain {
   float: right;
   margin: 20px 0; }
-  @media all and (min-width: 600px) {
+  @media all and (min-width: 800px) {
     .site-title-contain {
       margin-top: 29px; } }
 
@@ -3691,7 +3691,7 @@ html {
       margin-bottom: 2.25em;
       margin-bottom: 2.25rem; }
       .footer-widget-area .footer-widget .widget li, .footer-widget-area .footer-widget .widget a {
-        border-color: #d9d9d9; }
+        border-color: #181818; }
     .footer-widget-area .footer-widget .widget_calendar #calendar_wrap {
       padding-left: 0; }
 
