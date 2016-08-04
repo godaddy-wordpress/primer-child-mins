@@ -3424,8 +3424,10 @@ object {
     padding: 0;
     max-width: none;
     width: 100%; }
-  body.page-template-page-builder #primary {
+  body.page-template-page-builder #primary,
+  body.page-template-page-builder-no-header #primary {
     width: 100%;
+    max-width: 100%;
     padding: 0;
     float: none; }
 
@@ -3629,6 +3631,11 @@ html {
           position: absolute;
           bottom: -30px;
           left: 0; } }
+
+.page-header .page-title,
+.page-header .archive-title {
+  margin: 1em .5em;
+  text-align: center; }
 
 .site-footer {
   color: #181818;
