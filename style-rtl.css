@@ -3412,9 +3412,11 @@ object {
     max-width: 100%;
     margin: 0;
     padding: 0; }
-  body.page-template-page-builder #content {
-    padding: 0;
-    max-width: none; }
+  body.page-template-page-builder #content,
+  body.page-template-page-builder-no-header #content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0; }
 
 #primary {
   float: none;

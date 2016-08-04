@@ -8,9 +8,11 @@
 		padding: 0;
 	}
 
-	body.page-template-page-builder &{
+	body.page-template-page-builder &,
+	body.page-template-page-builder-no-header &{
+		width: 100%;
+		max-width: 100%;
 		padding: 0;
-		max-width: none;
 	}
 }
 
