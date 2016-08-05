@@ -274,32 +274,6 @@ function mins_colors() {
 			),
 		),
 		array(
-			'name'    => 'main_text_color',
-			'label'   => __( 'Text Color', 'primer' ),
-			'default' => '#181818',
-			'css'     => array(
-				'body, .site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend, .footer-widget-area .footer-widget .widget-title, .footer-widget-area .footer-widget .widget, h1, h2, h3, h4, h5, h6, blockquote, blockquote p, blockquote cite, .entry-footer, .comment-notes, .form-allowed-tags, .comment-awaiting-moderation' => array(
-					'color' => '%1$s',
-				),
-				'.footer-widget-area .footer-widget .widget li a' => array(
-					'border-color' => '%1$s',
-				),
-				'.hero-area .hero-widget h2.widget-title:after, .hentry .page-title:after, .hentry .entry-title:after, .footer-widget-area .footer-widget .widget-title:after' => array(
-					'background-color' => '%1$s',
-				),
-			),
-		),
-		array(
-			'name'    => 'button_text_color',
-			'label'   => __( 'Call to Action Color', 'primer' ),
-			'default' => '#181818',
-			'css'     => array(
-				'button, a.button, body a.button:hover, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"], a.button:after, .footer-widget-area .footer-widget .widget a.button' => array(
-					'color' => '%1$s',
-				)
-			),
-		),
-		array(
 			'name'    => 'w_bg',
 			'label'   => __( 'Widget Background', 'primer' ),
 			'default' => '#fff',
@@ -322,9 +296,7 @@ function mins_color_schemes() {
 			'colors' => array(
 				'background_color'        => '#c9ede3',
 				'link_color'              => '#c96050',
-				'main_text_color'         => '#013f39',
 				'w_bg'                    => '#b5d6cd',
-				'button_text_color'       => '#013f39'
 			),
 		),
 		'wheat' => array(
@@ -332,9 +304,7 @@ function mins_color_schemes() {
 			'colors' => array(
 				'background_color'        => '#eae9dc',
 				'link_color'              => '#ff4f4f',
-				'main_text_color'         => '#ff4f4f',
 				'w_bg'                    => '#d3d2c7',
-				'button_text_color'       => '#4a707a'
 			),
 		),
 		'melancholy' => array(
@@ -342,9 +312,7 @@ function mins_color_schemes() {
 			'colors' => array(
 				'background_color'        => '#b1b9bf',
 				'link_color'              => '#4e5972',
-				'main_text_color'         => '#eae0c7',
 				'w_bg'                    => '#a0a7ac',
-				'button_text_color'       => '#4e5972'
 			),
 		),
 		'foliage' => array(
@@ -352,9 +320,7 @@ function mins_color_schemes() {
 			'colors' => array(
 				'background_color'        => '#a7caa9',
 				'link_color'              => '#fff1c6',
-				'main_text_color'         => '#4c684e',
 				'w_bg'                    => '#97b698',
-				'button_text_color'       => '#d15e5e'
 			),
 		),
 		'ocean' => array(
@@ -362,9 +328,7 @@ function mins_color_schemes() {
 			'colors' => array(
 				'background_color'        => '#051a5b',
 				'link_color'              => '#fff1c6',
-				'main_text_color'         => '#75ceda',
 				'w_bg'                    => '#051752',
-				'button_text_color'       => '#f6faef'
 			),
 		),
 		'negative' => array(
@@ -372,9 +336,7 @@ function mins_color_schemes() {
 			'colors' => array(
 				'background_color'        => '#181818',
 				'link_color'              => '#ccc',
-				'main_text_color'         => '#fff',
 				'w_bg'                    => '#212121',
-				'button_text_color'       => '#fff'
 			),
 		),
 		'immke' => array(
@@ -382,9 +344,7 @@ function mins_color_schemes() {
 			'colors' => array(
 				'background_color'        => '#010e68',
 				'link_color'              => '#fced4b',
-				'main_text_color'         => '#f700ef',
 				'w_bg'                    => '#43039e',
-				'button_text_color'       => '#fced4b'
 			),
 		),
 	);
