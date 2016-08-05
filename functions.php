@@ -263,7 +263,7 @@ function mins_colors() {
 			'label'   => __( 'Link Color', 'primer' ),
 			'default' => '#62b6cb',
 			'css'     => array(
-				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a, .entry-title a' => array(
+				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a, .entry-title a, .site-info-wrapper .site-info .social-menu a' => array(
 					'color' => '%1$s',
 				)
 			),
