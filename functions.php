@@ -5,13 +5,13 @@
  *
  * @since 1.0.0
  */
-function mins_remove_titles(){
+function mins_remove_titles() {
 
 	remove_action( 'primer_after_header', 'primer_add_page_builder_template_title', 100 );
 	remove_action( 'primer_after_header', 'primer_add_blog_title', 100 );
 	remove_action( 'primer_after_header', 'primer_add_archive_title', 100 );
 
-	if( ! is_front_page() ):
+	if ( ! is_front_page() ) :
 		add_action( 'primer_after_header', 'primer_add_page_builder_template_title' );
 		add_action( 'primer_after_header', 'primer_add_blog_title' );
 		add_action( 'primer_after_header', 'primer_add_archive_title' );
@@ -44,8 +44,8 @@ add_action( 'template_redirect', 'mins_check_hero' );
  *
  * @action primer_after_header
  */
-function mins_add_hero(){
-	if( is_front_page() ) {
+function mins_add_hero() {
+	if ( is_front_page() ) {
 		get_template_part( 'templates/parts/hero' );
 	}
 }
@@ -60,7 +60,7 @@ function mins_register_menus() {
 
 	register_nav_menus(
 		array(
-			'footer'	=> esc_html__( 'Footer', 'mins' )
+			'footer'	=> esc_html__( 'Footer', 'mins' ),
 		)
 	);
 
@@ -167,7 +167,7 @@ function mins_update_fonts() {
 	return array(
 		'Roboto',
 		'Abril Fatface',
-		'Raleway'
+		'Raleway',
 	);
 }
 add_filter( 'primer_fonts', 'mins_update_fonts' );
@@ -177,7 +177,7 @@ function mins_custom_logo() {
 		'height'      => 86,
 		'width'       => 400,
 		'flex-height' => false,
-		'flex-width'  => false
+		'flex-width'  => false,
 	);
 }
 add_filter( 'primer_custom_logo_args', 'mins_custom_logo' );
@@ -194,19 +194,21 @@ function mins_update_font_types() {
 			'label'   => __( 'Primary Font', 'primer' ),
 			'default' => 'Roboto',
 			'css'     => array(
-				'.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
+				'.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' ),
 			),
 			'weight'   => array(
-				100, 300, 700
-			)
+				100,
+				300,
+				700,
+			),
 		),
 		array(
 			'name'    => 'secondary_font',
 			'label'   => __( 'Secondary Font', 'primer' ),
 			'default' => 'Roboto',
 			'css'     => array(
-				'body, input, select, textarea, .hero-widget div.textwidget, .widget, .widget p, .widget ul, .widget ol, .entry-content p, .entry-summary p, h3, h4, h5, h6' => array( 'font-family' => '"%s", sans-serif' )
-			)
+				'body, input, select, textarea, .hero-widget div.textwidget, .widget, .widget p, .widget ul, .widget ol, .entry-content p, .entry-summary p, h3, h4, h5, h6' => array( 'font-family' => '"%s", sans-serif' ),
+			),
 		),
 	);
 }
@@ -224,7 +226,7 @@ add_filter( 'primer_font_weights', 'mins_font_weight', 10, 2 );
  *
  * @action primer_after_header
  */
-function mins_add_social_to_header(){
+function mins_add_social_to_header() {
 
 	if ( has_nav_menu( 'social' ) ) :
 
@@ -240,9 +242,9 @@ add_action( 'primer_after_header', 'mins_add_social_to_header', 30 );
  *
  * @action after_setup_theme
  */
-function mins_remove_customizer_features($wp_customize){
+function mins_remove_customizer_features( $wp_customize ) {
 
-	$wp_customize->remove_section('layout');
+	$wp_customize->remove_section( 'layout' );
 
 }
 add_action( 'customize_register', 'mins_remove_customizer_features', 30 );
@@ -259,7 +261,7 @@ function mins_colors() {
 			'default' => '#f4f4f4',
 			'css'     => array(
 				'.site-content',
-			)
+			),
 		),
 		array(
 			'name'    => 'hero_text_color',
@@ -269,7 +271,7 @@ function mins_colors() {
 					'color' => '%1$s',
 				),
 				'.hero-area .hero-widget h2.widget-title:after' => array(
-					'background-color' => '%1$s'
+					'background-color' => '%1$s',
 				),
 			),
 		),
@@ -280,12 +282,12 @@ function mins_colors() {
 			'css'     => array(
 				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a, .entry-title a, .site-info-wrapper .site-info .social-menu a' => array(
 					'color' => '%1$s',
-				)
+				),
 			),
 			'rgba_css' => array(
 				'a:hover, a:visited:hover, .entry-footer a:hover' => array(
 					'color' => 'rgba(%1$s, 0.75)',
-				)
+				),
 			),
 		),
 		array(
@@ -373,10 +375,10 @@ function mins_color_schemes() {
 }
 add_filter( 'primer_color_schemes', 'mins_color_schemes' );
 
-function mins_add_default_header_image($array) {
+function mins_add_default_header_image( $array ) {
 	$array['default-image'] = get_stylesheet_directory_uri() . '/assets/images/default-header.jpg';
 	$array['width'] = 1300;
-	$array['height'] =1245;
+	$array['height'] = 1245;
 	$array['flex-height'] = false;
 
 	return $array;
@@ -391,21 +393,21 @@ add_filter( 'primer_custom_header_args', 'mins_add_default_header_image', 20 );
  */
 function mins_move_nav_markup() {
 
-	remove_action( 'primer_after_header', 'primer_add_primary_navigation', 20);
+	remove_action( 'primer_after_header', 'primer_add_primary_navigation', 20 );
 
-	add_action( 'primer_header', 'primer_add_primary_navigation', 21);
+	add_action( 'primer_header', 'primer_add_primary_navigation', 21 );
 
 }
 add_action( 'init', 'mins_move_nav_markup', 30 );
 
-function mins_add_search_menu ( $items, $args ) {
+function mins_add_search_menu( $items, $args ) {
 
-	if( 'primary' === $args -> theme_location ) {
+	if ( 'primary' === $args -> theme_location ) {
 		$items .= '<li class="menu-item menu-item-search">';
 		$items .= '<a href="#" class="search-toggle"><span class="genericon genericon-search"></span></a>';
-		$items .= get_search_form(false);
+		$items .= get_search_form( false );
 		$items .= '</li>';
 	}
-return $items;
+	return $items;
 }
-add_filter('wp_nav_menu_items','mins_add_search_menu',10,2);
+add_filter( 'wp_nav_menu_items','mins_add_search_menu', 10, 2 );
