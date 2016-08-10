@@ -2900,6 +2900,9 @@ a {
         .widget_calendar #calendar_wrap #wp-calendar tfoot td#next {
           text-align: left; }
 
+.site-content {
+  background: #fff; }
+
 .no-results,
 .not-found {
   padding: 1.5em;

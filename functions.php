@@ -188,33 +188,33 @@ add_filter( 'primer_custom_logo_args', 'mins_custom_logo' );
  * @return array
  */
 function mins_update_font_types() {
-    return array(
-        array(
-            'name'    => 'primary_font',
-            'label'   => __( 'Primary Font', 'primer' ),
-            'default' => 'Roboto',
-            'css'     => array(
-	            '.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
-	        ),
-            'weight'   => array(
-                100, 300, 700
-            )
-        ),
-        array(
-            'name'    => 'secondary_font',
-            'label'   => __( 'Secondary Font', 'primer' ),
-            'default' => 'Roboto',
-            'css'     => array(
+	return array(
+		array(
+			'name'    => 'primary_font',
+			'label'   => __( 'Primary Font', 'primer' ),
+			'default' => 'Roboto',
+			'css'     => array(
+				'.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
+			),
+			'weight'   => array(
+				100, 300, 700
+			)
+		),
+		array(
+			'name'    => 'secondary_font',
+			'label'   => __( 'Secondary Font', 'primer' ),
+			'default' => 'Roboto',
+			'css'     => array(
 				'body, input, select, textarea, .hero-widget div.textwidget, .widget, .widget p, .widget ul, .widget ol, .entry-content p, .entry-summary p, h3, h4, h5, h6' => array( 'font-family' => '"%s", sans-serif' )
-            )
-        ),
-    );
+			)
+		),
+	);
 }
 add_action( 'primer_font_types', 'mins_update_font_types' );
 
 function mins_font_weight( $weights, $font ) {
 
-    return ( 'Roboto' === $font ) ? [ 700, 300, 100 ] : $weights;
+	return ( 'Roboto' === $font ) ? [ 700, 300, 100 ] : $weights;
 
 }
 add_filter( 'primer_font_weights', 'mins_font_weight', 10, 2 );
@@ -257,6 +257,9 @@ function mins_colors() {
 		array(
 			'name'    => 'background_color',
 			'default' => '#f4f4f4',
+			'css'     => array(
+				'.site-content',
+			)
 		),
 		array(
 			'name'    => 'link_color',
