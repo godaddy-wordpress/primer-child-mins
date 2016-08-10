@@ -262,6 +262,18 @@ function mins_colors() {
 			)
 		),
 		array(
+			'name'    => 'hero_text_color',
+			'default' => '#ffffff',
+			'css'     => array(
+				'.hero-area, .hero-area a, .hero-area h1, .hero-area h2, .hero-area h3, .hero-area h4, .hero-area h5, .hero-area h6, hr, .page-title' => array(
+					'color' => '%1$s',
+				),
+				'.hero-area .hero-widget h2.widget-title:after' => array(
+					'background-color' => '%1$s'
+				),
+			),
+		),
+		array(
 			'name'    => 'link_color',
 			'label'   => __( 'Link Color', 'primer' ),
 			'default' => '#62b6cb',
@@ -298,6 +310,7 @@ function mins_color_schemes() {
 			'label'  => esc_html__( 'Seafoam', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#c9ede3',
+				'hero_text_color'         => '#000000',
 				'link_color'              => '#c96050',
 				'w_bg'                    => '#b5d6cd',
 			),
@@ -306,6 +319,7 @@ function mins_color_schemes() {
 			'label'  => esc_html__( 'Wheat', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#eae9dc',
+				'hero_text_color'         => '#000000',
 				'link_color'              => '#ff4f4f',
 				'w_bg'                    => '#d3d2c7',
 			),
@@ -314,6 +328,7 @@ function mins_color_schemes() {
 			'label'  => esc_html__( 'Melancholy', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#b1b9bf',
+				'hero_text_color'         => '#000000',
 				'link_color'              => '#4e5972',
 				'w_bg'                    => '#a0a7ac',
 			),
@@ -322,6 +337,7 @@ function mins_color_schemes() {
 			'label'  => esc_html__( 'Foliage', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#a7caa9',
+				'hero_text_color'         => '#000000',
 				'link_color'              => '#fff1c6',
 				'w_bg'                    => '#97b698',
 			),
@@ -330,6 +346,7 @@ function mins_color_schemes() {
 			'label'  => esc_html__( 'Deep Sea', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#051a5b',
+				'hero_text_color'         => '#ffffff',
 				'link_color'              => '#fff1c6',
 				'w_bg'                    => '#051752',
 			),
@@ -338,6 +355,7 @@ function mins_color_schemes() {
 			'label'  => esc_html__( 'Negative', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#181818',
+				'hero_text_color'         => '#ffffff',
 				'link_color'              => '#ccc',
 				'w_bg'                    => '#212121',
 			),
@@ -346,6 +364,7 @@ function mins_color_schemes() {
 			'label'  => esc_html__( 'Immke', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#010e68',
+				'hero_text_color'         => '#ffffff',
 				'link_color'              => '#fced4b',
 				'w_bg'                    => '#43039e',
 			),

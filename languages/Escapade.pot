@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Escapade 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-09 20:53-0400\n"
+"POT-Creation-Date: 2016-08-09 21:01-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,39 +37,39 @@ msgstr ""
 msgid "Secondary Font"
 msgstr ""
 
-#: functions.php:266
+#: functions.php:278
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:281
+#: functions.php:293
 msgid "Widget Background"
 msgstr ""
 
-#: functions.php:298
+#: functions.php:310
 msgid "Seafoam"
 msgstr ""
 
-#: functions.php:306
+#: functions.php:319
 msgid "Wheat"
 msgstr ""
 
-#: functions.php:314
+#: functions.php:328
 msgid "Melancholy"
 msgstr ""
 
-#: functions.php:322
+#: functions.php:337
 msgid "Foliage"
 msgstr ""
 
-#: functions.php:330
+#: functions.php:346
 msgid "Deep Sea"
 msgstr ""
 
-#: functions.php:338
+#: functions.php:355
 msgid "Negative"
 msgstr ""
 
-#: functions.php:346
+#: functions.php:364
 msgid "Immke"
 msgstr ""
 
