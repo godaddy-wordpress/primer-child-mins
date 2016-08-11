@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the Escapade package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Escapade 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-29 17:48-0400\n"
+"POT-Creation-Date: 2016-08-10 20:53-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,71 +17,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: functions.php:12
+#: functions.php:75
 msgid "Footer"
 msgstr ""
 
-#: functions.php:71
+#: functions.php:150
 msgid "Hero"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:152
 msgid "The hero appears in the hero widget area on the front page"
 msgstr ""
 
-#: functions.php:143
+#: functions.php:236
 msgid "Primary Font"
 msgstr ""
 
-#: functions.php:154
+#: functions.php:246
 msgid "Secondary Font"
 msgstr ""
 
-#: functions.php:212
+#: functions.php:306
+msgid "Hero Text Color"
+msgstr ""
+
+#: functions.php:318
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:227
-msgid "Text Color"
-msgstr ""
-
-#: functions.php:243
-msgid "Call to Action Color"
-msgstr ""
-
-#: functions.php:253
+#: functions.php:332
 msgid "Widget Background"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:358
 msgid "Seafoam"
 msgstr ""
 
-#: functions.php:280
+#: functions.php:367
 msgid "Wheat"
 msgstr ""
 
-#: functions.php:290
+#: functions.php:376
 msgid "Melancholy"
 msgstr ""
 
-#: functions.php:300
+#: functions.php:385
 msgid "Foliage"
 msgstr ""
 
-#: functions.php:310
+#: functions.php:394
 msgid "Deep Sea"
 msgstr ""
 
-#: functions.php:320
+#: functions.php:403
 msgid "Negative"
 msgstr ""
 
-#: functions.php:330
+#: functions.php:412
 msgid "Immke"
 msgstr ""
 
-#: header.php:56
+#: header.php:41
 msgid "Skip to content"
 msgstr ""
 

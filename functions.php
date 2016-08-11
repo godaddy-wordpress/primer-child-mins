@@ -12,13 +12,13 @@ define( 'NO_HEADER_TEXT', true );
  *
  * @since 1.0.0
  */
-function mins_remove_titles(){
+function mins_remove_titles() {
 
 	remove_action( 'primer_after_header', 'primer_add_page_builder_template_title', 100 );
 	remove_action( 'primer_after_header', 'primer_add_blog_title', 100 );
 	remove_action( 'primer_after_header', 'primer_add_archive_title', 100 );
 
-	if( ! is_front_page() ):
+	if ( ! is_front_page() ) :
 		add_action( 'primer_after_header', 'primer_add_page_builder_template_title' );
 		add_action( 'primer_after_header', 'primer_add_blog_title' );
 		add_action( 'primer_after_header', 'primer_add_archive_title' );
@@ -54,8 +54,8 @@ add_action( 'template_redirect', 'mins_check_hero' );
  *
  * @action primer_after_header
  */
-function mins_add_hero(){
-	if( is_front_page() ) {
+function mins_add_hero() {
+	if ( is_front_page() ) {
 		get_template_part( 'templates/parts/hero' );
 	}
 }
@@ -72,7 +72,7 @@ function mins_register_menus() {
 
 	register_nav_menus(
 		array(
-			'footer'	=> esc_html__( 'Footer', 'mins' )
+			'footer'	=> esc_html__( 'Footer', 'mins' ),
 		)
 	);
 
@@ -147,9 +147,9 @@ add_filter( 'primer_custom_header_args', 'primer_update_custom_header_args' );
  */
 function mins_register_hero_sidebar() {
 	register_sidebar( array(
-		'name'          => __( 'Hero', 'mins' ),
+		'name'          => esc_html__( 'Hero', 'mins' ),
 		'id'            => 'hero',
-		'description'   => __( 'The hero appears in the hero widget area on the front page', 'mins' ),
+		'description'   => esc_html__( 'The hero appears in the hero widget area on the front page', 'mins' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -203,7 +203,7 @@ function mins_update_fonts() {
 	return array(
 		'Roboto',
 		'Abril Fatface',
-		'Raleway'
+		'Raleway',
 	);
 }
 add_filter( 'primer_fonts', 'mins_update_fonts' );
@@ -218,7 +218,7 @@ function mins_custom_logo() {
 		'height'      => 86,
 		'width'       => 400,
 		'flex-height' => false,
-		'flex-width'  => false
+		'flex-width'  => false,
 	);
 }
 add_filter( 'primer_custom_logo_args', 'mins_custom_logo' );
@@ -233,7 +233,7 @@ add_filter( 'primer_custom_logo_args', 'mins_custom_logo' );
 function mins_update_font_types() {
 	return array(
 		'primary_font' => array(
-			'label'    => __( 'Primary Font', 'mins' ),
+			'label'    => esc_html__( 'Primary Font', 'mins' ),
 			'default'  => 'Roboto',
 			'css'      => array(
 				'.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
@@ -243,7 +243,7 @@ function mins_update_font_types() {
 			)
 		),
 		'primary_font' => array(
-			'label'    => __( 'Secondary Font', 'mins' ),
+			'label'    => esc_html__( 'Secondary Font', 'mins' ),
 			'default'  => 'Roboto',
 			'css'      => array(
 				'body, input, select, textarea, .hero-widget div.textwidget, .widget, .widget p, .widget ul, .widget ol, .entry-content p, .entry-summary p, h3, h4, h5, h6' => array( 'font-family' => '"%s", sans-serif' )
@@ -260,7 +260,7 @@ add_action( 'primer_font_types', 'mins_update_font_types' );
  *
  * @action primer_after_header
  */
-function mins_add_social_to_header(){
+function mins_add_social_to_header() {
 
 	if ( has_nav_menu( 'social' ) ) :
 
@@ -278,9 +278,9 @@ add_action( 'primer_after_header', 'mins_add_social_to_header', 30 );
  *
  * @action after_setup_theme
  */
-function mins_remove_customizer_features($wp_customize){
+function mins_remove_customizer_features( $wp_customize ) {
 
-	$wp_customize->remove_section('layout');
+	$wp_customize->remove_section( 'layout' );
 
 }
 add_action( 'customize_register', 'mins_remove_customizer_features', 30 );
@@ -298,47 +298,38 @@ function mins_colors( $colors ) {
 
 		'background_color' => array(
 			'default' => '#f4f4f4',
-		),
-		'link_color' => array(
-			'label'   => __( 'Link Color', 'mins' ),
-			'default' => '#62b6cb',
 			'css'     => array(
-				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a, .entry-title a' => array(
-					'color' => '%1$s',
-				)
-			),
-			'rgba_css' => array(
-				'a:hover, a:visited:hover, .entry-footer a:hover' => array(
-					'color' => 'rgba(%1$s, 0.75)',
-				)
+				'.site-content',
 			),
 		),
-		'main_text_color' => array(
-			'label'   => __( 'Text Color', 'mins' ),
-			'default' => '#181818',
+		'hero_text_color' => array(
+			'label'   => esc_html__( 'Hero Text Color', 'primer' ),
+			'default' => '#ffffff',
 			'css'     => array(
-				'body, .site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend, .footer-widget-area .footer-widget .widget-title, .footer-widget-area .footer-widget .widget, h1, h2, h3, h4, h5, h6, blockquote, blockquote p, blockquote cite, .entry-footer, .comment-notes, .form-allowed-tags, .comment-awaiting-moderation' => array(
+				'.hero-area, .hero-area a, .hero-area h1, .hero-area h2, .hero-area h3, .hero-area h4, .hero-area h5, .hero-area h6, hr, .page-title' => array(
 					'color' => '%1$s',
 				),
-				'.footer-widget-area .footer-widget .widget li a' => array(
-					'border-color' => '%1$s',
-				),
-				'.hero-area .hero-widget h2.widget-title:after, .hentry .page-title:after, .hentry .entry-title:after, .footer-widget-area .footer-widget .widget-title:after' => array(
+				'.hero-area .hero-widget h2.widget-title:after' => array(
 					'background-color' => '%1$s',
 				),
 			),
 		),
-		'button_text_color' => array(
-			'label'   => __( 'Call to Action Color', 'mins' ),
-			'default' => '#181818',
+		'link_color' => array(
+			'label'   => esc_html__( 'Link Color', 'primer' ),
+			'default' => '#62b6cb',
 			'css'     => array(
-				'button, a.button, body a.button:hover, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"], a.button:after, .footer-widget-area .footer-widget .widget a.button' => array(
+				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a, .entry-title a, .site-info-wrapper .site-info .social-menu a' => array(
 					'color' => '%1$s',
-				)
+				),
+			),
+			'rgba_css' => array(
+				'a:hover, a:visited:hover, .entry-footer a:hover' => array(
+					'color' => 'rgba(%1$s, 0.75)',
+				),
 			),
 		),
 		'w_bg' => array(
-			'label'   => __( 'Widget Background', 'mins' ),
+			'label'   => esc_html__( 'Widget Background', 'primer' ),
 			'default' => '#fff',
 			'css'     => array(
 				'.site-footer' => array(
@@ -349,8 +340,9 @@ function mins_colors( $colors ) {
 	);
 
 	return $colors;
+
 }
-add_filter( 'primer_colors', 'mins_colors', 30 );
+add_filter( 'primer_colors', 'mins_colors' );
 
 /**
  * Add color schemes
@@ -362,80 +354,73 @@ add_filter( 'primer_colors', 'mins_colors', 30 );
 function mins_color_schemes( $color_schemes ) {
 
 	$color_schemes = array(
-
 		'seafoam' => array(
-			'label'  => esc_html__( 'Seafoam', 'mins' ),
+			'label'  => esc_html__( 'Seafoam', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#c9ede3',
+				'hero_text_color'         => '#000000',
 				'link_color'              => '#c96050',
-				'main_text_color'         => '#013f39',
 				'w_bg'                    => '#b5d6cd',
-				'button_text_color'       => '#013f39'
 			),
 		),
 		'wheat' => array(
-			'label'  => esc_html__( 'Wheat', 'mins' ),
+			'label'  => esc_html__( 'Wheat', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#eae9dc',
+				'hero_text_color'         => '#000000',
 				'link_color'              => '#ff4f4f',
-				'main_text_color'         => '#ff4f4f',
 				'w_bg'                    => '#d3d2c7',
-				'button_text_color'       => '#4a707a'
 			),
 		),
 		'melancholy' => array(
-			'label'  => esc_html__( 'Melancholy', 'mins' ),
+			'label'  => esc_html__( 'Melancholy', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#b1b9bf',
+				'hero_text_color'         => '#000000',
 				'link_color'              => '#4e5972',
-				'main_text_color'         => '#eae0c7',
 				'w_bg'                    => '#a0a7ac',
-				'button_text_color'       => '#4e5972'
 			),
 		),
 		'foliage' => array(
-			'label'  => esc_html__( 'Foliage', 'mins' ),
+			'label'  => esc_html__( 'Foliage', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#a7caa9',
+				'hero_text_color'         => '#000000',
 				'link_color'              => '#fff1c6',
-				'main_text_color'         => '#4c684e',
 				'w_bg'                    => '#97b698',
-				'button_text_color'       => '#d15e5e'
 			),
 		),
 		'ocean' => array(
-			'label'  => esc_html__( 'Deep Sea', 'mins' ),
+			'label'  => esc_html__( 'Deep Sea', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#051a5b',
+				'hero_text_color'         => '#ffffff',
 				'link_color'              => '#fff1c6',
-				'main_text_color'         => '#75ceda',
 				'w_bg'                    => '#051752',
-				'button_text_color'       => '#f6faef'
 			),
 		),
 		'negative' => array(
-			'label'  => esc_html__( 'Negative', 'mins' ),
+			'label'  => esc_html__( 'Negative', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#181818',
+				'hero_text_color'         => '#ffffff',
 				'link_color'              => '#ccc',
-				'main_text_color'         => '#fff',
 				'w_bg'                    => '#212121',
-				'button_text_color'       => '#fff'
 			),
 		),
 		'immke' => array(
-			'label'  => esc_html__( 'Immke', 'mins' ),
+			'label'  => esc_html__( 'Immke', 'primer' ),
 			'colors' => array(
 				'background_color'        => '#010e68',
+				'hero_text_color'         => '#ffffff',
 				'link_color'              => '#fced4b',
-				'main_text_color'         => '#f700ef',
 				'w_bg'                    => '#43039e',
-				'button_text_color'       => '#fced4b'
 			),
 		),
 	);
 
 	return $color_schemes;
+
 }
 add_filter( 'primer_color_schemes', 'mins_color_schemes' );
 
