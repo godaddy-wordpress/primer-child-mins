@@ -83,7 +83,7 @@ msgstr ""
 
 #. //developer.wordpress.org/themes/basics/template-hierarchy/#search-result
 #. *
-#. * @package Primer
+#. * @package Mins
 #. * @since 1.0.0
 #.
 #: search.php:21

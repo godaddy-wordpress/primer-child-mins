@@ -4,8 +4,7 @@
  *
  * Displays all of the head element and everything up until the "site-content" div.
  *
- * @package Primer
- * @since 1.0.0
+ * @package Mins
  */
 ?><!DOCTYPE html>
 

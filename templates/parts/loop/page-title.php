@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the page title inside The Loop.
  *
- * @package Primer
+ * @package Mins
  */
 ?>
 

@@ -2,7 +2,7 @@
 /**
  * Displays the site title.
  *
- * @package Primer
+ * @package Mins
  */
 ?>
 <?php if ( has_custom_logo() ) : ?>
