@@ -2790,8 +2790,7 @@ a {
   .widget li a {
     display: block;
     padding: .5em 0;
-    padding: .5rem 0;
-    border-bottom: 1px solid #fff; }
+    padding: .5rem 0; }
   .widget > ul:last-child > li:last-child > a,
   .widget > div > ul:last-child > li:last-child > a {
     border-bottom: 0;
