@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * Disable header text.
+ *
+ * @since 1.0.0
+ */
+define( 'NO_HEADER_TEXT', true );
+
+/**
  * Move titles above menu templates.
  *
  * @since 1.0.0
@@ -23,8 +30,9 @@ add_action( 'init', 'mins_remove_titles' );
 /**
  * Check to see if we should add the hero to the page.
  *
+ * @since  1.0.0
+ *
  * @action after_setup_theme
- * @since 1.0.0
  */
 function mins_check_hero() {
 
@@ -42,6 +50,8 @@ add_action( 'template_redirect', 'mins_check_hero' );
 /**
  * Display hero in the header on the front page.
  *
+ * @since  1.0.0
+ *
  * @action primer_after_header
  */
 function mins_add_hero(){
@@ -53,6 +63,8 @@ add_action( 'primer_after_header', 'mins_add_hero', 30 );
 
 /**
  * Register custom Custom Navigation Menus.
+ *
+ * @since  1.0.0
  *
  * @link https://codex.wordpress.org/Function_Reference/register_nav_menus
  */
@@ -68,19 +80,33 @@ function mins_register_menus() {
 add_action( 'after_setup_theme', 'mins_register_menus' );
 
 /**
- * Add image size for hero image
+ * Add images sizes.
  *
- * @link https://codex.wordpress.org/Function_Reference/add_image_size
+ * @since  1.0.0
+ *
+ * @action primer_image_sizes
  */
-function mins_add_image_size() {
+function mins_adjust_image_sizes( $args ) {
 
-	add_image_size( 'hero', 2400, 1320, array( 'center', 'center' ) );
+	$args['primer-featured']['width'] = 1200;
+	$args['primer-featured']['height'] = 660;
+
+	$args['primer-featured-2x']['width'] = 2400;
+	$args['primer-featured-2x']['height'] = 1320;
+
+	$args['primer-hero']['width'] = 1200;
+	$args['primer-hero']['height'] = 660;
+
+	$args['primer-hero-2x']['width'] = 2400;
+	$args['primer-hero-2x']['height'] = 1320;
 
 }
-add_action( 'after_setup_theme', 'mins_add_image_size' );
+add_action( 'primer_image_sizes', 'mins_adjust_image_sizes' );
 
 /**
  * Remove primer navigation and add mins navigation
+ *
+ * @since 1.0.0
  */
 function mins_navigation() {
 	wp_dequeue_script( 'primer-navigation' );
@@ -90,6 +116,8 @@ add_action( 'wp_print_scripts', 'mins_navigation', 100 );
 
 /**
  * Add mobile menu to header
+ *
+ * @since 1.0.0
  *
  * @link https://codex.wordpress.org/Function_Reference/get_template_part
  */
@@ -133,6 +161,8 @@ add_action( 'widgets_init', 'mins_register_hero_sidebar' );
 /**
  * Get header image with image size
  *
+ * @since  1.0.0
+ *
  * @return false|string
  */
 function mins_get_header_image() {
@@ -151,8 +181,9 @@ function mins_get_header_image() {
 }
 
 /**
- * Remove sidebar
+ * Remove sidebars.
  *
+ * @since  1.0.0
  */
 function mins_remove_widgets() {
 
@@ -163,6 +194,11 @@ function mins_remove_widgets() {
 
 add_action( 'widgets_init', 'mins_remove_widgets', 11 );
 
+/**
+ * Set custom fonts for this theme.
+ *
+ * @since  1.0.0
+ */
 function mins_update_fonts() {
 	return array(
 		'Roboto',
@@ -172,6 +208,11 @@ function mins_update_fonts() {
 }
 add_filter( 'primer_fonts', 'mins_update_fonts' );
 
+/**
+ * Set custom logo arguments.
+ *
+ * @since  1.0.0
+ */
 function mins_custom_logo() {
 	return array(
 		'height'      => 86,
@@ -183,44 +224,39 @@ function mins_custom_logo() {
 add_filter( 'primer_custom_logo_args', 'mins_custom_logo' );
 
 /**
- * Update font types
+ * Update font types.
+ *
+ * @since  1.0.0
  *
  * @return array
  */
 function mins_update_font_types() {
-    return array(
-        array(
-            'name'    => 'primary_font',
-            'label'   => __( 'Primary Font', 'primer' ),
-            'default' => 'Roboto',
-            'css'     => array(
-	            '.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
-	        ),
-            'weight'   => array(
-                100, 300, 700
-            )
-        ),
-        array(
-            'name'    => 'secondary_font',
-            'label'   => __( 'Secondary Font', 'primer' ),
-            'default' => 'Roboto',
-            'css'     => array(
+	return array(
+		'primary_font' => array(
+			'label'    => __( 'Primary Font', 'mins' ),
+			'default'  => 'Roboto',
+			'css'      => array(
+				'.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
+			),
+			'weight'   => array(
+				100, 300, 700
+			)
+		),
+		'primary_font' => array(
+			'label'    => __( 'Secondary Font', 'mins' ),
+			'default'  => 'Roboto',
+			'css'      => array(
 				'body, input, select, textarea, .hero-widget div.textwidget, .widget, .widget p, .widget ul, .widget ol, .entry-content p, .entry-summary p, h3, h4, h5, h6' => array( 'font-family' => '"%s", sans-serif' )
-            )
-        ),
-    );
+			)
+		),
+	);
 }
 add_action( 'primer_font_types', 'mins_update_font_types' );
 
-function mins_font_weight( $weights, $font ) {
-
-    return ( 'Roboto' === $font ) ? [ 700, 300, 100 ] : $weights;
-
-}
-add_filter( 'primer_font_weights', 'mins_font_weight', 10, 2 );
-
 /**
  * Add Social links to primary navigation area.
+ *
+ * @since 1.0.0
  *
  * @action primer_after_header
  */
@@ -238,6 +274,8 @@ add_action( 'primer_after_header', 'mins_add_social_to_header', 30 );
 /**
  * Remove customizer features added by the parent theme that are not applicable to this theme
  *
+ * @since 1.0.0
+ *
  * @action after_setup_theme
  */
 function mins_remove_customizer_features($wp_customize){
@@ -250,17 +288,19 @@ add_action( 'customize_register', 'mins_remove_customizer_features', 30 );
 /**
  * Update colors
  *
+ * @since 1.0.0
+ *
  * @action primer_colors
  */
-function mins_colors() {
-	return array(
-		array(
-			'name'    => 'background_color',
+function mins_colors( $colors ) {
+
+	$colors = array(
+
+		'background_color' => array(
 			'default' => '#f4f4f4',
 		),
-		array(
-			'name'    => 'link_color',
-			'label'   => __( 'Link Color', 'primer' ),
+		'link_color' => array(
+			'label'   => __( 'Link Color', 'mins' ),
 			'default' => '#62b6cb',
 			'css'     => array(
 				'a, a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a, .entry-title a' => array(
@@ -273,9 +313,8 @@ function mins_colors() {
 				)
 			),
 		),
-		array(
-			'name'    => 'main_text_color',
-			'label'   => __( 'Text Color', 'primer' ),
+		'main_text_color' => array(
+			'label'   => __( 'Text Color', 'mins' ),
 			'default' => '#181818',
 			'css'     => array(
 				'body, .site-content, .site-content h1, .site-content h2, .site-content h3, .site-content h4, .site-content h5, .site-content h6, .site-content p, .site-content blockquote, legend, .footer-widget-area .footer-widget .widget-title, .footer-widget-area .footer-widget .widget, h1, h2, h3, h4, h5, h6, blockquote, blockquote p, blockquote cite, .entry-footer, .comment-notes, .form-allowed-tags, .comment-awaiting-moderation' => array(
@@ -289,9 +328,8 @@ function mins_colors() {
 				),
 			),
 		),
-		array(
-			'name'    => 'button_text_color',
-			'label'   => __( 'Call to Action Color', 'primer' ),
+		'button_text_color' => array(
+			'label'   => __( 'Call to Action Color', 'mins' ),
 			'default' => '#181818',
 			'css'     => array(
 				'button, a.button, body a.button:hover, a.button:visited, input[type="button"], input[type="reset"], input[type="submit"], a.button:after, .footer-widget-area .footer-widget .widget a.button' => array(
@@ -299,9 +337,8 @@ function mins_colors() {
 				)
 			),
 		),
-		array(
-			'name'    => 'w_bg',
-			'label'   => __( 'Widget Background', 'primer' ),
+		'w_bg' => array(
+			'label'   => __( 'Widget Background', 'mins' ),
 			'default' => '#fff',
 			'css'     => array(
 				'.site-footer' => array(
@@ -310,15 +347,24 @@ function mins_colors() {
 			),
 		),
 	);
+
+	return $colors;
 }
-add_action( 'primer_colors', 'mins_colors', 30 );
+add_filter( 'primer_colors', 'mins_colors', 30 );
 
-define( 'NO_HEADER_TEXT', true );
+/**
+ * Add color schemes
+ *
+ * @since 1.0.0
+ *
+ * @action primer_color_schemes
+ */
+function mins_color_schemes( $color_schemes ) {
 
-function mins_color_schemes() {
-	return array(
+	$color_schemes = array(
+
 		'seafoam' => array(
-			'label'  => esc_html__( 'Seafoam', 'primer' ),
+			'label'  => esc_html__( 'Seafoam', 'mins' ),
 			'colors' => array(
 				'background_color'        => '#c9ede3',
 				'link_color'              => '#c96050',
@@ -328,7 +374,7 @@ function mins_color_schemes() {
 			),
 		),
 		'wheat' => array(
-			'label'  => esc_html__( 'Wheat', 'primer' ),
+			'label'  => esc_html__( 'Wheat', 'mins' ),
 			'colors' => array(
 				'background_color'        => '#eae9dc',
 				'link_color'              => '#ff4f4f',
@@ -338,7 +384,7 @@ function mins_color_schemes() {
 			),
 		),
 		'melancholy' => array(
-			'label'  => esc_html__( 'Melancholy', 'primer' ),
+			'label'  => esc_html__( 'Melancholy', 'mins' ),
 			'colors' => array(
 				'background_color'        => '#b1b9bf',
 				'link_color'              => '#4e5972',
@@ -348,7 +394,7 @@ function mins_color_schemes() {
 			),
 		),
 		'foliage' => array(
-			'label'  => esc_html__( 'Foliage', 'primer' ),
+			'label'  => esc_html__( 'Foliage', 'mins' ),
 			'colors' => array(
 				'background_color'        => '#a7caa9',
 				'link_color'              => '#fff1c6',
@@ -358,7 +404,7 @@ function mins_color_schemes() {
 			),
 		),
 		'ocean' => array(
-			'label'  => esc_html__( 'Deep Sea', 'primer' ),
+			'label'  => esc_html__( 'Deep Sea', 'mins' ),
 			'colors' => array(
 				'background_color'        => '#051a5b',
 				'link_color'              => '#fff1c6',
@@ -368,7 +414,7 @@ function mins_color_schemes() {
 			),
 		),
 		'negative' => array(
-			'label'  => esc_html__( 'Negative', 'primer' ),
+			'label'  => esc_html__( 'Negative', 'mins' ),
 			'colors' => array(
 				'background_color'        => '#181818',
 				'link_color'              => '#ccc',
@@ -378,7 +424,7 @@ function mins_color_schemes() {
 			),
 		),
 		'immke' => array(
-			'label'  => esc_html__( 'Immke', 'primer' ),
+			'label'  => esc_html__( 'Immke', 'mins' ),
 			'colors' => array(
 				'background_color'        => '#010e68',
 				'link_color'              => '#fced4b',
@@ -388,22 +434,33 @@ function mins_color_schemes() {
 			),
 		),
 	);
+
+	return $color_schemes;
 }
 add_filter( 'primer_color_schemes', 'mins_color_schemes' );
 
-function mins_add_default_header_image($array) {
+/**
+ * Add default header image.
+ *
+ * @since 1.0.0
+ *
+ * @action primer_after_header
+ */
+function mins_update_header_image_args( $array ) {
+
+	$array['width']         = 1300;
+	$array['height']        = 1245;
+	$array['flex-height']   = false;
 	$array['default-image'] = get_stylesheet_directory_uri() . '/assets/images/default-header.jpg';
-	$array['width'] = 1300;
-	$array['height'] =1245;
-	$array['flex-height'] = false;
 
 	return $array;
 }
-add_filter( 'primer_custom_header_args', 'mins_add_default_header_image', 20 );
-
+add_filter( 'primer_custom_header_args', 'mins_update_header_image_args', 20 );
 
 /**
- * Move navigation
+ * Move navigation.
+ *
+ * @since 1.0.0
  *
  * @action primer_after_header
  */
@@ -416,14 +473,20 @@ function mins_move_nav_markup() {
 }
 add_action( 'init', 'mins_move_nav_markup', 30 );
 
-function mins_add_search_menu ( $items, $args ) {
+/**
+ * Add search menu icon to primary nav menu.
+ *
+ * @since 1.0.0
+ *
+ * @action wp_nav_menu_items
+ */
+function mins_add_search_to_nav_menu( $items, $args ) {
 
-	if( 'primary' === $args -> theme_location ) {
-		$items .= '<li class="menu-item menu-item-search">';
-		$items .= '<a href="#" class="search-toggle"><span class="genericon genericon-search"></span></a>';
-		$items .= get_search_form(false);
-		$items .= '</li>';
+	if( 'primary' === $args->theme_location ) {
+		$items .= '<li class="menu-item menu-item-search"><a href="#" class="search-toggle"><span class="genericon genericon-search"></span></a>' . get_search_form(false) . '</li>';
 	}
-return $items;
+
+	return $items;
+
 }
-add_filter('wp_nav_menu_items','mins_add_search_menu',10,2);
+add_filter( 'wp_nav_menu_items', 'mins_add_search_to_nav_menu', 10, 2 );
