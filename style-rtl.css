@@ -2789,8 +2789,8 @@ a {
     padding: 0; }
   .widget li a {
     display: block;
-    padding: .5em 0;
-    padding: .5rem 0; }
+    padding: .35em 0;
+    padding: .35rem 0; }
   .widget > ul:last-child > li:last-child > a,
   .widget > div > ul:last-child > li:last-child > a {
     border-bottom: 0;
