@@ -41,9 +41,6 @@ meta.foundation-mq-xxlarge {
 meta.foundation-data-attribute-namespace {
   font-family: false; }
 
-html, body {
-  height: 100%; }
-
 *,
 *:before,
 *:after {
@@ -100,21 +97,6 @@ img {
 
 .hide {
   display: none; }
-
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-img {
-  display: inline-block;
-  vertical-align: middle; }
-
-textarea {
-  height: auto;
-  min-height: 50px; }
-
-select {
-  width: 100%; }
 
 meta.foundation-mq-small {
   font-family: "/only screen/";
@@ -139,9 +121,6 @@ meta.foundation-mq-xxlarge {
 meta.foundation-data-attribute-namespace {
   font-family: false; }
 
-html, body {
-  height: 100%; }
-
 *,
 *:before,
 *:after {
@@ -198,21 +177,6 @@ img {
 
 .hide {
   display: none; }
-
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-img {
-  display: inline-block;
-  vertical-align: middle; }
-
-textarea {
-  height: auto;
-  min-height: 50px; }
-
-select {
-  width: 100%; }
 
 .row, .navigation, #content, .site-branding-container, .site-footer .site-footer-inner, .site-title-wrapper, .featured-content .entry-header .entry-header-row, .featured-content .featured-content-inner {
   width: 100%;
@@ -1703,9 +1667,6 @@ meta.foundation-mq-xxlarge {
 meta.foundation-data-attribute-namespace {
   font-family: false; }
 
-html, body {
-  height: 100%; }
-
 *,
 *:before,
 *:after {
@@ -1762,21 +1723,6 @@ img {
 
 .hide {
   display: none; }
-
-.antialiased {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-img {
-  display: inline-block;
-  vertical-align: middle; }
-
-textarea {
-  height: auto;
-  min-height: 50px; }
-
-select {
-  width: 100%; }
 
 .text-left {
   text-align: right !important; }
