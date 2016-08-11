@@ -70,17 +70,13 @@ add_action( 'primer_after_header', 'mins_add_hero', 30 );
  */
 function mins_register_menus() {
 
-	register_nav_menus(
-		array(
-			'footer'	=> esc_html__( 'Footer', 'mins' ),
-		)
-	);
+	register_nav_menu( 'footer', esc_html__( 'Footer', 'mins' ) );
 
 }
 add_action( 'after_setup_theme', 'mins_register_menus' );
 
 /**
- * Add images sizes.
+ * Add image sizes.
  *
  * @since  1.0.0
  *

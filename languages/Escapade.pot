@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Escapade 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-10 20:53-0500\n"
+"POT-Creation-Date: 2016-08-10 21:13-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,63 +17,63 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: functions.php:75
+#: functions.php:73
 msgid "Footer"
 msgstr ""
 
-#: functions.php:150
+#: functions.php:146
 msgid "Hero"
 msgstr ""
 
-#: functions.php:152
+#: functions.php:148
 msgid "The hero appears in the hero widget area on the front page"
 msgstr ""
 
-#: functions.php:236
+#: functions.php:232
 msgid "Primary Font"
 msgstr ""
 
-#: functions.php:246
+#: functions.php:242
 msgid "Secondary Font"
 msgstr ""
 
-#: functions.php:306
+#: functions.php:302
 msgid "Hero Text Color"
 msgstr ""
 
-#: functions.php:318
+#: functions.php:314
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:332
+#: functions.php:328
 msgid "Widget Background"
 msgstr ""
 
-#: functions.php:358
+#: functions.php:354
 msgid "Seafoam"
 msgstr ""
 
-#: functions.php:367
+#: functions.php:363
 msgid "Wheat"
 msgstr ""
 
-#: functions.php:376
+#: functions.php:372
 msgid "Melancholy"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:381
 msgid "Foliage"
 msgstr ""
 
-#: functions.php:394
+#: functions.php:390
 msgid "Deep Sea"
 msgstr ""
 
-#: functions.php:403
+#: functions.php:399
 msgid "Negative"
 msgstr ""
 
-#: functions.php:412
+#: functions.php:408
 msgid "Immke"
 msgstr ""
 
