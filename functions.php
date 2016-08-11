@@ -8,6 +8,20 @@
 define( 'NO_HEADER_TEXT', true );
 
 /**
+ * Replace parent theme editor styles with child theme editor styles.
+ *
+ * @since 1.0.0
+ */
+function mins_replace_editor_stylesheet(){
+
+	remove_editor_styles();
+
+	add_editor_style( get_stylesheet_directory_uri() . '/editor-style.css' );
+
+}
+add_action( 'admin_init', 'mins_replace_editor_stylesheet', 9999 );
+
+/**
  * Move titles above menu templates.
  *
  * @since 1.0.0

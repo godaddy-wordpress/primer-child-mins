@@ -17,7 +17,20 @@ This theme, like WordPress, is licensed under the GPL.
 */
 
 @import "variables/variables";
+@import "mixins/functions";
+@import "mixins/global";
+@import "mixins/grid";
+@import "mixins/color-contrast";
 @import "partials/typography";
 @import "partials/forms";
+@import "partials/accessibility";
 @import "partials/alignments";
+@import "partials/clearings";
+@import "partials/widgets";
 @import "partials/content";
+@import "partials/media";
+
+body {
+	margin: 20px;
+	background-color: #fff;
+}
