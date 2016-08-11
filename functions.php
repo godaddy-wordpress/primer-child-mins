@@ -304,7 +304,7 @@ function mins_colors( $colors ) {
 		),
 		'hero_text_color' => array(
 			'label'   => esc_html__( 'Hero Text Color', 'primer' ),
-			'default' => '#ffffff',
+			'default' => '#222222',
 			'css'     => array(
 				'.hero-area, .hero-area a, .hero-area h1, .hero-area h2, .hero-area h3, .hero-area h4, .hero-area h5, .hero-area h6, hr, .page-title' => array(
 					'color' => '%1$s',
