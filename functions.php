@@ -439,6 +439,28 @@ function mins_update_header_image_args( $array ) {
 add_filter( 'primer_custom_header_args', 'mins_update_header_image_args', 20 );
 
 /**
+ * Register default header image.
+ *
+ * @since 1.0.0
+ *
+ * @action primer_after_header
+ */
+function mins_register_custom_header(){
+
+	register_default_headers(
+		array(
+			'space' => array(
+				'url'           => get_stylesheet_directory_uri() . '/assets/images/default-header.jpg',
+				'thumbnail_url' => get_stylesheet_directory_uri() . '/assets/images/default-header.jpg',
+				'description'   => esc_attr_x( 'Space', 'header image description', 'mins' ),
+			)
+		)
+	);
+
+}
+add_action( 'after_setup_theme', 'mins_register_custom_header' );
+
+/**
  * Move navigation.
  *
  * @since 1.0.0
