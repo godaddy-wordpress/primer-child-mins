@@ -2464,7 +2464,7 @@ a {
     padding-top: 1rem;
     padding-bottom: 1em;
     padding-bottom: 1rem; }
-  @media all and (min-width: 800px) {
+  @media all and (min-width: 900px) {
     .main-navigation {
       float: left; }
       .main-navigation li {
@@ -2551,7 +2551,7 @@ a {
     -webkit-border-radius: 1px;
     border-radius: 1px; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .menu-toggle,
   .main-navigation.toggled {
     display: block; }
@@ -2563,7 +2563,7 @@ a {
     display: none;
     top: 86px; }
     .admin-bar .main-navigation {
-      top: 130px; }
+      top: 127px; }
     .main-navigation ul {
       clear: both;
       background: #fff; }
@@ -2604,6 +2604,10 @@ a {
       .main-navigation li .search-field {
         margin: 1rem;
         float: right; } }
+
+@media screen and (max-width: 782px) {
+  .admin-bar .main-navigation {
+    top: 132px; } }
 
 .navigation .nav-links {
   margin-bottom: 1em;
@@ -3541,91 +3545,34 @@ body {
 html {
   -webkit-font-smoothing: antialiased; }
 
-.hero-area {
-  background: rgba(0, 0, 0, 0.1); }
-  .hero-area:before, .hero-area:after {
+.hero {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-background-size: 50% 50%;
+  background-size: 50%;
+  background-position: top right;
+  background-repeat: no-repeat;
+  min-height: 600px; }
+  .hero:before, .hero:after {
     content: " ";
     display: table; }
-  .hero-area:after {
+  .hero:after {
     clear: both; }
-  .hero-area .left-img {
-    display: block; }
-  .hero-area .hero-widget {
+  .hero .hero-inner {
+    width: 50%;
+    float: left;
     padding: 4%; }
-    .hero-area .hero-widget .textwidget {
-      line-height: 30px;
-      font-size: 18px; }
-      .hero-area .hero-widget .textwidget p {
-        line-height: 30px;
-        font-size: 18px; }
-    .hero-area .hero-widget h2.widget-title {
-      font-weight: 100;
-      font-size: 3rem;
-      line-height: 60px;
-      margin-bottom: 45px; }
-      .hero-area .hero-widget h2.widget-title:after {
-        content: " ";
-        height: 2px;
-        background: #181818;
-        width: 25%;
-        position: absolute;
-        bottom: -15px;
-        right: 0; }
-  @media screen and (min-width: 1000px) {
-    .hero-area .left-img {
-      max-width: 50%;
-      display: block;
-      float: right; }
-    .hero-area .hero-widget {
-      width: 50%;
-      float: right;
-      padding: 3%; }
-      .hero-area .hero-widget .textwidget {
-        line-height: 30px;
-        font-size: 18px; }
-        .hero-area .hero-widget .textwidget p {
-          line-height: 30px;
-          font-size: 18px; }
-      .hero-area .hero-widget h2.widget-title {
-        font-weight: 100;
-        font-size: 3rem;
-        line-height: 60px;
-        margin-bottom: 45px; }
-        .hero-area .hero-widget h2.widget-title:after {
-          content: " ";
-          height: 2px;
-          background: #181818;
-          width: 25%;
-          position: absolute;
-          bottom: -15px;
-          right: 0; } }
-  @media screen and (min-width: 1500px) {
-    .hero-area .hero-widget {
-      width: 50%;
-      float: right;
-      padding: 7%; }
-      .hero-area .hero-widget .textwidget {
-        line-height: 30px;
-        font-size: 18px; }
-        .hero-area .hero-widget .textwidget p {
-          line-height: 30px;
-          font-size: 18px; }
-      .hero-area .hero-widget h2.widget-title {
-        font-weight: 100;
-        font-size: 4.5rem;
-        line-height: 72px;
-        margin-bottom: 60px; }
-        .hero-area .hero-widget h2.widget-title:after {
-          content: " ";
-          height: 2px;
-          background: #181818;
-          width: 25%;
-          position: absolute;
-          bottom: -30px;
-          right: 0; } }
+  @media screen and (max-width: 900px) {
+    .hero {
+      -webkit-background-size: cover;
+      background-size: cover;
+      min-height: 0; }
+      .hero .hero-inner {
+        width: 100%;
+        float: none; }
+      .hero * {
+        color: #fff; } }
 
-.page-header .page-title,
-.page-header .archive-title {
+.page-header .page-title {
   margin: 1em .5em;
   text-align: center; }
 

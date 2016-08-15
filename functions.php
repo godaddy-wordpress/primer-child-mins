@@ -1,132 +1,133 @@
 <?php
 
 /**
- * Disable header text.
+ * Move some elements around.
  *
- * @since 1.0.0
+ * @action template_redirect
+ * @since  1.0.0
  */
-define( 'NO_HEADER_TEXT', true );
+function mins_move_elements() {
 
-/**
- * Replace parent theme editor styles with child theme editor styles.
- *
- * @since 1.0.0
- */
-function mins_replace_editor_stylesheet(){
+	// Hero image
+	remove_action( 'primer_header', 'primer_add_hero' );
+	add_action( 'primer_after_header', 'primer_add_hero' );
 
-	remove_editor_styles();
+	// Primary navigation
+	remove_action( 'primer_after_header', 'primer_add_primary_navigation' );
+	add_action( 'primer_header', 'primer_add_primary_navigation' );
 
-	add_editor_style( get_stylesheet_directory_uri() . '/editor-style.css' );
+	// Social navigation
+//	remove_action( 'primer_after_footer', 'primer_add_social_navigation' );
+//	add_action( 'primer_after_header', 'primer_add_social_navigation' );
 
-}
-add_action( 'admin_init', 'mins_replace_editor_stylesheet', 9999 );
-
-/**
- * Move titles above menu templates.
- *
- * @since 1.0.0
- */
-function mins_remove_titles() {
-
-	remove_action( 'primer_after_header', 'primer_add_page_builder_template_title', 100 );
-	remove_action( 'primer_after_header', 'primer_add_blog_title', 100 );
-	remove_action( 'primer_after_header', 'primer_add_archive_title', 100 );
+	// Page titles
+	remove_action( 'primer_after_header', 'primer_add_page_title' );
 
 	if ( ! is_front_page() ) {
 
-		add_action( 'primer_after_header', 'primer_add_page_builder_template_title' );
-		add_action( 'primer_after_header', 'primer_add_blog_title' );
-		add_action( 'primer_after_header', 'primer_add_archive_title' );
+		add_action( 'primer_hero', 'primer_add_page_title' );
 
 	}
 
 }
-add_action( 'init', 'mins_remove_titles' );
+add_action( 'template_redirect', 'mins_move_elements' );
 
 /**
- * Check to see if we should add the hero to the page.
+ * Set hero element style attribute.
  *
+ * @filter primer_hero_style_attr
  * @since  1.0.0
  *
- * @action after_setup_theme
+ * @return string
  */
-function mins_check_hero() {
+function mins_hero_style_attr() {
 
-	remove_action( 'primer_header', 'primer_add_hero', 10 );
-
-	if ( is_404() || is_page_template( 'templates/page-builder-no-header.php' ) ) {
-
-		return;
-
-	}
-
-	add_action( 'primer_after_header', 'mins_add_hero', 10 );
+	return sprintf(
+		'background-image: url(%s);',
+		primer_get_hero_image()
+	);
 
 }
-add_action( 'template_redirect', 'mins_check_hero' );
+add_filter( 'primer_hero_style_attr', 'mins_hero_style_attr' );
 
 /**
- * Display hero in the header on the front page.
+ * Add a footer menu.
  *
+ * @filter primer_nav_menus
  * @since  1.0.0
  *
- * @action primer_after_header
- */
-function mins_add_hero() {
-
-	if ( is_front_page() ) {
-
-		get_template_part( 'templates/parts/hero' );
-
-	}
-
-}
-add_action( 'primer_after_header', 'mins_add_hero', 30 );
-
-/**
- * Register Footer Menu.
- *
- * @package mins
- * @since   1.0.0
- *
- * @param $menu
- */
-function mins_register_nav_menu( $menu ) {
-
-	$menu[ 'footer' ] = __( 'Footer Menu', 'mins' );
-
-	return $menu;
-
-}
-add_filter( 'primer_nav_menus', 'mins_register_nav_menu' );
-
-/**
- * Add image sizes.
- *
- * @since  1.0.0
- *
- * @action primer_image_sizes
- *
- * @param array $images_sizes
+ * @param  array $nav_menus
  *
  * @return array
  */
-function mins_adjust_image_sizes( $images_sizes ) {
+function mins_nav_menus( $nav_menus ) {
 
-	$args['primer-featured']['width']     = 1200;
-	$args['primer-featured']['height']    = 660;
-	$args['primer-featured-2x']['width']  = 2400;
-	$args['primer-featured-2x']['height'] = 1320;
+	$nav_menus['footer'] = esc_html__( 'Footer Menu', 'stout' );
 
-	$args['primer-hero']['width']         = 1200;
-	$args['primer-hero']['height']        = 660;
-	$args['primer-hero-2x']['width']      = 2400;
-	$args['primer-hero-2x']['height']     = 1320;
+	return $nav_menus;
+
+}
+add_filter( 'primer_nav_menus', 'mins_nav_menus' );
+
+/**
+ * Set images sizes.
+ *
+ * @filter primer_image_sizes
+ * @since  1.0.0
+ *
+ * @param  array $sizes
+ *
+ * @return array
+ */
+function mins_image_sizes( $sizes ) {
+
+	$sizes['primer-hero']['width']  = 2400;
+	$sizes['primer-hero']['height'] = 1300;
+
+	return $sizes;
+
+}
+add_filter( 'primer_image_sizes', 'mins_image_sizes' );
+
+/**
+ * Set custom logo args.
+ *
+ * @filter primer_custom_logo_args
+ * @since  1.0.0
+ *
+ * @param  array $args
+ *
+ * @return array
+ */
+function mins_custom_logo_args( $args ) {
+
+	$args['width']  = 325;
+	$args['height'] = 50;
 
 	return $args;
 
 }
-add_action( 'primer_image_sizes', 'mins_adjust_image_sizes' );
+add_filter( 'primer_custom_logo_args', 'mins_custom_logo_args' );
+
+/**
+ * Set custom header args.
+ *
+ * @action primer_custom_header_args
+ * @since  1.0.0
+ *
+ * @param  array $args
+ *
+ * @return array
+ */
+function mins_custom_header_args( $args ) {
+
+	$args['width']  = 2400;
+	$args['height'] = 1300;
+
+	return $args;
+
+}
+add_filter( 'primer_custom_header_args', 'mins_custom_header_args' );
 
 /**
  * Remove primer navigation and add mins navigation
@@ -156,22 +157,6 @@ function mins_add_mobile_menu() {
 add_action( 'primer_header', 'mins_add_mobile_menu', 0 );
 
 /**
- * Update custom header arguments
- *
- * @param $args
- * @return mixed
- */
-function primer_update_custom_header_args( $args ) {
-
-	$args['width']  = 2400;
-	$args['height'] = 1320;
-
-	return $args;
-
-}
-add_filter( 'primer_custom_header_args', 'primer_update_custom_header_args' );
-
-/**
  * Register sidebar areas.
  *
  * @link    http://codex.wordpress.org/Function_Reference/register_sidebar
@@ -183,20 +168,7 @@ add_filter( 'primer_custom_header_args', 'primer_update_custom_header_args' );
  *
  * @return array
  */
-function mins_register_sidebars( $sidebars ) {
-
-	/**
-	 * Register Hero Widget.
-	 */
-	$sidebars['hero'] = array(
-		'name'          => esc_attr__( 'Hero', 'mins' ),
-		'id'            => 'hero',
-		'description'   => esc_html__( 'The hero appears in the hero widget area on the front page', 'mins' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	);
+function mins_sidebars( $sidebars ) {
 
 	unset( $sidebars['sidebar-1'] );
 	unset( $sidebars['sidebar-2'] );
@@ -204,106 +176,57 @@ function mins_register_sidebars( $sidebars ) {
 	return $sidebars;
 
 }
-add_filter( 'primer_sidebars', 'mins_register_sidebars' );
+add_filter( 'primer_sidebars', 'mins_sidebars' );
 
 /**
- * Set custom fonts for this theme.
+ * Set fonts.
  *
+ * @filter primer_fonts
  * @since  1.0.0
+ *
+ * @param  array $fonts
+ *
+ * @return array
  */
-function mins_update_fonts() {
+function mins_update_fonts( $fonts ) {
 
-	return array(
-		'Roboto',
-		'Abril Fatface',
-		'Raleway',
-	);
+	$fonts[] = 'Abril Fatface';
+	$fonts[] = 'Raleway';
+	$fonts[] = 'Roboto';
+
+	return $fonts;
 
 }
 add_filter( 'primer_fonts', 'mins_update_fonts' );
 
 /**
- * Set custom logo arguments.
+ * Set font types.
  *
+ * @filter primer_font_types
  * @since  1.0.0
- */
-function mins_custom_logo() {
-
-	return array(
-		'height'      => 86,
-		'width'       => 400,
-		'flex-height' => false,
-		'flex-width'  => false,
-	);
-
-}
-add_filter( 'primer_custom_logo_args', 'mins_custom_logo' );
-
-/**
- * Update font types.
  *
- * @since  1.0.0
+ * @param  array $font_types
  *
  * @return array
  */
-function mins_update_font_types() {
+function mins_font_types( $font_types ) {
 
-	return array(
-		'primary_font' => array(
-			'label'    => esc_html__( 'Primary Font', 'mins' ),
-			'default'  => 'Roboto',
-			'css'      => array(
-				'.comment-list .comment-author, .comment-list .comment-metadata, #respond, .featured-content .entry-title, .featured-content .read-more, button, a.button, input, select, textarea, legend, .widget-title, .entry-meta, .event-meta, .sermon-meta, .location-meta, .person-meta, .post-format, article.format-link .entry-title, label, .more-link, .entry-footer, .widget p, .widget ul, .widget ol, h1, h2' => array( 'font-family' => '"%s", sans-serif' )
-			),
-			'weight'   => array(
-				100, 300, 700
-			)
+	$overrides = array(
+		'header_font' => array(
+			'default' => 'Roboto',
 		),
 		'primary_font' => array(
-			'label'    => esc_html__( 'Secondary Font', 'mins' ),
-			'default'  => 'Roboto',
-			'css'      => array(
-				'body, input, select, textarea, .hero-widget div.textwidget, .widget, .widget p, .widget ul, .widget ol, .entry-content p, .entry-summary p, h3, h4, h5, h6' => array( 'font-family' => '"%s", sans-serif' )
-			)
+			'default' => 'Roboto',
+		),
+		'secondary_font' => array(
+			'default' => 'Roboto',
 		),
 	);
 
-}
-add_action( 'primer_font_types', 'mins_update_font_types' );
-
-/**
- * Add Social links to primary navigation area.
- *
- * @since 1.0.0
- *
- * @action primer_after_header
- */
-function mins_add_social_to_header() {
-
-	if ( has_nav_menu( 'social' ) ) {
-
-		get_template_part( 'templates/parts/social-menu' );
-
-	}
+	return primer_array_replace_recursive( $font_types, $overrides );
 
 }
-add_action( 'primer_after_header', 'mins_add_social_to_header', 30 );
-
-/**
- * Remove customizer features added by the parent theme that are not applicable to this theme
- *
- * @since  1.0.0
- *
- * @action after_setup_theme
- *
- * @param $wp_customize
- */
-function mins_remove_customizer_features( $wp_customize ) {
-
-	$wp_customize->remove_section( 'layout' );
-
-}
-add_action( 'customize_register', 'mins_remove_customizer_features', 30 );
+add_filter( 'primer_font_types', 'mins_font_types' );
 
 /**
  * Update colors
@@ -462,22 +385,6 @@ function mins_update_header_image_args( $args ) {
 	return $args;
 }
 add_filter( 'primer_custom_header_args', 'mins_update_header_image_args', 20 );
-
-/**
- * Move navigation.
- *
- * @since 1.0.0
- *
- * @action primer_after_header
- */
-function mins_move_nav_markup() {
-
-	remove_action( 'primer_after_header', 'primer_add_primary_navigation', 20);
-
-	add_action( 'primer_header', 'primer_add_primary_navigation', 21);
-
-}
-add_action( 'init', 'mins_move_nav_markup', 30 );
 
 /**
  * Add search menu icon to primary nav menu.
