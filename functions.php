@@ -16,10 +16,6 @@ function mins_move_elements() {
 	remove_action( 'primer_after_header', 'primer_add_primary_navigation' );
 	add_action( 'primer_header', 'primer_add_primary_navigation' );
 
-	// Social navigation
-//	remove_action( 'primer_after_footer', 'primer_add_social_navigation' );
-//	add_action( 'primer_after_header', 'primer_add_social_navigation' );
-
 	// Page titles
 	remove_action( 'primer_after_header', 'primer_add_page_title' );
 
