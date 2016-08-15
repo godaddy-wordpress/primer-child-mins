@@ -29,61 +29,19 @@ function mins_move_elements() {
 add_action( 'template_redirect', 'mins_move_elements' );
 
 /**
- * Set hero element style attribute.
+ * Set hero image target element.
  *
- * @filter primer_hero_style_attr
+ * @filter primer_hero_image_selector
  * @since  1.0.0
  *
  * @return string
  */
-function mins_hero_style_attr() {
+function mins_hero_image_selector() {
 
-	return sprintf(
-		'background-image: url(%s);',
-		primer_get_hero_image()
-	);
+	return '.hero';
 
 }
-add_filter( 'primer_hero_style_attr', 'mins_hero_style_attr' );
-
-/**
- * Add a footer menu.
- *
- * @filter primer_nav_menus
- * @since  1.0.0
- *
- * @param  array $nav_menus
- *
- * @return array
- */
-function mins_nav_menus( $nav_menus ) {
-
-	$nav_menus['footer'] = esc_html__( 'Footer Menu', 'stout' );
-
-	return $nav_menus;
-
-}
-add_filter( 'primer_nav_menus', 'mins_nav_menus' );
-
-/**
- * Set images sizes.
- *
- * @filter primer_image_sizes
- * @since  1.0.0
- *
- * @param  array $sizes
- *
- * @return array
- */
-function mins_image_sizes( $sizes ) {
-
-	$sizes['primer-hero']['width']  = 2400;
-	$sizes['primer-hero']['height'] = 1300;
-
-	return $sizes;
-
-}
-add_filter( 'primer_image_sizes', 'mins_image_sizes' );
+add_filter( 'primer_hero_image_selector', 'mins_hero_image_selector' );
 
 /**
  * Set custom logo args.
@@ -106,6 +64,25 @@ function mins_custom_logo_args( $args ) {
 add_filter( 'primer_custom_logo_args', 'mins_custom_logo_args' );
 
 /**
+ * Set images sizes.
+ *
+ * @filter primer_image_sizes
+ * @since  1.0.0
+ *
+ * @param  array $sizes
+ *
+ * @return array
+ */
+function mins_image_sizes( $sizes ) {
+
+	$sizes['primer-hero']['height'] = 2000;
+
+	return $sizes;
+
+}
+add_filter( 'primer_image_sizes', 'mins_image_sizes' );
+
+/**
  * Set custom header args.
  *
  * @action primer_custom_header_args
@@ -117,8 +94,7 @@ add_filter( 'primer_custom_logo_args', 'mins_custom_logo_args' );
  */
 function mins_custom_header_args( $args ) {
 
-	$args['width']  = 2400;
-	$args['height'] = 1300;
+	$args['height'] = 2000;
 
 	return $args;
 
