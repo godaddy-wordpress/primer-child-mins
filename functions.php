@@ -8,16 +8,12 @@
  */
 function mins_move_elements() {
 
-	// Hero image
-	remove_action( 'primer_header', 'primer_add_hero' );
-	add_action( 'primer_after_header', 'primer_add_hero' );
-
-	// Primary navigation
+	remove_action( 'primer_header',       'primer_add_hero' );
 	remove_action( 'primer_after_header', 'primer_add_primary_navigation' );
-	add_action( 'primer_header', 'primer_add_primary_navigation' );
-
-	// Page titles
 	remove_action( 'primer_after_header', 'primer_add_page_title' );
+
+	add_action( 'primer_after_header', 'primer_add_hero' );
+	add_action( 'primer_header',       'primer_add_primary_navigation' );
 
 	if ( ! is_front_page() ) {
 
@@ -31,7 +27,8 @@ add_action( 'template_redirect', 'mins_move_elements' );
 /**
  * Add search nav toggle.
  *
- * @since 1.0.0
+ * @action wp_enqueue_scripts
+ * @since  1.0.0
  */
 function mins_search_toggle() {
 
@@ -54,6 +51,25 @@ function mins_hero_image_selector() {
 
 }
 add_filter( 'primer_hero_image_selector', 'mins_hero_image_selector' );
+
+/**
+ * Set the default hero image description.
+ *
+ * @filter primer_default_hero_images
+ * @since  1.0.0
+ *
+ * @param  array $defaults
+ *
+ * @return array
+ */
+function mins_default_hero_images( $defaults ) {
+
+	$defaults['default']['description'] = esc_html__( 'Cosmic nebula captured by the Hubble Space Telescope', 'mins' );
+
+	return $defaults;
+
+}
+add_filter( 'primer_default_hero_images', 'mins_default_hero_images' );
 
 /**
  * Set custom logo args.
@@ -114,14 +130,12 @@ function mins_custom_header_args( $args ) {
 add_filter( 'primer_custom_header_args', 'mins_custom_header_args' );
 
 /**
- * Register sidebar areas.
+ * Set sidebars.
  *
- * @link    http://codex.wordpress.org/Function_Reference/register_sidebar
+ * @filter primer_sidebars
+ * @since  1.0.0
  *
- * @package mins
- * @since   1.0.0
- *
- * @param array $sidebars
+ * @param  array $sidebars
  *
  * @return array
  */
@@ -134,27 +148,6 @@ function mins_sidebars( $sidebars ) {
 
 }
 add_filter( 'primer_sidebars', 'mins_sidebars' );
-
-/**
- * Set fonts.
- *
- * @filter primer_fonts
- * @since  1.0.0
- *
- * @param  array $fonts
- *
- * @return array
- */
-function mins_update_fonts( $fonts ) {
-
-	$fonts[] = 'Abril Fatface';
-	$fonts[] = 'Raleway';
-	$fonts[] = 'Roboto';
-
-	return $fonts;
-
-}
-add_filter( 'primer_fonts', 'mins_update_fonts' );
 
 /**
  * Set font types.
@@ -186,15 +179,16 @@ function mins_font_types( $font_types ) {
 add_filter( 'primer_font_types', 'mins_font_types' );
 
 /**
- * Update colors
+ * Set colors.
  *
+ * @filter primer_colors
  * @since  1.0.0
  *
- * @action primer_colors
+ * @param  array $colors
  *
  * @return array
  */
-function mins_colors() {
+function mins_colors( $colors ) {
 
 	return array(
 		'background_color' => array(
@@ -231,7 +225,7 @@ function mins_colors() {
 		),
 		'w_bg' => array(
 			'label'   => esc_html__( 'Widget Background', 'primer' ),
-			'default' => '#fff',
+			'default' => '#ffffff',
 			'css'     => array(
 				'.site-footer' => array(
 					'background-color' => '%1$s',
@@ -244,13 +238,16 @@ function mins_colors() {
 add_filter( 'primer_colors', 'mins_colors' );
 
 /**
- * Add color schemes
+ * Set color schemes.
  *
- * @since 1.0.0
+ * @filter primer_color_schemes
+ * @since  1.0.0
  *
- * @action primer_color_schemes
+ * @param  array $color_schemes
+ *
+ * @return array
  */
-function mins_color_schemes() {
+function mins_color_schemes( $color_schemes ) {
 
 	return array(
 		'seafoam' => array(
@@ -320,50 +317,3 @@ function mins_color_schemes() {
 
 }
 add_filter( 'primer_color_schemes', 'mins_color_schemes' );
-
-/**
- * Add default header image.
- *
- * @since  1.0.0
- *
- * @action primer_after_header
- *
- * @param array $args
- *
- * @return array
- */
-function mins_update_header_image_args( $args ) {
-
-	$args['width']         = 1300;
-	$args['height']        = 1245;
-	$args['flex-height']   = false;
-	$args['default-image'] = get_stylesheet_directory_uri() . '/assets/images/default-header.jpg';
-
-	return $args;
-}
-add_filter( 'primer_custom_header_args', 'mins_update_header_image_args', 20 );
-
-/**
- * Add search menu icon to primary nav menu.
- *
- * @since  1.0.0
- *
- * @action wp_nav_menu_items
- *
- * @param string $items
- * @param array $args
- *
- * @return string
- */
-function mins_add_search_to_nav_menu( $items, $args ) {
-
-	if( 'primary' === $args->theme_location ) {
-
-		$items .= '<li id="search-toggle-item" class="menu-item menu-item-search"><a href="#" id="search-toggle-button" class="search-toggle"><span class="genericon genericon-search"></span></a>' . get_search_form(false) . '</li>';
-
-	}
-
-	return $items;
-
-}
-add_filter( 'wp_nav_menu_items', 'mins_add_search_to_nav_menu', 10, 2 );
