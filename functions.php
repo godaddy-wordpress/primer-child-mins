@@ -29,6 +29,18 @@ function mins_move_elements() {
 add_action( 'template_redirect', 'mins_move_elements' );
 
 /**
+ * Add search nav toggle.
+ *
+ * @since 1.0.0
+ */
+function mins_search_toggle() {
+
+	wp_enqueue_script( 'mins-search-nav', get_stylesheet_directory_uri() . '/assets/js/search-nav.js', array(), PRIMER_VERSION );
+
+}
+add_action( 'wp_enqueue_scripts', 'mins_search_toggle' );
+
+/**
  * Set hero image target element.
  *
  * @filter primer_hero_image_selector
@@ -100,33 +112,6 @@ function mins_custom_header_args( $args ) {
 
 }
 add_filter( 'primer_custom_header_args', 'mins_custom_header_args' );
-
-/**
- * Remove primer navigation and add mins navigation
- *
- * @since 1.0.0
- */
-function mins_navigation() {
-
-	wp_dequeue_script( 'primer-navigation' );
-	wp_enqueue_script( 'mins-navigation', get_stylesheet_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), '20120206', true );
-
-}
-add_action( 'wp_print_scripts', 'mins_navigation', 100 );
-
-/**
- * Add mobile menu to header
- *
- * @since 1.0.0
- *
- * @link https://codex.wordpress.org/Function_Reference/get_template_part
- */
-function mins_add_mobile_menu() {
-
-	get_template_part( 'templates/parts/mobile-menu' );
-
-}
-add_action( 'primer_header', 'mins_add_mobile_menu', 0 );
 
 /**
  * Register sidebar areas.
@@ -374,7 +359,7 @@ function mins_add_search_to_nav_menu( $items, $args ) {
 
 	if( 'primary' === $args->theme_location ) {
 
-		$items .= '<li class="menu-item menu-item-search"><a href="#" class="search-toggle"><span class="genericon genericon-search"></span></a>' . get_search_form(false) . '</li>';
+		$items .= '<li id="search-toggle-item" class="menu-item menu-item-search"><a href="#" id="search-toggle-button" class="search-toggle"><span class="genericon genericon-search"></span></a>' . get_search_form(false) . '</li>';
 
 	}
 

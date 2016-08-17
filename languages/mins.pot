@@ -1,62 +1,79 @@
-# Mins
-# Copyright (C) 2016
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the mins package.
-# GoDaddy Operating Company, LLC.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: mins 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-15 17:57-0500\n"
+"POT-Creation-Date: 2016-08-17 10:58-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: functions.php:222
+#: functions.php:207
 msgid "Hero Text Color"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:219
 msgid "Link Color"
 msgstr ""
 
-#: functions.php:248
+#: functions.php:233
 msgid "Widget Background"
 msgstr ""
 
-#: functions.php:272
+#: functions.php:257
 msgid "Seafoam"
 msgstr ""
 
-#: functions.php:281
+#: functions.php:266
 msgid "Wheat"
 msgstr ""
 
-#: functions.php:290
+#: functions.php:275
 msgid "Melancholy"
 msgstr ""
 
-#: functions.php:299
+#: functions.php:284
 msgid "Foliage"
 msgstr ""
 
-#: functions.php:308
+#: functions.php:293
 msgid "Deep Sea"
 msgstr ""
 
-#: functions.php:317
+#: functions.php:302
 msgid "Negative"
 msgstr ""
 
-#: functions.php:326
+#: functions.php:311
 msgid "Immke"
 msgstr ""
 
-#: header.php:40
-msgid "Skip to content"
+#: node_modules/grunt-pot/test/fixtures/some-file.php:3
+msgid "I'm a translatable string."
+msgstr ""
+
+#: node_modules/grunt-pot/test/fixtures/some-other-file.php:4
+msgid "Me too"
+msgstr ""
+
+#: node_modules/grunt-pot/test/fixtures/some-other-file.php:7
+#, php-format
+msgid "I have %d apple"
+msgid_plural "I have %d apples"
+msgstr[0] ""
+msgstr[1] ""
+
+#. / TRANSLATORS: This should be translated as a shorthand for YEAR-MONTH-DAY using 4, 2 and 2 digits.
+#: node_modules/grunt-pot/test/fixtures/some-other-file.php:16
+msgid "yyyy-mm-dd"
 msgstr ""
