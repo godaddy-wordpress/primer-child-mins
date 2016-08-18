@@ -16,6 +16,10 @@ $menu-background-color: transparent;
 	display: none;
 	font-family: $header-font-family;
 
+  &.open {
+    display: block;
+  }
+
 	@media #{$medium-up}{
 		display: block;
 	}
