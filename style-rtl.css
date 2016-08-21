@@ -2450,6 +2450,8 @@ a {
       margin-right: 25px; } }
   .main-navigation li li {
     text-indent: 1rem; }
+  .main-navigation li li a {
+    padding: 1em 1em; }
   .main-navigation li li li {
     text-indent: 1.5rem; }
   .main-navigation ul {
