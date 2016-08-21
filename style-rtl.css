@@ -3614,7 +3614,8 @@ html {
       color: #222; }
   .site-info-wrapper .site-info-text {
     color: rgba(0, 0, 0, 0.5);
-    text-align: center; }
+    text-align: center;
+    font-size: .9em; }
     .site-info-wrapper .site-info-text a[rel="designer"] {
       color: rgba(0, 0, 0, 0.5); }
     .site-info-wrapper .site-info-text .menu {
@@ -3665,6 +3666,31 @@ html {
           padding: 0;
           width: 36px;
           height: 36px; }
+
+.footer-menu {
+  float: right; }
+  .footer-menu ul {
+    list-style: none;
+    margin: 0 0 5px;
+    padding: 0;
+    text-align: center; }
+    @media only screen and (min-width: 40.063em) {
+      .footer-menu ul {
+        text-align: right; } }
+    .footer-menu ul li {
+      display: inline-block;
+      font-size: .875rem;
+      font-weight: 600;
+      margin: 0 10px;
+      text-align: center;
+      text-transform: uppercase; }
+      .footer-menu ul li:first-of-type {
+        margin-right: 0; }
+      @media only screen and (min-width: 568px) {
+        .footer-menu ul li {
+          text-align: right; } }
+      .footer-menu ul li a {
+        color: #181818; }
 
 .featured-content {
   -webkit-background-size: cover;
