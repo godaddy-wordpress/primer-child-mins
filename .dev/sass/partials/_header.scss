@@ -5,23 +5,13 @@ body {
 }
 
 .site-title-wrapper {
-	@extend .row;
-
-	margin-bottom: 40px;
-}
-
-.site-title-wrapper-inner {
-	@extend .large-12;
-
-	@extend .columns;
-}
-
-.site-title-contain {
 	float: left;
-	margin: 20px 0;
+	padding: 23px;
 
-	@media all and (min-width: 800px) {
-		margin-top: 29px;
+	@media #{$small-only}{
+		@include clearfix;
+		float: none;
+		padding: 20px;
 	}
 }
 
@@ -40,7 +30,7 @@ body {
 	}
 }
 
-.site-title-contain .site-title {
+.site-title {
 	font-family: $sans-font-family;
 	font-size: emCalc(22);
 	font-size: rem-calc(22);
@@ -69,7 +59,7 @@ body {
 .site-header {
 	background-color: $header-bg-color;
 	letter-spacing: -.01em;
-	padding: 0 2rem;
+	padding: 0;
 
 	@media screen and (max-width: 800px) {
 		width: 100%;
