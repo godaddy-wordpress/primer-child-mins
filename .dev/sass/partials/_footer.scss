@@ -9,17 +9,17 @@ $site-footer-info-text-color: contrast-color($site-footer-info-background, #222,
 $site-footer-info-anchor-color: contrast-color($site-footer-info-background, #222, #fff, 50%) !default;
 $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-background, #222, #fff, 50%) !default;
 
-.site-footer{
+.site-footer {
 	color: $site-footer-text-color;
 	background-color: $site-footer-background;
 	padding: 0;
 
-	a{
+	.widget-title {
 		color: $site-footer-anchor-color;
+	}
 
-		&:hover{
-			color: $site-footer-anchor-color-hover;
-		}
+	.widget {
+		color: $site-footer-text-color;
 	}
 }
 
@@ -62,10 +62,6 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 	.footer-widget {
 		padding: 0;
 
-		.widget{
-			color: $site-footer-text-color;
-		}
-
 		@media #{$large-up} {
 			padding: 0 15px;
 			float: left;
@@ -86,13 +82,13 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 		}
 
 		.widget-title {
-			color: $site-footer-anchor-color;
 			background: transparent;
 			font-weight: bold;
 			font-size: 30px;
 			font-weight: 300;
 			margin-top: 0;
 			margin-bottom: 30px;
+
 			&:after {
 				content: " ";
 				height: 2px;
@@ -119,28 +115,16 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 	}
 }
 
-.site-info-wrapper{
+.site-info-wrapper {
 	padding: 0;
 	background: $site-footer-info-background;
 	color: $site-footer-info-text-color;
 	line-height: 1.5;
 
-	a{
-		color: $site-footer-info-anchor-color;
-
-		&:hover{
-			color: $site-footer-info-anchor-color-hover;
-		}
-	}
-
-	.site-info-text{
-		color: rgba(0,0,0,.5);
+	.site-info-text {
+		color: rgba(0, 0, 0, 0.5);
 		text-align: center;
 		font-size: .9em;
-
-		a[rel="designer"] {
-			color: rgba(0,0,0,.5);
-		}
 
 		.menu {
 			display: none;
@@ -172,7 +156,7 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 		}
 	}
 
-	.site-info{
+	.site-info {
 		padding: 2.5rem 2rem;
 		overflow: hidden;
 
@@ -185,7 +169,7 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 				margin: 0;
 			}
 
-			ul{
+			ul {
 				text-align: center;
 				margin-right: 0;
 
@@ -202,9 +186,8 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 				padding: 0;
 			}
 
-			a{
+			a {
 				margin-right: 15px;
-				color: #181818;
 
 				&:before {
 					font-size: 36px;
@@ -214,11 +197,11 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 				}
 			}
 		}
-
 	}
 
-	.site-info-inner{
+	.site-info-inner {
 		@extend .large-12;
+
 		@extend .columns;
 	}
 }
@@ -244,7 +227,7 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 			text-align: center;
 			text-transform: uppercase;
 
-			&:first-of-type{
+			&:first-of-type {
 				margin-left: 0;
 			}
 
@@ -255,9 +238,6 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 			a {
 				color: $body-font-color;
 			}
-
 		}
-
 	}
-
 }

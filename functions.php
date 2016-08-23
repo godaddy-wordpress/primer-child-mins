@@ -150,6 +150,25 @@ function mins_sidebars( $sidebars ) {
 add_filter( 'primer_sidebars', 'mins_sidebars' );
 
 /**
+ * Set fonts.
+ *
+ * @filter primer_fonts
+ * @since  1.0.0
+ *
+ * @param  array $fonts
+ *
+ * @return array
+ */
+function mins_fonts( $fonts ) {
+
+	$fonts[] = 'Roboto';
+
+	return $fonts;
+
+}
+add_filter( 'primer_fonts', 'mins_fonts' );
+
+/**
  * Set font types.
  *
  * @filter primer_font_types
@@ -162,7 +181,13 @@ add_filter( 'primer_sidebars', 'mins_sidebars' );
 function mins_font_types( $font_types ) {
 
 	$overrides = array(
-		'header_font' => array(
+		'site_title_font' => array(
+			'default' => 'Roboto',
+		),
+		'navigation_font' => array(
+			'default' => 'Roboto',
+		),
+		'heading_font' => array(
 			'default' => 'Roboto',
 		),
 		'primary_font' => array(
@@ -190,49 +215,82 @@ add_filter( 'primer_font_types', 'mins_font_types' );
  */
 function mins_colors( $colors ) {
 
-	return array(
-		'background_color' => array(
-			'default' => '#f4f4f4',
-			'css'     => array(
-				'.site-content',
-			),
+	unset(
+		$colors['content_background_color'],
+		$colors['footer_widget_content_background_color']
+	);
+
+	$overrides = array(
+		/**
+		 * Text colors
+		 */
+		'header_textcolor' => array(
+			'default' => '#252525',
+		),
+		'tagline_text_color' => array(
+			'default' => '#686868',
 		),
 		'hero_text_color' => array(
-			'label'   => esc_html__( 'Hero Text Color', 'primer' ),
-			'default' => '#222222',
-			'css'     => array(
-				'.hero-area, .hero-area a, .hero-area h1, .hero-area h2, .hero-area h3, .hero-area h4, .hero-area h5, .hero-area h6, hr, .page-title' => array(
-					'color' => '%1$s',
-				),
-				'.hero-area .hero-widget h2.widget-title:after' => array(
-					'background-color' => '%1$s',
-				),
-			),
+			'default' => '#252525',
 		),
+		'menu_text_color' => array(
+			'default' => '#252525',
+		),
+		/**
+		 * Link / Button colors
+		 */
 		'link_color' => array(
-			'label'   => esc_html__( 'Link Color', 'primer' ),
+			'default' => '#62b6cb',
+		),
+		'button_text_color' => array(
+			'default'  => '#252525',
+		),
+		'button_color' => array(
 			'default' => '#62b6cb',
 			'css'     => array(
-				'#content a, #content a:visited, .entry-footer a, .sticky .entry-title a:before, .footer-widget-area .footer-widget .widget a, .entry-title a, .site-info-wrapper .site-info .social-menu a' => array(
+				'button,
+				a.button, a.button:visited,
+				.content-area .fl-builder-content a.fl-button,
+				.content-area .fl-builder-content a.fl-button:visited,
+				input[type="button"], input[type="reset"], input[type="submit"]' => array(
+					'background-color' => 'transparent',
+				),
+				'button:hover, button:active, button:focus,
+				a.button:hover, a.button:active, a.button:focus, a.button:visited:hover, a.button:visited:active, a.button:visited:focus,
+				.content-area .fl-builder-content a.fl-button:hover, .content-area .fl-builder-content a.fl-button:active, .content-area .fl-builder-content a.fl-button:focus, .content-area .fl-builder-content a.fl-button:visited:hover, .content-area .fl-builder-content a.fl-button:visited:active, .content-area .fl-builder-content a.fl-button:visited:focus,
+				input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus,
+				input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus,
+				input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus' => array(
 					'color' => '%1$s',
 				),
 			),
-			'rgba_css' => array(
-				'a:hover, a:visited:hover, .entry-footer a:hover' => array(
-					'color' => 'rgba(%1$s, 0.75)',
-				),
-			),
 		),
-		'w_bg' => array(
-			'label'   => esc_html__( 'Widget Background', 'primer' ),
+		/**
+		 * Background colors
+		 */
+		'background_color' => array(
+			'default' => '#ffffff',
+		),
+		'hero_background_color' => array(
+			'default' => '#f5f5f5',
+		),
+		'menu_background_color' => array(
 			'default' => '#ffffff',
 			'css'     => array(
-				'.site-footer' => array(
+				'.site-header' => array(
 					'background-color' => '%1$s',
 				),
 			),
 		),
+		'footer_widget_background_color' => array(
+			'default' => '#ffffff',
+		),
+		'footer_background_color' => array(
+			'default' => '#f5f5f5',
+		),
 	);
+
+	return primer_array_replace_recursive( $colors, $overrides );
 
 }
 add_filter( 'primer_colors', 'mins_colors' );
@@ -249,71 +307,88 @@ add_filter( 'primer_colors', 'mins_colors' );
  */
 function mins_color_schemes( $color_schemes ) {
 
-	return array(
-		'seafoam' => array(
-			'label'  => esc_html__( 'Seafoam', 'primer' ),
+	unset( $color_schemes['cool'] );
+
+	$overrides = array(
+		'blush' => array(
 			'colors' => array(
-				'background_color'        => '#c9ede3',
-				'hero_text_color'         => '#000000',
-				'link_color'              => '#c96050',
-				'w_bg'                    => '#b5d6cd',
+				'hero_background_color'          => '#f5f5f5',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
 			),
 		),
-		'wheat' => array(
-			'label'  => esc_html__( 'Wheat', 'primer' ),
+		'bronze' => array(
 			'colors' => array(
-				'background_color'        => '#eae9dc',
-				'hero_text_color'         => '#000000',
-				'link_color'              => '#ff4f4f',
-				'w_bg'                    => '#d3d2c7',
+				'hero_background_color'          => '#f5f5f5',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
 			),
 		),
-		'melancholy' => array(
-			'label'  => esc_html__( 'Melancholy', 'primer' ),
+		'canary' => array(
 			'colors' => array(
-				'background_color'        => '#b1b9bf',
-				'hero_text_color'         => '#000000',
-				'link_color'              => '#4e5972',
-				'w_bg'                    => '#a0a7ac',
+				'hero_background_color'          => '#f5f5f5',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
 			),
 		),
-		'foliage' => array(
-			'label'  => esc_html__( 'Foliage', 'primer' ),
+		'dark' => array(
 			'colors' => array(
-				'background_color'        => '#a7caa9',
-				'hero_text_color'         => '#000000',
-				'link_color'              => '#fff1c6',
-				'w_bg'                    => '#97b698',
+				'link_color'   => '#62b6cb',
+				'button_color' => '#62b6cb',
 			),
 		),
-		'ocean' => array(
-			'label'  => esc_html__( 'Deep Sea', 'primer' ),
+		'iguana' => array(
 			'colors' => array(
-				'background_color'        => '#051a5b',
-				'hero_text_color'         => '#ffffff',
-				'link_color'              => '#fff1c6',
-				'w_bg'                    => '#051752',
+				'hero_background_color'          => '#f5f5f5',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
 			),
 		),
-		'negative' => array(
-			'label'  => esc_html__( 'Negative', 'primer' ),
+		'muted' => array(
 			'colors' => array(
-				'background_color'        => '#181818',
-				'hero_text_color'         => '#ffffff',
-				'link_color'              => '#ccc',
-				'w_bg'                    => '#212121',
+				'header_textcolor'               => '#4f5875',
+				'tagline_text_color'             => '#888c99',
+				'hero_text_color'                => '#4f5875',
+				'menu_text_color'                => '#4f5875',
+				'button_text_color'              => '#5a6175',
+				'background_color'               => '#ffffff',
+				'hero_background_color'          => '#d5d6e0',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
+				'footer_background_color'        => '#d5d6e0',
 			),
 		),
-		'immke' => array(
-			'label'  => esc_html__( 'Immke', 'primer' ),
+		'plum' => array(
 			'colors' => array(
-				'background_color'        => '#010e68',
-				'hero_text_color'         => '#ffffff',
-				'link_color'              => '#fced4b',
-				'w_bg'                    => '#43039e',
+				'hero_background_color'          => '#f5f5f5',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
+			),
+		),
+		'rose' => array(
+			'colors' => array(
+				'hero_background_color'          => '#f5f5f5',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
+			),
+		),
+		'tangerine' => array(
+			'colors' => array(
+				'hero_background_color'          => '#f5f5f5',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
+			),
+		),
+		'turquoise' => array(
+			'colors' => array(
+				'hero_background_color'          => '#f5f5f5',
+				'menu_background_color'          => '#ffffff',
+				'footer_widget_background_color' => '#ffffff',
 			),
 		),
 	);
+
+	return primer_array_replace_recursive( $color_schemes, $overrides );
 
 }
 add_filter( 'primer_color_schemes', 'mins_color_schemes' );
