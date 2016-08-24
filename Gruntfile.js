@@ -22,7 +22,7 @@ module.exports = function( grunt ) {
 				cascade: false
 			},
 			dist: {
-				src: [ '*.css', '!ie.css' ]
+				src: [ '*.css' ]
 			}
 		},
 
@@ -94,7 +94,7 @@ module.exports = function( grunt ) {
 						to: pkg.title
 					},
 					{
-						from: "YEAR THE PACKAGE'S COPYRIGHT HOLDER",
+						from: 'YEAR THE PACKAGE\'S COPYRIGHT HOLDER',
 						to: new Date().getFullYear()
 					},
 					{
@@ -118,8 +118,7 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						'style.css': '.dev/sass/style.scss',
-						'editor-style.css': '.dev/sass/editor-style.scss',
-						'ie.css': '.dev/sass/ie.scss'
+						'editor-style.css': '.dev/sass/editor-style.scss'
 					}
 				]
 			}
