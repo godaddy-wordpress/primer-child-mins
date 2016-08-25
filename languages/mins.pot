@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: mins 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-23 16:58-0500\n"
+"POT-Creation-Date: 2016-08-25 08:13-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,44 +19,4 @@ msgstr ""
 
 #: functions.php:67
 msgid "Cosmic nebula captured by the Hubble Space Telescope"
-msgstr ""
-
-#: functions.php:415
-msgid "Hero Text Color"
-msgstr ""
-
-#: functions.php:427
-msgid "Link Color"
-msgstr ""
-
-#: functions.php:441
-msgid "Widget Background"
-msgstr ""
-
-#: functions.php:468
-msgid "Seafoam"
-msgstr ""
-
-#: functions.php:477
-msgid "Wheat"
-msgstr ""
-
-#: functions.php:486
-msgid "Melancholy"
-msgstr ""
-
-#: functions.php:495
-msgid "Foliage"
-msgstr ""
-
-#: functions.php:504
-msgid "Deep Sea"
-msgstr ""
-
-#: functions.php:513
-msgid "Negative"
-msgstr ""
-
-#: functions.php:522
-msgid "Immke"
 msgstr ""
