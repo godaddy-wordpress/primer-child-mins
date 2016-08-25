@@ -53,25 +53,6 @@ function mins_hero_image_selector() {
 add_filter( 'primer_hero_image_selector', 'mins_hero_image_selector' );
 
 /**
- * Set the default hero image description.
- *
- * @filter primer_default_hero_images
- * @since  1.0.0
- *
- * @param  array $defaults
- *
- * @return array
- */
-function mins_default_hero_images( $defaults ) {
-
-	$defaults['default']['description'] = esc_html__( 'Cosmic nebula captured by the Hubble Space Telescope', 'mins' );
-
-	return $defaults;
-
-}
-add_filter( 'primer_default_hero_images', 'mins_default_hero_images' );
-
-/**
  * Set custom logo args.
  *
  * @filter primer_custom_logo_args
