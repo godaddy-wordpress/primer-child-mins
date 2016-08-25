@@ -3,7 +3,23 @@
 }
 
 .bypostauthor {
+	display: block;
+	padding: 40px 40px 0 50px;
+	margin-bottom: 60px;
+	margin-right: 0;
+	border: 3px solid rgba(0,0,0,.2);
 
+	@media #{$small-only}{
+		padding: 20px 20px 0 30px;
+	}
+
+	.comment-body{
+		padding-left: 50px;
+
+		@media #{$small-only}{
+			padding-left: 30px;
+		}
+	}
 }
 
 .comments-area {

@@ -1,4 +1,35 @@
-.sticky {}
+.sticky {
+
+	.entry-title{
+		position: relative;
+
+		a:before {
+			color: rgb(0,0,0);
+			font-family: 'Genericons';
+			content: '\f308';
+			position: absolute;
+			top: 10px;
+			left: -70px;
+			opacity: .5;
+			height: 48px;
+			width: 48px;
+			font-size: 26px;
+			padding: 5px;
+			border-radius: 70px;
+			line-height: 1.95;
+			text-align: center;
+
+			@media #{$small-only}{
+				top: 8px;
+				left: -45px;
+				height: 28px;
+				width: 34px;
+				font-size: 22px;
+				padding: 0;
+			}
+		}
+	}
+}
 
 .no-results,
 .not-found{

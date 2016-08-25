@@ -2834,6 +2834,33 @@ body.no-max-width .main-navigation {
         .widget_calendar #calendar_wrap #wp-calendar tfoot td#next {
           text-align: left; }
 
+.sticky .entry-title {
+  position: relative; }
+  .sticky .entry-title a:before {
+    color: black;
+    font-family: 'Genericons';
+    content: '\f308';
+    position: absolute;
+    top: 10px;
+    right: -70px;
+    opacity: .5;
+    height: 48px;
+    width: 48px;
+    font-size: 26px;
+    padding: 5px;
+    -webkit-border-radius: 70px;
+    border-radius: 70px;
+    line-height: 1.95;
+    text-align: center; }
+    @media only screen and (max-width: 40em) {
+      .sticky .entry-title a:before {
+        top: 8px;
+        right: -45px;
+        height: 28px;
+        width: 34px;
+        font-size: 22px;
+        padding: 0; } }
+
 .no-results,
 .not-found {
   padding: 1.5em;
@@ -3078,6 +3105,21 @@ article.format-link {
 
 .comment-content a {
   word-wrap: break-word; }
+
+.bypostauthor {
+  display: block;
+  padding: 40px 50px 0 40px;
+  margin-bottom: 60px;
+  margin-left: 0;
+  border: 3px solid rgba(0, 0, 0, 0.2); }
+  @media only screen and (max-width: 40em) {
+    .bypostauthor {
+      padding: 20px 30px 0 20px; } }
+  .bypostauthor .comment-body {
+    padding-right: 50px; }
+    @media only screen and (max-width: 40em) {
+      .bypostauthor .comment-body {
+        padding-right: 30px; } }
 
 .comments-area {
   padding: 1.5em;
