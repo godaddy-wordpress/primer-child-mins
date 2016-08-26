@@ -73,44 +73,6 @@ function mins_custom_logo_args( $args ) {
 add_filter( 'primer_custom_logo_args', 'mins_custom_logo_args' );
 
 /**
- * Set images sizes.
- *
- * @filter primer_image_sizes
- * @since  1.0.0
- *
- * @param  array $sizes
- *
- * @return array
- */
-function mins_image_sizes( $sizes ) {
-
-	$sizes['primer-hero']['height'] = 2000;
-
-	return $sizes;
-
-}
-add_filter( 'primer_image_sizes', 'mins_image_sizes' );
-
-/**
- * Set custom header args.
- *
- * @action primer_custom_header_args
- * @since  1.0.0
- *
- * @param  array $args
- *
- * @return array
- */
-function mins_custom_header_args( $args ) {
-
-	$args['height'] = 2000;
-
-	return $args;
-
-}
-add_filter( 'primer_custom_header_args', 'mins_custom_header_args' );
-
-/**
  * Set sidebars.
  *
  * @filter primer_sidebars
