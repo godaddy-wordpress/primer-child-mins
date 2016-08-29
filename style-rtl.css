@@ -2419,12 +2419,12 @@ a {
       .main-navigation.open {
         background-color: none; } }
   .main-navigation .expand {
-    font-size: 1.8rem;
+    font-size: 28px;
     color: #181818;
     position: absolute;
     left: 0;
     top: 0;
-    padding: 18px 0 17px;
+    padding: 18px 0;
     width: 50px;
     line-height: 1;
     text-align: center;
@@ -2432,7 +2432,7 @@ a {
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     text-indent: 0; }
     .main-navigation .expand:hover {
-      background-color: white;
+      background-color: rgba(0, 0, 0, 0.1);
       color: white; }
     .main-navigation .expand:before {
       content: "+"; }

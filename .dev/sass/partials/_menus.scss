@@ -37,12 +37,12 @@
 	}
 
 	.expand {
-		font-size: 1.8rem;
+		font-size: 28px;
 		color: $header-text-color;
 		position: absolute;
 		right: 0;
 		top: 0;
-		padding: 18px 0 17px;
+		padding: 18px 0;
 		width: 50px;
 		line-height: 1;
 		text-align: center;
@@ -51,7 +51,7 @@
 		text-indent: 0;
 
 		&:hover {
-			background-color: $header-bg-color;
+			background-color: rgba(0,0,0,.1);
 			color: white;
 		}
 
