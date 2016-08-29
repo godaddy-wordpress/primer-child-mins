@@ -159,44 +159,6 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 	.site-info {
 		padding: 2.5rem 2rem;
 		overflow: hidden;
-
-		.social-menu {
-			margin-top: 15px;
-
-			@media screen and (min-width: 769px) {
-				float: right;
-				width: 50%;
-				margin: 0;
-			}
-
-			ul {
-				text-align: center;
-				margin-right: 0;
-
-				li:last-child a {
-					margin-right: 0;
-				}
-
-				@media screen and (min-width: 769px) {
-					text-align: right;
-				}
-			}
-
-			li {
-				padding: 0;
-			}
-
-			a {
-				margin-right: 15px;
-
-				&:before {
-					font-size: 36px;
-					padding: 0;
-					width: 36px;
-					height: 36px;
-				}
-			}
-		}
 	}
 
 	.site-info-inner {
@@ -207,7 +169,10 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 }
 
 .footer-menu {
-	float: left;
+
+	@media #{$medium-up}{
+		float: left;
+	}
 
 	ul {
 		list-style: none;

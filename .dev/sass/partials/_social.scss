@@ -1,5 +1,13 @@
 .social-menu {
-	@extend .clearfix;
+	text-align: center;
+	padding: 20px 0;
+
+	@media #{$medium-up} {
+		text-align: right;
+		float: right;
+		width: 50%;
+		padding: 0 0 20px;
+	}
 
 	a{
 		@extend .genericon;
@@ -11,12 +19,18 @@
 		height: 32px;
 		transition: 200ms opacity;
 		color: $body-bg;
+		margin-right: 8px;
+		text-align: center;
+		line-height: 32px;
+		border-radius: 32px;
 
-		&:before{
+		&:before {
+			padding: 0;
+			width: 32px;
+			height: 32px;
+			font-size: 16px;
 			-webkit-font-smoothing: subpixel-antialiased;
-			padding: 7px;
 			display: inline-block;
-			font-size: 18px;
 		}
 
 		&:hover{
@@ -116,13 +130,16 @@
 		margin: 0 1.25em 0 0;
 		margin: 0 1.25rem 0 0;
 		font-size: 0;
-		text-align: right;
 
 		li {
-			display:  inline-block;
+			display: inline-block;
 			position: relative;
 			padding: 0;
 			margin: 3px;
+		}
+
+		li:last-child a {
+			margin-right: 0;
 		}
 	}
 }
