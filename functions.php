@@ -73,44 +73,6 @@ function mins_custom_logo_args( $args ) {
 add_filter( 'primer_custom_logo_args', 'mins_custom_logo_args' );
 
 /**
- * Set images sizes.
- *
- * @filter primer_image_sizes
- * @since  1.0.0
- *
- * @param  array $sizes
- *
- * @return array
- */
-function mins_image_sizes( $sizes ) {
-
-	$sizes['primer-hero']['height'] = 2000;
-
-	return $sizes;
-
-}
-add_filter( 'primer_image_sizes', 'mins_image_sizes' );
-
-/**
- * Set custom header args.
- *
- * @action primer_custom_header_args
- * @since  1.0.0
- *
- * @param  array $args
- *
- * @return array
- */
-function mins_custom_header_args( $args ) {
-
-	$args['height'] = 2000;
-
-	return $args;
-
-}
-add_filter( 'primer_custom_header_args', 'mins_custom_header_args' );
-
-/**
  * Set sidebars.
  *
  * @filter primer_sidebars
@@ -264,10 +226,10 @@ function mins_colors( $colors ) {
 			),
 		),
 		'footer_widget_background_color' => array(
-			'default' => '#ffffff',
+			'default' => '#f5f5f5',
 		),
 		'footer_background_color' => array(
-			'default' => '#f5f5f5',
+			'default' => '#ffffff',
 		),
 	);
 
@@ -288,28 +250,25 @@ add_filter( 'primer_colors', 'mins_colors' );
  */
 function mins_color_schemes( $color_schemes ) {
 
-	unset( $color_schemes['cool'] );
-
 	$overrides = array(
 		'blush' => array(
 			'colors' => array(
-				'hero_background_color'          => '#f5f5f5',
-				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
+				'menu_background_color' => '#ffffff',
 			),
 		),
 		'bronze' => array(
 			'colors' => array(
-				'hero_background_color'          => '#f5f5f5',
-				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
+				'menu_background_color' => '#ffffff',
 			),
 		),
 		'canary' => array(
 			'colors' => array(
-				'hero_background_color'          => '#f5f5f5',
-				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
+				'menu_background_color' => '#ffffff',
+			),
+		),
+		'cool' => array(
+			'colors' => array(
+				'menu_background_color' => '#ffffff',
 			),
 		),
 		'dark' => array(
@@ -320,9 +279,7 @@ function mins_color_schemes( $color_schemes ) {
 		),
 		'iguana' => array(
 			'colors' => array(
-				'hero_background_color'          => '#f5f5f5',
-				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
+				'menu_background_color' => '#ffffff',
 			),
 		),
 		'muted' => array(
@@ -331,40 +288,34 @@ function mins_color_schemes( $color_schemes ) {
 				'tagline_text_color'             => '#888c99',
 				'hero_text_color'                => '#4f5875',
 				'menu_text_color'                => '#4f5875',
+				'footer_menu_text_color'         => '#3e4c75',
+				'footer_text_color'              => '#888c99',
 				'button_text_color'              => '#5a6175',
 				'background_color'               => '#ffffff',
 				'hero_background_color'          => '#d5d6e0',
 				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
-				'footer_background_color'        => '#d5d6e0',
+				'footer_widget_background_color' => '#d5d6e0',
+				'footer_background_color'        => '#ffffff',
 			),
 		),
 		'plum' => array(
 			'colors' => array(
-				'hero_background_color'          => '#f5f5f5',
-				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
+				'menu_background_color' => '#ffffff',
 			),
 		),
 		'rose' => array(
 			'colors' => array(
-				'hero_background_color'          => '#f5f5f5',
-				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
+				'menu_background_color' => '#ffffff',
 			),
 		),
 		'tangerine' => array(
 			'colors' => array(
-				'hero_background_color'          => '#f5f5f5',
-				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
+				'menu_background_color' => '#ffffff',
 			),
 		),
 		'turquoise' => array(
 			'colors' => array(
-				'hero_background_color'          => '#f5f5f5',
-				'menu_background_color'          => '#ffffff',
-				'footer_widget_background_color' => '#ffffff',
+				'menu_background_color' => '#ffffff',
 			),
 		),
 	);
