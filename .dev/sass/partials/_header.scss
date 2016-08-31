@@ -8,8 +8,9 @@ body {
 	float: left;
 	padding: 23px;
 
-	@media #{$small-only}{
+	@media #{$small-only} {
 		@include clearfix;
+
 		float: none;
 		padding: 20px;
 	}
@@ -61,7 +62,7 @@ body {
 	letter-spacing: -.01em;
 	padding: 0;
 
-	@media screen and (max-width: 800px) {
+	@media #{$small-only} {
 		width: 100%;
 		background: #fff;
 		z-index: 1;

@@ -1,10 +1,9 @@
 .sticky {
-
-	.entry-title{
+	.entry-title {
 		position: relative;
 
 		a:before {
-			color: rgb(0,0,0);
+			color: rgb(0, 0, 0);
 			font-family: 'Genericons';
 			content: '\f308';
 			position: absolute;
@@ -19,7 +18,7 @@
 			line-height: 1.95;
 			text-align: center;
 
-			@media #{$small-only}{
+			@media #{$small-only} {
 				top: 8px;
 				left: -45px;
 				height: 28px;
@@ -32,18 +31,22 @@
 }
 
 .no-results,
-.not-found{
+.not-found {
 	@include panel;
 
-	.page-header{
+	.page-header {
 		margin-bottom: 1em;
 	}
 }
 
 .hentry {
-	@include panel;
+	body:not(.fl-builder) & {
+		@include panel;
+	}
+
 	background: none;
-	.attachment-primer-featured{
+
+	.attachment-primer-featured {
 		width: 100%;
 		height: auto;
 	}
@@ -59,6 +62,7 @@
 		line-height: 60px;
 		margin-bottom: 45px;
 		position: relative;
+
 		&:after {
 			content: " ";
 			height: 2px;
@@ -68,10 +72,12 @@
 			bottom: -15px;
 			left: 0;
 		}
-		@media all and ( min-width: 769px ){
+
+		@media all and (min-width: 769px) {
 			font-size: emCalc(60);
 			line-height: 60px;
 			margin-bottom: 60px;
+
 			&:after {
 				content: " ";
 				height: 2px;
@@ -82,11 +88,13 @@
 				left: 0;
 			}
 		}
-		@media all and ( min-width: 1000px ){
+
+		@media all and (min-width: 1000px) {
 			font-weight: 100;
 			font-size: emCalc(72);
 			line-height: 72px;
 			margin-bottom: 60px;
+
 			&:after {
 				content: " ";
 				height: 2px;
@@ -100,7 +108,7 @@
 	}
 }
 
-.featured-image{
+.featured-image {
 	margin-bottom: 1em;
 	margin-bottom: 1.5rem;
 }
@@ -125,17 +133,18 @@
 	margin: 0 0 1.5em;
 }
 
-.entry-title{
+.entry-title {
 	margin-bottom: .25em;
 	font-size: rem-calc(28);
 
-	a{
+	a {
 		color: $header-color;
 	}
 
-	.blog &, .search &, .archive &{
+	.blog &, .search &, .archive & {
 		font-weight: 300;
 		font-size: rem-calc(36);
+
 		&:after {
 			bottom: 0;
 			width: 15%;
@@ -148,6 +157,7 @@
 		font-size: 18px;
 		line-height: 36px;
 		margin: 0 0 30px 0;
+
 		&.expand {
 			margin: 50px -10%;
 		}
@@ -158,19 +168,20 @@
 	margin: 50px -10%;
 }
 
-.archive-title{
+.archive-title {
 	margin-bottom: 1em;
 	margin-bottom: 2rem;
 }
 
-.entry-footer{
+.entry-footer {
 	color: $small-font-color;
 	font-family: $header-font-family;
 	font-size: rem-calc(14);
 	padding-top: 1em;
+
 	@include clearfix;
 
-	a{
+	a {
 		color: $primary-color;
 	}
 
@@ -186,27 +197,24 @@
 	.comments-link a {
 		vertical-align: top;
 	}
-
 }
 
 .entry-meta {
-	border-bottom: 1px solid rgba(0,0,0,.1);
-	line-height: 1.4em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	line-height: 1.4rem;
-	margin-bottom: 1em;
 	margin-bottom: 1rem;
-	padding-bottom: 1em;
 	padding-bottom: 1rem;
 	font-size: .9em;
 	font-family: $sans-font-family;
+
 	@extend .clearfix;
 
-	i{
+	i {
 		vertical-align: middle;
 		line-height: .8;
 	}
 
-	.has-post-thumbnail &{
+	.has-post-thumbnail & {
 		border-bottom-width: 0;
 	}
 }
@@ -216,7 +224,7 @@
 		margin-right: 1em;
 		margin-right: 1rem;
 
-		@media #{$small-only}{
+		@media #{$small-only} {
 			margin-bottom: 10px;
 		}
 	}
@@ -234,7 +242,6 @@
 		line-height: 2;
 	}
 
-
 	span {
 		-ms-word-wrap: break-word;
 		word-wrap: break-word;
@@ -245,7 +252,7 @@
 	}
 }
 
-.post-format{
+.post-format {
 	color: $primary-color;
 	text-transform: uppercase;
 	font-family: $sans-font-family;
@@ -253,7 +260,7 @@
 	font-weight: bold;
 }
 
-.more-link{
+.more-link {
 	font-family: $header-font-family;
 	font-weight: normal;
 	border-radius: $global-radius;
@@ -290,12 +297,12 @@ article.format-link {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		width: 100%!important;
-		height: 100%!important;
+		width: 100% !important;
+		height: 100% !important;
 	}
 
 	.mejs-container {
-		width: 100%!important;
-		height: 100%!important;
+		width: 100% !important;
+		height: 100% !important;
 	}
 }
