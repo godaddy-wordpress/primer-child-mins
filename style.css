@@ -3442,7 +3442,9 @@ html {
 
 .hero {
   background: rgba(0, 0, 0, 0.1);
-  background-position: top center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center top;
   background-repeat: no-repeat; }
   .hero:before, .hero:after {
     content: " ";
