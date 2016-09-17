@@ -48,7 +48,7 @@ Mins is a Primer child theme with a minimal design.
 
 **Contributing:**
 
-You can fork and contribute to Mins by visiting [our public repo on GitHub](https://github.com/godaddy/wp-Mins-theme).
+You can fork and contribute to Mins by visiting [our public repo on GitHub](https://github.com/godaddy/wp-mins-theme).
 
 == Installation ==
 
