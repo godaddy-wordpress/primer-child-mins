@@ -2463,10 +2463,12 @@ body.no-max-width .main-navigation {
 /**
  * Post navigation
  */
+.post-navigation {
+  padding: 0 3.5rem; }
+
 .navigation .nav-links {
   margin-bottom: 1em;
-  margin-bottom: 1rem;
-  padding: 0; }
+  margin-bottom: 1rem; }
 
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
@@ -3357,7 +3359,8 @@ object {
     max-width: 50em; } }
 
 body {
-  background: #f4f4f4; }
+  background: #f4f4f4;
+  word-wrap: break-word; }
 
 .site-title-wrapper {
   float: right;
