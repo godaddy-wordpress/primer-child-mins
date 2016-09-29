@@ -107,8 +107,11 @@
 	}
 }
 
-body.layout-one-column-narrow {
-	.site-content {
-		max-width: 50em;
+@media #{$medium-up} {
+
+	body.layout-one-column-narrow {
+		#content {
+			max-width: 50em;
+		}
 	}
 }

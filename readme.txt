@@ -7,11 +7,11 @@ Stable tag:        1.0.0
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Mins is a Primer child theme with a minimal design.
+Mins is a GoDaddy Primer child theme with a minimal design.
 
 == Description ==
 
-Mins is a Primer child theme with a minimal design.
+Mins is a GoDaddy Primer child theme with a minimal design.
 
 **Languages Supported:**
 
@@ -48,7 +48,7 @@ Mins is a Primer child theme with a minimal design.
 
 **Contributing:**
 
-You can fork and contribute to Mins by visiting [our public repo on GitHub](https://github.com/godaddy/wp-Mins-theme).
+You can fork and contribute to Mins by visiting [our public repo on GitHub](https://github.com/godaddy/wp-mins-theme).
 
 == Installation ==
 
