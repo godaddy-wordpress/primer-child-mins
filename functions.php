@@ -229,7 +229,8 @@ function mins_colors( $colors ) {
 		'button_color' => array(
 			'default' => '#62b6cb',
 			'css'     => array(
-				'button,
+				'.hero a.button:focus,
+				button,
 				a.button, a.button:visited,
 				.content-area .fl-builder-content a.fl-button,
 				.content-area .fl-builder-content a.fl-button:visited,
