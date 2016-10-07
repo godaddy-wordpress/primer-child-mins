@@ -38,6 +38,10 @@ input[type="submit"] {
 		left: 5px;
 		position: relative;
 		transition: .2s all;
+
+		.fl-lightbox & {
+			content: '';
+		}
 	}
 	
 	&:hover {

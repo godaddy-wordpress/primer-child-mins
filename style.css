@@ -2087,6 +2087,13 @@ input[type="submit"] {
     position: relative;
     -webkit-transition: .2s all;
     transition: .2s all; }
+    .fl-lightbox button:after, .fl-lightbox
+    a.button:after, .fl-lightbox
+    a.button:visited:after, .fl-lightbox
+    input[type="button"]:after, .fl-lightbox
+    input[type="reset"]:after, .fl-lightbox
+    input[type="submit"]:after {
+      content: ''; }
   button:hover,
   a.button:hover,
   a.button:visited:hover,
