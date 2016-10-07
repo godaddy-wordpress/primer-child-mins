@@ -362,7 +362,7 @@ function mins_color_schemes( $color_schemes ) {
 				// Links & Buttons
 				'link_color'        => $color_schemes['muted']['base'],
 				'button_color'      => $color_schemes['muted']['base'],
-				'button_text_color' => '#4f5875',
+				'button_text_color' => '#ffffff',
 				// Backgrounds
 				'background_color'               => '#ffffff',
 				'hero_background_color'          => '#b7bac8',
