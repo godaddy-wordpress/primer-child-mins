@@ -32,7 +32,7 @@
 		background-color: white;
 
 		@media #{$medium-up} {
-			background-color: none;
+			background-color: transparent;
 		}
 	}
 
@@ -196,7 +196,7 @@ body.no-max-width .main-navigation {
 }
 
 .menu-toggle {
-	width: 3.6rem;
+	width: 3.55rem;
 	padding: 0.6rem;
 	cursor: pointer;
 	display: none;

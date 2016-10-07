@@ -229,7 +229,8 @@ function mins_colors( $colors ) {
 		'button_color' => array(
 			'default' => '#62b6cb',
 			'css'     => array(
-				'button,
+				'.hero a.button:focus,
+				button,
 				a.button, a.button:visited,
 				.content-area .fl-builder-content a.fl-button,
 				.content-area .fl-builder-content a.fl-button:visited,
@@ -361,7 +362,7 @@ function mins_color_schemes( $color_schemes ) {
 				// Links & Buttons
 				'link_color'        => $color_schemes['muted']['base'],
 				'button_color'      => $color_schemes['muted']['base'],
-				'button_text_color' => '#4f5875',
+				'button_text_color' => '#ffffff',
 				// Backgrounds
 				'background_color'               => '#ffffff',
 				'hero_background_color'          => '#b7bac8',

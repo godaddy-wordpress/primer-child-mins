@@ -2313,7 +2313,7 @@ a {
       clear: both; }
     @media only screen and (min-width: 40.063em) {
       .main-navigation.open {
-        background-color: none; } }
+        background-color: transparent; } }
   .main-navigation .expand {
     font-size: 28px;
     color: #181818;
@@ -2423,7 +2423,7 @@ body.no-max-width .main-navigation {
   max-width: none; }
 
 .menu-toggle {
-  width: 3.6rem;
+  width: 3.55rem;
   padding: 0.6rem;
   cursor: pointer;
   display: none;
@@ -3371,7 +3371,8 @@ body {
   @media only screen and (max-width: 40em) {
     .site-title-wrapper {
       float: none;
-      padding: 20px; }
+      padding: 20px;
+      max-width: 75%; }
       .site-title-wrapper:before, .site-title-wrapper:after {
         content: " ";
         display: table; }
