@@ -1,0 +1,29 @@
+sudo: false
+
+language:
+  - php
+  - node_js
+
+before_script:
+  - curl -s https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
+
+script:
+  - echo "Deploy only"
+
+before_deploy:
+  - export RELEASE_FOLDER=mins
+  - php /tmp/wp-cli.phar package install runcommand/dist-archive
+  - cp -rv ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
+  - mv /tmp/${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}
+  - php /tmp/wp-cli.phar dist-archive ${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}/${RELEASE_FOLDER}.zip --format=zip --debug
+
+deploy:
+  provider: releases
+  api_key:
+    secure: pvmb4jLrhHd+JysAfNClG8epHqMcY5aybfYGpX++jdCKfQyz6AGO0xspXDB/2/Rs9k8CkeQRIyOid58Lnl6bQx4iqm5CS0yPZEU+4E7LW5fJFLuSj3p5NfWtDKfhzGkqEuoK91v3Cm5zs2sB809fvLxn4NIXfg4bvT/PrRfxqBT8IGJhy+qNCvtTSWDOLcfv3qjZbHeHYXkHuvnKXnPQApepP1T3ynurvQJrgGSHolhjxekOVnzzMVZNUyANJXLyCZOi9Uv7/JoJCDm58NRTD+MMIIPvLsbWF7SnmprKSJ2P/UFG17vMym1nBCK7rwmXIAiv7rqMz7INZ6WoVUjhqg/L/uK6dvCAtcW06jobMwhH8O/wpOXxBWUwCsdP83sm4nXsZh+wPGb6u0FD39ic+mFq0ZdAxm9wIpckN6GgKsrsX7U/ZWBGWSlh6G1kVc0vT8MZGeImorYhX7CxhYOis9M48lHR9sXwaGYvH2AOD3ZhDYQ9wN4OcCnmQrDYLaGIHzOnMnZqT74524epjFqHUgG+WLhHo6vIPcTf6VL5+TmHrYE8qXzca5S2KXM03zosFL0ZVOZjCB3lJ1kgAXcqlPhHX8uLLS9rbTZ5bN35IPQsvSHOD0oHD6oIpISftK12wtCZBsWTjLavroIuc212xuXFLKVeCoAW56lVbVy4sf4=
+  file: mins.zip
+  on:
+    tags: true
+    repo: godaddy/wp-mins-theme
+  skip_cleanup: true
+  overwrite: true
