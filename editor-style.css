@@ -2318,6 +2318,11 @@ legend {
         .widget_calendar #calendar_wrap #wp-calendar tfoot td#next {
           text-align: right; }
 
+.hero .widget.widget_text p {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  padding: 0; }
+
 .sticky .entry-title {
   position: relative; }
   .sticky .entry-title a:before {
