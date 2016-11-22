@@ -64,6 +64,7 @@ body {
 	background-color: $header-bg-color;
 	letter-spacing: -.01em;
 	padding: 0;
+	position: relative;
 
 	@media #{$small-only} {
 		width: 100%;
