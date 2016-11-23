@@ -4291,8 +4291,6 @@ ul.site-header-cart.menu .widget_shopping_cart .buttons a {
   display: block;
   width: 100%;
   text-align: center; }
-  ul.site-header-cart.menu .widget_shopping_cart .buttons a:hover, ul.site-header-cart.menu .widget_shopping_cart .buttons a:focus, ul.site-header-cart.menu .widget_shopping_cart .buttons a:active {
-    color: inherit; }
 
 .site-header-cart-container {
   width: 100%;
