@@ -4273,3 +4273,7 @@ ul.site-header-cart.menu {
   text-indent: 0; }
   .woocommerce-cart-menu-item .cart_list li a.remove:hover {
     background: red; }
+
+@media only screen and (min-width: 40.063em) {
+  li#woocommerce-cart-menu-item .sub-menu {
+    margin-left: -6em; } }

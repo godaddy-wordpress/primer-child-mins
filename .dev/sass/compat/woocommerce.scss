@@ -94,3 +94,11 @@ ul.site-header-cart.menu {
 	}
 
 }
+
+@media #{$medium-up} {
+
+	li#woocommerce-cart-menu-item .sub-menu {
+		margin-left: -6em;
+	}
+
+}
