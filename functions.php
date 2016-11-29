@@ -20,11 +20,9 @@ function mins_move_elements() {
 	remove_action( 'primer_header',       'primer_add_hero',               7 );
 	remove_action( 'primer_after_header', 'primer_add_primary_navigation', 11 );
 	remove_action( 'primer_after_header', 'primer_add_page_title',         12 );
-	remove_action( 'primer_after_header', 'primer_generate_cart_submenu',  11 );
 
 	add_action( 'primer_after_header', 'primer_add_hero',               7 );
 	add_action( 'primer_header',       'primer_add_primary_navigation', 11 );
-	add_action( 'primer_header',       'primer_generate_cart_submenu',  12 );
 
 	if ( ! is_front_page() || ! is_active_sidebar( 'hero' ) ) {
 
@@ -236,7 +234,8 @@ function mins_colors( $colors ) {
 				a.button, a.button:visited,
 				.content-area .fl-builder-content a.fl-button,
 				.content-area .fl-builder-content a.fl-button:visited,
-				input[type="button"], input[type="reset"], input[type="submit"]' => array(
+				input[type="button"], input[type="reset"], input[type="submit"],
+				.woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a' => array(
 					'background-color' => 'transparent',
 				),
 				'button:hover, button:active, button:focus,
@@ -244,7 +243,8 @@ function mins_colors( $colors ) {
 				.content-area .fl-builder-content a.fl-button:hover, .content-area .fl-builder-content a.fl-button:active, .content-area .fl-builder-content a.fl-button:focus, .content-area .fl-builder-content a.fl-button:visited:hover, .content-area .fl-builder-content a.fl-button:visited:active, .content-area .fl-builder-content a.fl-button:visited:focus,
 				input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus,
 				input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus,
-				input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus' => array(
+				input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus,
+				.woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a:hover, .woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a:focus, .woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a:active' => array(
 					'color' => '%1$s',
 				),
 			),
