@@ -2100,7 +2100,7 @@ input[type="submit"] {
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background: transparent !important; }
+    background: transparent; }
   button:hover:after,
   a.button:hover:after,
   a.button:visited:hover:after,
@@ -3510,6 +3510,8 @@ html {
     width: 50%;
     float: left;
     padding: 4%; }
+    .hero .hero-inner .widget a.button:hover {
+      background: transparent; }
   @media screen and (max-width: 900px) {
     .hero {
       -webkit-background-size: cover;
@@ -4206,6 +4208,9 @@ html {
 #wpstats {
   display: none; }
 
+ul.products a.button:after {
+  display: none; }
+
 .main-navigation .menu-item-object-cart:hover a {
   background: transparent; }
 
@@ -4289,6 +4294,26 @@ ul.site-header-cart.menu {
   text-indent: 0; }
   .woocommerce-cart-menu-item .cart_list li a.remove:hover {
     background: red; }
+
+body.post-type-archive,
+body.single-product {
+  /* On Sale Badge */ }
+  body.post-type-archive span.onsale,
+  body.post-type-archive ul.products li.product .onsale,
+  body.single-product span.onsale,
+  body.single-product ul.products li.product .onsale {
+    padding: 2px 8px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    margin: 0;
+    min-height: auto;
+    min-width: auto;
+    line-height: inherit; }
+
+body.single-product span.onsale {
+  padding: 3px 18px;
+  top: 0;
+  right: 0; }
 
 @media only screen and (min-width: 40.063em) {
   li#woocommerce-cart-menu-item .sub-menu {

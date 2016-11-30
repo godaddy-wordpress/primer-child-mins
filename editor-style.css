@@ -1882,7 +1882,7 @@ input[type="submit"] {
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background: transparent !important; }
+    background: transparent; }
   button:hover:after,
   a.button:hover:after,
   a.button:visited:hover:after,

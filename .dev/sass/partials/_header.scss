@@ -183,6 +183,11 @@ html {
 		width: 50%;
 		float: right;
 		padding: 4%;
+
+		.widget a.button:hover {
+			background: transparent;
+		}
+
 	}
 
 	@media screen and (max-width: 900px) {

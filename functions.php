@@ -234,9 +234,7 @@ function mins_colors( $colors ) {
 				a.button, a.button:visited,
 				.content-area .fl-builder-content a.fl-button,
 				.content-area .fl-builder-content a.fl-button:visited,
-				input[type="button"], input[type="reset"], input[type="submit"],
-				#woocommerce-cart-menu-item .widget_shopping_cart p.buttons a,
-				#woocommerce-cart-menu-item .widget_shopping_cart p.buttons a:visited' => array(
+				input[type="button"], input[type="reset"], input[type="submit"]' => array(
 					'background-color' => 'transparent',
 				),
 				'button:hover, button:active, button:focus,
@@ -244,8 +242,7 @@ function mins_colors( $colors ) {
 				.content-area .fl-builder-content a.fl-button:hover, .content-area .fl-builder-content a.fl-button:active, .content-area .fl-builder-content a.fl-button:focus, .content-area .fl-builder-content a.fl-button:visited:hover, .content-area .fl-builder-content a.fl-button:visited:active, .content-area .fl-builder-content a.fl-button:visited:focus,
 				input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus,
 				input[type="reset"]:hover, input[type="reset"]:active, input[type="reset"]:focus,
-				input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus,
-				.woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a:hover, .woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a:focus, .woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a:active' => array(
+				input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus' => array(
 					'color' => '%1$s',
 				),
 			),

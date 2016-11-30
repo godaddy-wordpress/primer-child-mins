@@ -43,11 +43,11 @@ input[type="submit"] {
 			content: '';
 		}
 	}
-	
+
 	&:hover {
-		background: transparent !important;
+		background: transparent;
 	}
-	
+
 	&:hover:after {
 		left: 8px;
 		transition: .2s all;
