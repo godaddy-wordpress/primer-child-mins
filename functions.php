@@ -235,7 +235,8 @@ function mins_colors( $colors ) {
 				.content-area .fl-builder-content a.fl-button,
 				.content-area .fl-builder-content a.fl-button:visited,
 				input[type="button"], input[type="reset"], input[type="submit"],
-				.woocommerce-cart-menu-item .woocommerce.widget_shopping_cart p.buttons a' => array(
+				#woocommerce-cart-menu-item .widget_shopping_cart p.buttons a,
+				#woocommerce-cart-menu-item .widget_shopping_cart p.buttons a:visited' => array(
 					'background-color' => 'transparent',
 				),
 				'button:hover, button:active, button:focus,
