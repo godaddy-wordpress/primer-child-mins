@@ -53,11 +53,11 @@ ul.site-header-cart.menu {
 	-o-transition: opacity .25s ease-out;
 
 	a:nth-child(2) {
-		padding: 1em 0em;
 		margin: 0;
 		width: 100%;
 		border: none;
 		text-indent: 3px;
+		padding-bottom: 0;
 	}
 
 	img {
@@ -67,6 +67,10 @@ ul.site-header-cart.menu {
 
 	&:hover {
 		opacity: 0.85;
+	}
+
+	.quantity {
+		padding-left: 5px;
 	}
 
 }
@@ -137,6 +141,10 @@ ul.site-header-cart.menu {
 		p.buttons a {
 			display: block;
 			width: 100%;
+		}
+
+		.total {
+			text-align: center;
 		}
 
 		.widget_shopping_cart {
