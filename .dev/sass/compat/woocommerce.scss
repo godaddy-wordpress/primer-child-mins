@@ -1,4 +1,5 @@
-ul.products a.button:after {
+ul.products a.button:after,
+.menu-item-object-cart p.buttons a:after {
 	display: none;
 }
 
@@ -26,7 +27,7 @@ ul.site-header-cart.menu {
 .widget_shopping_cart {
 
 	float: left;
-	padding: 0 1rem;
+	padding: 0 1rem 1rem 1rem;
 
 	ul.product_list_widget {
 		position: relative !important;
@@ -97,11 +98,10 @@ ul.site-header-cart.menu {
 
 		p.buttons a {
 			text-align: center;
-		}
-
-		&:first-child {
+			width: 100%;
 			margin-bottom: 5px;
 		}
+
 	}
 
 	.cart-preview-count {
@@ -172,7 +172,6 @@ body.single-product {
 
 		p.buttons a {
 			display: block;
-			width: 100%;
 		}
 
 		.total {
