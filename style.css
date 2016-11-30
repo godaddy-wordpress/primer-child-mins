@@ -4206,6 +4206,9 @@ html {
 #wpstats {
   display: none; }
 
+#woocommerce-cart-menu-item.empty-cart .widget_shopping_cart {
+  padding-top: 1em; }
+
 .main-navigation .menu-item-object-cart:hover a {
   background: transparent; }
 
