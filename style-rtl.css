@@ -2052,8 +2052,8 @@ textarea {
   font-family: "Roboto", sans-serif; }
 
 button,
-a.button:not(.wc-forward),
-a.button:visited:not(.wc-forward),
+a.button:not(.wc-forward):not(.add_to_cart_button),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -2073,8 +2073,8 @@ input[type="submit"] {
   padding: .75rem 0;
   display: inline-block; }
   button:after:not(.customize-partial-edit-shortcut),
-  a.button:not(.wc-forward):after:not(.customize-partial-edit-shortcut),
-  a.button:visited:not(.wc-forward):after:not(.customize-partial-edit-shortcut),
+  a.button:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut),
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut),
   input[type="button"]:after:not(.customize-partial-edit-shortcut),
   input[type="reset"]:after:not(.customize-partial-edit-shortcut),
   input[type="submit"]:after:not(.customize-partial-edit-shortcut) {
@@ -2088,19 +2088,19 @@ input[type="submit"] {
     -webkit-transition: .2s all;
     transition: .2s all; }
     .fl-lightbox button:after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    a.button:not(.wc-forward):after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    a.button:visited:not(.wc-forward):after:not(.customize-partial-edit-shortcut), .fl-lightbox
+    a.button:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
+    a.button:visited:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
     input[type="button"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
     input[type="reset"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
     input[type="submit"]:after:not(.customize-partial-edit-shortcut) {
       content: ''; }
   button:hover, button:focus, button:active,
-  a.button:not(.wc-forward):hover,
-  a.button:not(.wc-forward):focus,
-  a.button:not(.wc-forward):active,
-  a.button:visited:not(.wc-forward):hover,
-  a.button:visited:not(.wc-forward):focus,
-  a.button:visited:not(.wc-forward):active,
+  a.button:not(.wc-forward):not(.add_to_cart_button):hover,
+  a.button:not(.wc-forward):not(.add_to_cart_button):focus,
+  a.button:not(.wc-forward):not(.add_to_cart_button):active,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):hover,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):focus,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):active,
   input[type="button"]:hover,
   input[type="button"]:focus,
   input[type="button"]:active,
@@ -2112,8 +2112,8 @@ input[type="submit"] {
   input[type="submit"]:active {
     background: transparent !important; }
   button:hover:after,
-  a.button:not(.wc-forward):hover:after,
-  a.button:visited:not(.wc-forward):hover:after,
+  a.button:not(.wc-forward):not(.add_to_cart_button):hover:after,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):hover:after,
   input[type="button"]:hover:after,
   input[type="reset"]:hover:after,
   input[type="submit"]:hover:after {

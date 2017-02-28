@@ -10,8 +10,8 @@ textarea {
 }
 
 button,
-a.button:not(.wc-forward),
-a.button:visited:not(.wc-forward),
+a.button:not(.wc-forward):not(.add_to_cart_button),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
