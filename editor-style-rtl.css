@@ -1833,9 +1833,9 @@ textarea {
   /* Improves appearance and consistency in all browsers */
   font-family: "Roboto", sans-serif; }
 
-button,
+button:not(.single_add_to_cart_button),
 a.button:not(.wc-forward):not(.add_to_cart_button),
-a.button:visited:not(.wc-forward):not(.add_to_cart_button),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button)
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -1854,10 +1854,10 @@ input[type="submit"] {
   padding: .75em 0;
   padding: .75rem 0;
   display: inline-block; }
-  button:after:not(.customize-partial-edit-shortcut),
+  button:not(.single_add_to_cart_button):after:not(.customize-partial-edit-shortcut),
   a.button:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut),
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut),
-  input[type="button"]:after:not(.customize-partial-edit-shortcut),
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:after:not(.customize-partial-edit-shortcut),
   input[type="reset"]:after:not(.customize-partial-edit-shortcut),
   input[type="submit"]:after:not(.customize-partial-edit-shortcut) {
     content: '\f501';
@@ -1869,23 +1869,23 @@ input[type="submit"] {
     position: relative;
     -webkit-transition: .2s all;
     transition: .2s all; }
-    .fl-lightbox button:after:not(.customize-partial-edit-shortcut), .fl-lightbox
+    .fl-lightbox button:not(.single_add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
     a.button:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    a.button:visited:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    input[type="button"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
+    a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
     input[type="reset"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
     input[type="submit"]:after:not(.customize-partial-edit-shortcut) {
       content: ''; }
-  button:hover, button:focus, button:active,
+  button:not(.single_add_to_cart_button):hover, button:not(.single_add_to_cart_button):focus, button:not(.single_add_to_cart_button):active,
   a.button:not(.wc-forward):not(.add_to_cart_button):hover,
   a.button:not(.wc-forward):not(.add_to_cart_button):focus,
   a.button:not(.wc-forward):not(.add_to_cart_button):active,
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):hover,
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):focus,
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):active,
-  input[type="button"]:hover,
-  input[type="button"]:focus,
-  input[type="button"]:active,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:hover,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:focus,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:active,
   input[type="reset"]:hover,
   input[type="reset"]:focus,
   input[type="reset"]:active,
@@ -1893,10 +1893,10 @@ input[type="submit"] {
   input[type="submit"]:focus,
   input[type="submit"]:active {
     background: transparent !important; }
-  button:hover:after,
+  button:not(.single_add_to_cart_button):hover:after,
   a.button:not(.wc-forward):not(.add_to_cart_button):hover:after,
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):hover:after,
-  input[type="button"]:hover:after,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:hover:after,
   input[type="reset"]:hover:after,
   input[type="submit"]:hover:after {
     right: 8px;

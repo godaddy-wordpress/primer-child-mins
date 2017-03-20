@@ -9,9 +9,9 @@ textarea {
 	font-family: $sans-font-family;
 }
 
-button,
+button:not(.single_add_to_cart_button),,
 a.button:not(.wc-forward):not(.add_to_cart_button),
-a.button:visited:not(.wc-forward):not(.add_to_cart_button),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button)
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
