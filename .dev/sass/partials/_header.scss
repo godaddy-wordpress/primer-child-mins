@@ -77,9 +77,9 @@ body {
 
 		+.hero {
 			height: calc( 100vh - 95px );
-			padding: 0;
 			display: flex;
 			align-items: center;
+			flex-direction: row-reverse;
 			position: relative;
 
 			aside {

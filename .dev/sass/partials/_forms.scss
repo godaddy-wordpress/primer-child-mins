@@ -9,9 +9,9 @@ textarea {
 	font-family: $sans-font-family;
 }
 
-button:not(.single_add_to_cart_button),,
-a.button:not(.wc-forward):not(.add_to_cart_button),
-a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+button:not(.single_add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
+a.button:not(.wc-forward):not(.add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -29,7 +29,7 @@ input[type="submit"] {
 	padding: .75rem 0;
 	display: inline-block;
 
-	&:after:not(.customize-partial-edit-shortcut) {
+	&::after {
 		content: '\f501';
 		font-family: 'Genericons';
 		display: inline;
