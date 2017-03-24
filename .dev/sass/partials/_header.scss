@@ -72,6 +72,54 @@ body {
 		z-index: 1;
 		min-height: 86px;
 	}
+
+	&.video-header {
+
+		+.hero {
+			height: calc( 100vh - 95px );
+			padding: 0;
+			display: flex;
+			align-items: center;
+			position: relative;
+
+			aside {
+				position: relative;
+			}
+
+			.hero-inner {
+				z-index: 1;
+			}
+
+			#wp-custom-header {
+				position: absolute;
+				height: 100%;
+				top: 0;
+				left: 0;
+
+				img {
+					display: none;
+				}
+			}
+
+			#wp-custom-header-video-button {
+				position: absolute;
+				bottom: 0.5em;
+				left: 1em;
+				opacity: 0.5;
+				z-index: 11;
+			}
+
+			iframe#wp-custom-header-video {
+				height: 100%;
+			}
+		}
+	}
+}
+
+body.admin-bar {
+	.video-header + .hero {
+		height: calc( 100vh - 94px - 32px );
+	}
 }
 
 .featured-content {
