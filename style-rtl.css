@@ -3424,14 +3424,11 @@ body {
       left: 0;
       bottom: 0;
       margin: auto; }
-      .site-header.video-header + .hero #wp-custom-header img {
-        display: none; }
     .site-header.video-header + .hero #wp-custom-header-video-button {
       position: absolute;
       bottom: 0.5em;
       right: 1em;
-      opacity: 0.5;
-      z-index: 11; }
+      opacity: 0.5; }
     .site-header.video-header + .hero iframe#wp-custom-header-video {
       height: 100%; }
   @media only screen and (max-width: 40em) {
@@ -3517,6 +3514,8 @@ html {
     padding: 4%; }
     .hero .hero-inner .widget a.button:hover {
       background: transparent; }
+    .hero .hero-inner #wp-custom-header img {
+      display: none; }
   @media screen and (max-width: 900px) {
     .hero {
       -webkit-background-size: cover;
