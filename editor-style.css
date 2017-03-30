@@ -1833,9 +1833,9 @@ textarea {
   /* Improves appearance and consistency in all browsers */
   font-family: "Roboto", sans-serif; }
 
-button,
-a.button,
-a.button:visited,
+button:not(.single_add_to_cart_button),
+a.button:not(.wc-forward):not(.add_to_cart_button),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button)
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -1854,12 +1854,12 @@ input[type="submit"] {
   padding: .75em 0;
   padding: .75rem 0;
   display: inline-block; }
-  button:after,
-  a.button:after,
-  a.button:visited:after,
-  input[type="button"]:after,
-  input[type="reset"]:after,
-  input[type="submit"]:after {
+  button:not(.single_add_to_cart_button):after:not(.customize-partial-edit-shortcut),
+  a.button:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut),
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:after:not(.customize-partial-edit-shortcut),
+  input[type="reset"]:after:not(.customize-partial-edit-shortcut),
+  input[type="submit"]:after:not(.customize-partial-edit-shortcut) {
     content: '\f501';
     font-family: 'Genericons';
     display: inline;
@@ -1869,91 +1869,39 @@ input[type="submit"] {
     position: relative;
     -webkit-transition: .2s all;
     transition: .2s all; }
-    .fl-lightbox button:after, .fl-lightbox
-    a.button:after, .fl-lightbox
-    a.button:visited:after, .fl-lightbox
-    input[type="button"]:after, .fl-lightbox
-    input[type="reset"]:after, .fl-lightbox
-    input[type="submit"]:after {
+    .fl-lightbox button:not(.single_add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
+    a.button:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
+    a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
+    input[type="reset"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
+    input[type="submit"]:after:not(.customize-partial-edit-shortcut) {
       content: ''; }
-  button:hover,
-  a.button:hover,
-  a.button:visited:hover,
-  input[type="button"]:hover,
+  button:not(.single_add_to_cart_button):hover, button:not(.single_add_to_cart_button):focus, button:not(.single_add_to_cart_button):active,
+  a.button:not(.wc-forward):not(.add_to_cart_button):hover,
+  a.button:not(.wc-forward):not(.add_to_cart_button):focus,
+  a.button:not(.wc-forward):not(.add_to_cart_button):active,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:hover,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:focus,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:active,
   input[type="reset"]:hover,
-  input[type="submit"]:hover {
+  input[type="reset"]:focus,
+  input[type="reset"]:active,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus,
+  input[type="submit"]:active {
     background: transparent !important; }
-  button:hover:after,
-  a.button:hover:after,
-  a.button:visited:hover:after,
-  input[type="button"]:hover:after,
+  button:not(.single_add_to_cart_button):hover:after,
+  a.button:not(.wc-forward):not(.add_to_cart_button):hover:after,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button)
+input[type="button"]:hover:after,
   input[type="reset"]:hover:after,
   input[type="submit"]:hover:after {
     left: 8px;
     -webkit-transition: .2s all;
     transition: .2s all; }
-  button:focus button:active,
-  a.button:focus button:active,
-  a.button:visited:focus button:active,
-  input[type="button"]:focus button:active,
-  input[type="reset"]:focus button:active,
-  input[type="submit"]:focus button:active, button:focus
-  a.button:active,
-  a.button:focus
-  a.button:active,
-  a.button:visited:focus
-  a.button:active,
-  input[type="button"]:focus
-  a.button:active,
-  input[type="reset"]:focus
-  a.button:active,
-  input[type="submit"]:focus
-  a.button:active, button:focus
-  a.button:visited:active,
-  a.button:focus
-  a.button:visited:active,
-  a.button:visited:focus
-  a.button:visited:active,
-  input[type="button"]:focus
-  a.button:visited:active,
-  input[type="reset"]:focus
-  a.button:visited:active,
-  input[type="submit"]:focus
-  a.button:visited:active, button:focus
-  input[type="button"]:active,
-  a.button:focus
-  input[type="button"]:active,
-  a.button:visited:focus
-  input[type="button"]:active,
-  input[type="button"]:focus
-  input[type="button"]:active,
-  input[type="reset"]:focus
-  input[type="button"]:active,
-  input[type="submit"]:focus
-  input[type="button"]:active, button:focus
-  input[type="reset"]:active,
-  a.button:focus
-  input[type="reset"]:active,
-  a.button:visited:focus
-  input[type="reset"]:active,
-  input[type="button"]:focus
-  input[type="reset"]:active,
-  input[type="reset"]:focus
-  input[type="reset"]:active,
-  input[type="submit"]:focus
-  input[type="reset"]:active, button:focus
-  input[type="submit"]:active,
-  a.button:focus
-  input[type="submit"]:active,
-  a.button:visited:focus
-  input[type="submit"]:active,
-  input[type="button"]:focus
-  input[type="submit"]:active,
-  input[type="reset"]:focus
-  input[type="submit"]:active,
-  input[type="submit"]:focus
-  input[type="submit"]:active {
-    background: #2f9fe9; }
 
 input[type="checkbox"],
 input[type="radio"] {
