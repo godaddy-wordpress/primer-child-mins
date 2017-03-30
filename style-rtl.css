@@ -2059,9 +2059,9 @@ textarea {
   /* Improves appearance and consistency in all browsers */
   font-family: "Roboto", sans-serif; }
 
-button:not(.single_add_to_cart_button):not(.nf-element),
-a.button:not(.wc-forward):not(.add_to_cart_button),
-a.button:visited:not(.wc-forward):not(.add_to_cart_button),
+button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button),
+a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -2080,12 +2080,12 @@ input[type="submit"] {
   padding: .75em 0;
   padding: .75rem 0;
   display: inline-block; }
-  button:not(.single_add_to_cart_button):not(.nf-element):after:not(.customize-partial-edit-shortcut),
-  a.button:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut),
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut),
-  input[type="button"]:after:not(.customize-partial-edit-shortcut),
-  input[type="reset"]:after:not(.customize-partial-edit-shortcut),
-  input[type="submit"]:after:not(.customize-partial-edit-shortcut) {
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
+  input[type="button"]::after,
+  input[type="reset"]::after,
+  input[type="submit"]::after {
     content: '\f501';
     font-family: 'Genericons';
     display: inline;
@@ -2095,20 +2095,20 @@ input[type="submit"] {
     position: relative;
     -webkit-transition: .2s all;
     transition: .2s all; }
-    .fl-lightbox button:not(.single_add_to_cart_button):not(.nf-element):after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    a.button:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    a.button:visited:not(.wc-forward):not(.add_to_cart_button):after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    input[type="button"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    input[type="reset"]:after:not(.customize-partial-edit-shortcut), .fl-lightbox
-    input[type="submit"]:after:not(.customize-partial-edit-shortcut) {
+    .fl-lightbox button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
+    a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
+    a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
+    input[type="button"]::after, .fl-lightbox
+    input[type="reset"]::after, .fl-lightbox
+    input[type="submit"]::after {
       content: ''; }
-  button:not(.single_add_to_cart_button):not(.nf-element):hover, button:not(.single_add_to_cart_button):not(.nf-element):focus, button:not(.single_add_to_cart_button):not(.nf-element):active,
-  a.button:not(.wc-forward):not(.add_to_cart_button):hover,
-  a.button:not(.wc-forward):not(.add_to_cart_button):focus,
-  a.button:not(.wc-forward):not(.add_to_cart_button):active,
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):hover,
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):focus,
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):active,
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover, button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):focus, button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):active,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):focus,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):active,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):focus,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):active,
   input[type="button"]:hover,
   input[type="button"]:focus,
   input[type="button"]:active,
@@ -2119,9 +2119,9 @@ input[type="submit"] {
   input[type="submit"]:focus,
   input[type="submit"]:active {
     background: transparent !important; }
-  button:not(.single_add_to_cart_button):not(.nf-element):hover:after,
-  a.button:not(.wc-forward):not(.add_to_cart_button):hover:after,
-  a.button:visited:not(.wc-forward):not(.add_to_cart_button):hover:after,
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
   input[type="button"]:hover:after,
   input[type="reset"]:hover:after,
   input[type="submit"]:hover:after {
@@ -3417,6 +3417,28 @@ body {
   letter-spacing: -.01em;
   padding: 0;
   position: relative; }
+  .site-header.video-header + .hero {
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+    color: #000; }
+    .site-header.video-header + .hero aside {
+      position: relative; }
+    .site-header.video-header + .hero #wp-custom-header {
+      position: absolute;
+      height: 100vh;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto; }
+    .site-header.video-header + .hero #wp-custom-header-video-button {
+      position: absolute;
+      bottom: 0.5em;
+      right: 1em;
+      opacity: 0.5; }
+    .site-header.video-header + .hero iframe#wp-custom-header-video {
+      height: 100%; }
   @media only screen and (max-width: 40em) {
     .site-header {
       width: 100%;
@@ -3500,6 +3522,8 @@ html {
     padding: 4%; }
     .hero .hero-inner .widget a.button:hover {
       background: transparent; }
+    .hero .hero-inner #wp-custom-header img {
+      display: none; }
   @media screen and (max-width: 900px) {
     .hero {
       -webkit-background-size: cover;
