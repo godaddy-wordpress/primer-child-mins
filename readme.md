@@ -96,7 +96,7 @@ TODO
 * New: Added hook priorities for Primer 1.6.0 compatibility. @props [evanherman](https://github.com/EvanHerman)
 * New: Added Ninja Forms compatibility styles, and styled Ninja Forms response messages. @props [evanherman](https://github.com/EvanHerman)
 * New: Added pagination styles. @props [fjarrett](https://github.com/fjarrett), [evanherman](https://github.com/EvanHerman)
-* Tweak: Various WooCommerce style tweaks, including i10n site specific tweaks.
+* Tweak: Various WooCommerce style tweaks, including i10n site specific tweaks. @props [fjarrett](https://github.com/fjarrett), [evanherman](https://github.com/EvanHerman)
 
 ### 1.0.1 ###
 
