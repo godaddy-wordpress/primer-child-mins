@@ -2,7 +2,7 @@
   "name": "mins",
   "title": "Mins",
   "description": "Mins is a modern WordPress theme based on _s.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "author": "GoDaddy",
   "license": "GPL-2.0",
   "repository": "godaddy/wp-mins-theme",
@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/godaddy/wp-mins-theme/issues"
   },
-	"engines": {
+  "engines": {
     "php": ">= 5.2",
     "wordpress": ">= 4.4"
   },
