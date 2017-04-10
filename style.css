@@ -2038,6 +2038,14 @@ blockquote p {
   .show-for-print {
     display: inherit !important; } }
 
+.nf-response-msg p,
+.widget-area .nf-response-msg p {
+  font-weight: bold; }
+  .nf-response-msg p:first-child,
+  .widget-area .nf-response-msg p:first-child {
+    font-style: italic;
+    font-weight: normal; }
+
 button,
 a.button,
 input,
@@ -2051,9 +2059,9 @@ textarea {
   /* Improves appearance and consistency in all browsers */
   font-family: "Roboto", sans-serif; }
 
-button,
-a.button,
-a.button:visited,
+button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button),
+a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -2072,12 +2080,12 @@ input[type="submit"] {
   padding: .75em 0;
   padding: .75rem 0;
   display: inline-block; }
-  button:after,
-  a.button:after,
-  a.button:visited:after,
-  input[type="button"]:after,
-  input[type="reset"]:after,
-  input[type="submit"]:after {
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
+  input[type="button"]::after,
+  input[type="reset"]::after,
+  input[type="submit"]::after {
     content: '\f501';
     font-family: 'Genericons';
     display: inline;
@@ -2087,91 +2095,39 @@ input[type="submit"] {
     position: relative;
     -webkit-transition: .2s all;
     transition: .2s all; }
-    .fl-lightbox button:after, .fl-lightbox
-    a.button:after, .fl-lightbox
-    a.button:visited:after, .fl-lightbox
-    input[type="button"]:after, .fl-lightbox
-    input[type="reset"]:after, .fl-lightbox
-    input[type="submit"]:after {
+    .fl-lightbox button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
+    a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
+    a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
+    input[type="button"]::after, .fl-lightbox
+    input[type="reset"]::after, .fl-lightbox
+    input[type="submit"]::after {
       content: ''; }
-  button:hover,
-  a.button:hover,
-  a.button:visited:hover,
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover, button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):focus, button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):active,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):focus,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):active,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):focus,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):active,
   input[type="button"]:hover,
+  input[type="button"]:focus,
+  input[type="button"]:active,
   input[type="reset"]:hover,
-  input[type="submit"]:hover {
+  input[type="reset"]:focus,
+  input[type="reset"]:active,
+  input[type="submit"]:hover,
+  input[type="submit"]:focus,
+  input[type="submit"]:active {
     background: transparent !important; }
-  button:hover:after,
-  a.button:hover:after,
-  a.button:visited:hover:after,
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
+  a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
+  a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
   input[type="button"]:hover:after,
   input[type="reset"]:hover:after,
   input[type="submit"]:hover:after {
     left: 8px;
     -webkit-transition: .2s all;
     transition: .2s all; }
-  button:focus button:active,
-  a.button:focus button:active,
-  a.button:visited:focus button:active,
-  input[type="button"]:focus button:active,
-  input[type="reset"]:focus button:active,
-  input[type="submit"]:focus button:active, button:focus
-  a.button:active,
-  a.button:focus
-  a.button:active,
-  a.button:visited:focus
-  a.button:active,
-  input[type="button"]:focus
-  a.button:active,
-  input[type="reset"]:focus
-  a.button:active,
-  input[type="submit"]:focus
-  a.button:active, button:focus
-  a.button:visited:active,
-  a.button:focus
-  a.button:visited:active,
-  a.button:visited:focus
-  a.button:visited:active,
-  input[type="button"]:focus
-  a.button:visited:active,
-  input[type="reset"]:focus
-  a.button:visited:active,
-  input[type="submit"]:focus
-  a.button:visited:active, button:focus
-  input[type="button"]:active,
-  a.button:focus
-  input[type="button"]:active,
-  a.button:visited:focus
-  input[type="button"]:active,
-  input[type="button"]:focus
-  input[type="button"]:active,
-  input[type="reset"]:focus
-  input[type="button"]:active,
-  input[type="submit"]:focus
-  input[type="button"]:active, button:focus
-  input[type="reset"]:active,
-  a.button:focus
-  input[type="reset"]:active,
-  a.button:visited:focus
-  input[type="reset"]:active,
-  input[type="button"]:focus
-  input[type="reset"]:active,
-  input[type="reset"]:focus
-  input[type="reset"]:active,
-  input[type="submit"]:focus
-  input[type="reset"]:active, button:focus
-  input[type="submit"]:active,
-  a.button:focus
-  input[type="submit"]:active,
-  a.button:visited:focus
-  input[type="submit"]:active,
-  input[type="button"]:focus
-  input[type="submit"]:active,
-  input[type="reset"]:focus
-  input[type="submit"]:active,
-  input[type="submit"]:focus
-  input[type="submit"]:active {
-    background: #2f9fe9; }
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -2479,6 +2435,38 @@ body.no-max-width .main-navigation {
 .navigation .nav-links {
   margin-bottom: 1em;
   margin-bottom: 1rem; }
+
+.navigation.pagination {
+  clear: both;
+  margin: 0 0 1.5em; }
+  .navigation.pagination .nav-links {
+    text-align: center; }
+    .navigation.pagination .nav-links .page-numbers {
+      display: inline-block;
+      border: none;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+      line-height: 1;
+      margin: 0 0.25em;
+      padding: 0.5em 0.75em;
+      white-space: nowrap; }
+      .navigation.pagination .nav-links .page-numbers.dots {
+        background: none; }
+      .navigation.pagination .nav-links .page-numbers.current {
+        color: #fefefe;
+        background-color: #2199e8; }
+  .navigation.pagination .paging-nav-text {
+    display: none; }
+  @media only screen and (max-width: 40em) {
+    .navigation.pagination .paging-nav-text {
+      display: inline-block;
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: #fefefe; }
+    .navigation.pagination .nav-links {
+      float: right; }
+      .navigation.pagination .nav-links .page-numbers:not(.prev):not(.next) {
+        display: none; } }
 
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
@@ -3427,7 +3415,30 @@ body {
 .site-header {
   background-color: white;
   letter-spacing: -.01em;
-  padding: 0; }
+  padding: 0;
+  position: relative; }
+  .site-header.video-header + .hero {
+    overflow: hidden;
+    position: relative;
+    background-color: #000;
+    color: #000; }
+    .site-header.video-header + .hero aside {
+      position: relative; }
+    .site-header.video-header + .hero #wp-custom-header {
+      position: absolute;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+    .site-header.video-header + .hero #wp-custom-header-video-button {
+      position: absolute;
+      bottom: 0.5em;
+      left: 1em;
+      opacity: 0.5; }
+    .site-header.video-header + .hero iframe#wp-custom-header-video {
+      height: 100%; }
   @media only screen and (max-width: 40em) {
     .site-header {
       width: 100%;
@@ -3509,6 +3520,10 @@ html {
     width: 50%;
     float: right;
     padding: 4%; }
+    .hero .hero-inner .widget a.button:hover {
+      background: transparent; }
+    .hero .hero-inner #wp-custom-header img {
+      display: none; }
   @media screen and (max-width: 900px) {
     .hero {
       -webkit-background-size: cover;
@@ -4204,3 +4219,202 @@ html {
 
 #wpstats {
   display: none; }
+
+.primer-wc-cart-menu .primer-wc-cart-sub-menu {
+  float: right;
+  width: 100%;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  .primer-wc-cart-menu .primer-wc-cart-sub-menu li,
+  .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart {
+    width: 100%;
+    background: #fff; }
+  .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart {
+    float: right;
+    width: 250px;
+    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .quantity {
+      display: block;
+      float: left;
+      font-style: italic; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart ul.product_list_widget {
+      position: relative !important;
+      left: 0;
+      max-height: 250px;
+      overflow-y: auto; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart p.buttons,
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .total,
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .product_list_widget {
+      float: left;
+      width: 100%; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .total strong {
+      text-index: 0; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart p.buttons {
+      padding: .5em;
+      padding-top: 0;
+      margin: 0; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .cart_list li.mini_cart_item {
+      padding: 0 0 .5em 0 !important;
+      margin: 0;
+      width: 100%;
+      padding-bottom: 5px;
+      border-bottom: none;
+      padding: .5em 1em;
+      text-indent: 0;
+      opacity: 1;
+      -webkit-transition: opacity .25s ease-out;
+      transition: opacity .25s ease-out; }
+      .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .cart_list li.mini_cart_item img {
+        width: 100%;
+        max-width: 55px; }
+      .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .cart_list li.mini_cart_item a {
+        border-bottom: none; }
+      .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .cart_list li.mini_cart_item a:nth-child(2) {
+        padding: .5em;
+        padding-bottom: 0;
+        margin: 0;
+        width: 100%;
+        text-indent: 0 !important; }
+      .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart .cart_list li.mini_cart_item:hover {
+        opacity: .85; }
+  .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .product_list_widget {
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: inline-block;
+    left: 0 !important;
+    background: inherit; }
+  .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .widget_shopping_cart {
+    padding: 0;
+    margin-bottom: 0; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .widget_shopping_cart .total {
+      margin: 0;
+      padding: 10px 0;
+      text-align: center; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .widget_shopping_cart .total strong {
+      text-indent: 0; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .widget_shopping_cart p.buttons a {
+      text-align: center;
+      width: 100%;
+      text-indent: 0; }
+      .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .widget_shopping_cart p.buttons a:first-child {
+        margin-bottom: 5px; }
+  .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .cart-preview-count {
+    margin-left: 8px; }
+  .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .cart_list li a.remove {
+    position: relative !important;
+    float: left;
+    padding: 0;
+    margin-top: 10px;
+    margin-left: 15px;
+    text-indent: 0;
+    margin-right: 5px;
+    z-index: 1001;
+    line-height: .95;
+    text-indent: 0 !important;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+    .primer-wc-cart-menu .primer-wc-cart-sub-menu .primer-wc-cart-sub-menu-item .cart_list li a.remove:hover {
+      background: red !important; }
+
+.primer-wc-cart-menu:hover {
+  cursor: pointer; }
+  .primer-wc-cart-menu:hover a {
+    background: transparent; }
+
+.woocommerce-page div.product .woocommerce-product-gallery figure.woocommerce-product-gallery__wrapper {
+  margin: 0; }
+
+.woocommerce-page div.product .summary {
+  margin-top: 0; }
+
+.woocommerce-page div.product .commentlist {
+  padding-left: 0; }
+
+.woocommerce-page.woocommerce div.product form.cart {
+  margin: 1em 0; }
+
+.woocommerce-page ul.products li.product.primer-2-column-product {
+  width: 48.05%; }
+
+.woocommerce-page .primer-woocommerce .cart .qty {
+  padding: 0.52em; }
+
+.woocommerce-page table.variations tr:hover td {
+  background-color: transparent; }
+
+.woocommerce-page #reviews #comments ol.commentlist li img.avatar {
+  width: 60px; }
+
+.woocommerce-page #reviews #comments ol.commentlist li .comment-text {
+  margin: 0 0 0 80px; }
+
+.woocommerce-page form.woocommerce-cart-form table.cart td.actions #coupon_code {
+  width: 50%;
+  margin-right: 0; }
+
+.woocommerce-page span.onsale,
+.woocommerce-page ul.products li.product .onsale {
+  padding: 2px 8px;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin: 0;
+  min-height: auto;
+  min-width: auto;
+  line-height: inherit; }
+
+.woocommerce-page table.cart td.product-thumbnail,
+.woocommerce-page table.cart td.product-remove {
+  text-align: center; }
+  @media only screen and (min-width: 64.063em) and (max-width: 90em) {
+    .woocommerce-page table.cart td.product-thumbnail .remove,
+    .woocommerce-page table.cart td.product-remove .remove {
+      margin: 0 auto; } }
+
+.woocommerce-page table.cart img {
+  width: 100%;
+  max-width: 75px;
+  margin-bottom: 0; }
+
+.woocommerce-page table.cart td.actions .input-text {
+  padding: 7px !important; }
+
+body.primer-woocommerce-l10n.woocommerce ul.products li.product .button,
+.woocommerce a.added_to_cart {
+  max-width: 100%;
+  white-space: normal;
+  text-align: center;
+  display: block; }
+  @media only screen and (min-width: 64.063em) {
+    body.primer-woocommerce-l10n.woocommerce ul.products li.product .button,
+    .woocommerce a.added_to_cart {
+      font-size: 0.75rem;
+      padding: 0.75rem; } }
+
+.woocommerce a.added_to_cart {
+  text-align: left;
+  padding: 0.75rem 0; }
+
+body.single-product span.onsale {
+  padding: 3px 18px;
+  top: 0;
+  left: 0; }
+
+body.single-product .quantity .input-text {
+  padding: 8px; }
+
+body.woocommerce-cart .primer-wc-cart-sub-menu {
+  display: none; }
+
+.woocommerce ul.products li.product a.add_to_cart_button {
+  width: 100%;
+  text-align: center;
+  white-space: normal; }
+
+@media only screen and (max-width: 40em) {
+  .primer-wc-cart-menu .expand {
+    padding-right: 0 !important; }
+  .primer-wc-cart-menu .primer-wc-cart-sub-menu .widget_shopping_cart {
+    width: 100%; } }

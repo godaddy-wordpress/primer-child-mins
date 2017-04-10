@@ -1,3 +1,5 @@
+@import "../compat/ninja-forms.scss";
+
 button,
 a.button,
 input,
@@ -9,9 +11,9 @@ textarea {
 	font-family: $sans-font-family;
 }
 
-button,
-a.button,
-a.button:visited,
+button:not(.single_add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
+a.button:not(.wc-forward):not(.add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
+a.button:visited:not(.wc-forward):not(.add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -29,7 +31,7 @@ input[type="submit"] {
 	padding: .75rem 0;
 	display: inline-block;
 
-	&:after {
+	&::after {
 		content: '\f501';
 		font-family: 'Genericons';
 		display: inline;
@@ -43,19 +45,16 @@ input[type="submit"] {
 			content: '';
 		}
 	}
-	
-	&:hover {
+
+	&:hover,
+	&:focus,
+	&:active {
 		background: transparent !important;
 	}
-	
+
 	&:hover:after {
 		left: 8px;
 		transition: .2s all;
-	}
-
-	&:focus
-	&:active{
-		background: lighten($color-background-button,3%);
 	}
 }
 

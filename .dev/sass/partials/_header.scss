@@ -64,6 +64,9 @@ body {
 	background-color: $header-bg-color;
 	letter-spacing: -.01em;
 	padding: 0;
+	position: relative;
+
+	@import "video-header";
 
 	@media #{$small-only} {
 		width: 100%;
@@ -182,6 +185,15 @@ html {
 		width: 50%;
 		float: right;
 		padding: 4%;
+
+		.widget a.button:hover {
+			background: transparent;
+		}
+
+		#wp-custom-header img {
+			display: none;
+		}
+
 	}
 
 	@media screen and (max-width: 900px) {
