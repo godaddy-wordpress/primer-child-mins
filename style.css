@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Theme Name: Mins
  * Theme URI: https://github.com/godaddy/wp-mins-theme
@@ -189,13 +190,76 @@ img {
   .row:after, .navigation:after, body:not(.no-max-width) .site-header:after, body:not(.no-max-width) .site-content:after, body:not(.no-max-width) .site-footer-inner:after, body:not(.no-max-width) .site-info:after, .featured-content .entry-header .entry-header-row:after, .featured-content .featured-content-inner:after {
     clear: both; }
   .row.collapse > .column, .collapse.navigation > .column, body:not(.no-max-width) .collapse.site-header > .column, body:not(.no-max-width) .collapse.site-content > .column, body:not(.no-max-width) .collapse.site-footer-inner > .column, body:not(.no-max-width) .collapse.site-info > .column, .featured-content .entry-header .collapse.entry-header-row > .column, .featured-content .collapse.featured-content-inner > .column,
-  .row.collapse > .columns, .collapse.navigation > .columns, body:not(.no-max-width) .collapse.site-header > .columns, body:not(.no-max-width) .collapse.site-content > .columns, body:not(.no-max-width) .collapse.site-footer-inner > .columns, body:not(.no-max-width) .collapse.site-info > .columns, .featured-content .entry-header .collapse.entry-header-row > .columns, .featured-content .collapse.featured-content-inner > .columns, .navigation
-  .row.collapse > .nav-links, .collapse.navigation > .nav-links, body:not(.no-max-width) .navigation .collapse.site-header > .nav-links, .navigation body:not(.no-max-width) .collapse.site-header > .nav-links, body:not(.no-max-width) .navigation .collapse.site-content > .nav-links, .navigation body:not(.no-max-width) .collapse.site-content > .nav-links, body:not(.no-max-width) .navigation .collapse.site-footer-inner > .nav-links, .navigation body:not(.no-max-width) .collapse.site-footer-inner > .nav-links, body:not(.no-max-width) .navigation .collapse.site-info > .nav-links, .navigation body:not(.no-max-width) .collapse.site-info > .nav-links, .featured-content .entry-header .navigation .collapse.entry-header-row > .nav-links, .navigation .featured-content .entry-header .collapse.entry-header-row > .nav-links, .featured-content .navigation .collapse.featured-content-inner > .nav-links, .navigation .featured-content .collapse.featured-content-inner > .nav-links,
-  .row.collapse > .content-area, .collapse.navigation > .content-area, body:not(.no-max-width) .collapse.site-header > .content-area, body:not(.no-max-width) .collapse.site-content > .content-area, body:not(.no-max-width) .collapse.site-footer-inner > .content-area, body:not(.no-max-width) .collapse.site-info > .content-area, .featured-content .entry-header .collapse.entry-header-row > .content-area, .featured-content .collapse.featured-content-inner > .content-area,
-  .row.collapse > #secondary, .collapse.navigation > #secondary, body:not(.no-max-width) .collapse.site-header > #secondary, body:not(.no-max-width) .collapse.site-content > #secondary, body:not(.no-max-width) .collapse.site-footer-inner > #secondary, body:not(.no-max-width) .collapse.site-info > #secondary, .featured-content .entry-header .collapse.entry-header-row > #secondary, .featured-content .collapse.featured-content-inner > #secondary,
-  .row.collapse > #tertiary, .collapse.navigation > #tertiary, body:not(.no-max-width) .collapse.site-header > #tertiary, body:not(.no-max-width) .collapse.site-content > #tertiary, body:not(.no-max-width) .collapse.site-footer-inner > #tertiary, body:not(.no-max-width) .collapse.site-info > #tertiary, .featured-content .entry-header .collapse.entry-header-row > #tertiary, .featured-content .collapse.featured-content-inner > #tertiary, .featured-content .entry-header
-  .row.collapse > .entry-header-column, .featured-content .entry-header .collapse.navigation > .entry-header-column, body:not(.no-max-width) .featured-content .entry-header .collapse.site-header > .entry-header-column, .featured-content .entry-header body:not(.no-max-width) .collapse.site-header > .entry-header-column, body:not(.no-max-width) .featured-content .entry-header .collapse.site-content > .entry-header-column, .featured-content .entry-header body:not(.no-max-width) .collapse.site-content > .entry-header-column, body:not(.no-max-width) .featured-content .entry-header .collapse.site-footer-inner > .entry-header-column, .featured-content .entry-header body:not(.no-max-width) .collapse.site-footer-inner > .entry-header-column, body:not(.no-max-width) .featured-content .entry-header .collapse.site-info > .entry-header-column, .featured-content .entry-header body:not(.no-max-width) .collapse.site-info > .entry-header-column, .featured-content .entry-header .collapse.entry-header-row > .entry-header-column, .featured-content .entry-header .collapse.featured-content-inner > .entry-header-column, .featured-content
-  .row.collapse > article, .featured-content .collapse.navigation > article, body:not(.no-max-width) .featured-content .collapse.site-header > article, .featured-content body:not(.no-max-width) .collapse.site-header > article, body:not(.no-max-width) .featured-content .collapse.site-content > article, .featured-content body:not(.no-max-width) .collapse.site-content > article, body:not(.no-max-width) .featured-content .collapse.site-footer-inner > article, .featured-content body:not(.no-max-width) .collapse.site-footer-inner > article, body:not(.no-max-width) .featured-content .collapse.site-info > article, .featured-content body:not(.no-max-width) .collapse.site-info > article, .featured-content .entry-header .collapse.entry-header-row > article, .featured-content .collapse.featured-content-inner > article {
+  .row.collapse > .columns,
+  .collapse.navigation > .columns,
+  body:not(.no-max-width) .collapse.site-header > .columns,
+  body:not(.no-max-width) .collapse.site-content > .columns,
+  body:not(.no-max-width) .collapse.site-footer-inner > .columns,
+  body:not(.no-max-width) .collapse.site-info > .columns,
+  .featured-content .entry-header .collapse.entry-header-row > .columns,
+  .featured-content .collapse.featured-content-inner > .columns,
+  .navigation .row.collapse > .nav-links,
+  .collapse.navigation > .nav-links,
+  body:not(.no-max-width) .navigation .collapse.site-header > .nav-links,
+  .navigation body:not(.no-max-width) .collapse.site-header > .nav-links,
+  body:not(.no-max-width) .navigation .collapse.site-content > .nav-links,
+  .navigation body:not(.no-max-width) .collapse.site-content > .nav-links,
+  body:not(.no-max-width) .navigation .collapse.site-footer-inner > .nav-links,
+  .navigation body:not(.no-max-width) .collapse.site-footer-inner > .nav-links,
+  body:not(.no-max-width) .navigation .collapse.site-info > .nav-links,
+  .navigation body:not(.no-max-width) .collapse.site-info > .nav-links,
+  .featured-content .entry-header .navigation .collapse.entry-header-row > .nav-links,
+  .navigation .featured-content .entry-header .collapse.entry-header-row > .nav-links,
+  .featured-content .navigation .collapse.featured-content-inner > .nav-links,
+  .navigation .featured-content .collapse.featured-content-inner > .nav-links,
+  .row.collapse > .content-area,
+  .collapse.navigation > .content-area,
+  body:not(.no-max-width) .collapse.site-header > .content-area,
+  body:not(.no-max-width) .collapse.site-content > .content-area,
+  body:not(.no-max-width) .collapse.site-footer-inner > .content-area,
+  body:not(.no-max-width) .collapse.site-info > .content-area,
+  .featured-content .entry-header .collapse.entry-header-row > .content-area,
+  .featured-content .collapse.featured-content-inner > .content-area,
+  .row.collapse > #secondary,
+  .collapse.navigation > #secondary,
+  body:not(.no-max-width) .collapse.site-header > #secondary,
+  body:not(.no-max-width) .collapse.site-content > #secondary,
+  body:not(.no-max-width) .collapse.site-footer-inner > #secondary,
+  body:not(.no-max-width) .collapse.site-info > #secondary,
+  .featured-content .entry-header .collapse.entry-header-row > #secondary,
+  .featured-content .collapse.featured-content-inner > #secondary,
+  .row.collapse > #tertiary,
+  .collapse.navigation > #tertiary,
+  body:not(.no-max-width) .collapse.site-header > #tertiary,
+  body:not(.no-max-width) .collapse.site-content > #tertiary,
+  body:not(.no-max-width) .collapse.site-footer-inner > #tertiary,
+  body:not(.no-max-width) .collapse.site-info > #tertiary,
+  .featured-content .entry-header .collapse.entry-header-row > #tertiary,
+  .featured-content .collapse.featured-content-inner > #tertiary,
+  .featured-content .entry-header .row.collapse > .entry-header-column,
+  .featured-content .entry-header .collapse.navigation > .entry-header-column,
+  body:not(.no-max-width) .featured-content .entry-header .collapse.site-header > .entry-header-column,
+  .featured-content .entry-header body:not(.no-max-width) .collapse.site-header > .entry-header-column,
+  body:not(.no-max-width) .featured-content .entry-header .collapse.site-content > .entry-header-column,
+  .featured-content .entry-header body:not(.no-max-width) .collapse.site-content > .entry-header-column,
+  body:not(.no-max-width) .featured-content .entry-header .collapse.site-footer-inner > .entry-header-column,
+  .featured-content .entry-header body:not(.no-max-width) .collapse.site-footer-inner > .entry-header-column,
+  body:not(.no-max-width) .featured-content .entry-header .collapse.site-info > .entry-header-column,
+  .featured-content .entry-header body:not(.no-max-width) .collapse.site-info > .entry-header-column,
+  .featured-content .entry-header .collapse.entry-header-row > .entry-header-column,
+  .featured-content .entry-header .collapse.featured-content-inner > .entry-header-column,
+  .featured-content .row.collapse > article,
+  .featured-content .collapse.navigation > article,
+  body:not(.no-max-width) .featured-content .collapse.site-header > article,
+  .featured-content body:not(.no-max-width) .collapse.site-header > article,
+  body:not(.no-max-width) .featured-content .collapse.site-content > article,
+  .featured-content body:not(.no-max-width) .collapse.site-content > article,
+  body:not(.no-max-width) .featured-content .collapse.site-footer-inner > article,
+  .featured-content body:not(.no-max-width) .collapse.site-footer-inner > article,
+  body:not(.no-max-width) .featured-content .collapse.site-info > article,
+  .featured-content body:not(.no-max-width) .collapse.site-info > article,
+  .featured-content .entry-header .collapse.entry-header-row > article,
+  .featured-content .collapse.featured-content-inner > article {
     padding-left: 0;
     padding-right: 0; }
   .row.collapse .row, .collapse.navigation .row, body:not(.no-max-width) .collapse.site-header .row, body:not(.no-max-width) .collapse.site-content .row, body:not(.no-max-width) .collapse.site-footer-inner .row, body:not(.no-max-width) .collapse.site-info .row, .featured-content .entry-header .collapse.entry-header-row .row, .featured-content .collapse.featured-content-inner .row, .row.collapse .navigation, .collapse.navigation .navigation, body:not(.no-max-width) .collapse.site-header .navigation, body:not(.no-max-width) .collapse.site-content .navigation, body:not(.no-max-width) .collapse.site-footer-inner .navigation, body:not(.no-max-width) .collapse.site-info .navigation, .featured-content .entry-header .collapse.entry-header-row .navigation, .featured-content .collapse.featured-content-inner .navigation, .row.collapse body:not(.no-max-width) .site-header, body:not(.no-max-width) .row.collapse .site-header, .collapse.navigation body:not(.no-max-width) .site-header, body:not(.no-max-width) .collapse.navigation .site-header, body:not(.no-max-width) .collapse.site-header .site-header, body:not(.no-max-width) .collapse.site-content .site-header, body:not(.no-max-width) .collapse.site-footer-inner .site-header, body:not(.no-max-width) .collapse.site-info .site-header, .featured-content .entry-header .collapse.entry-header-row body:not(.no-max-width) .site-header, body:not(.no-max-width) .featured-content .entry-header .collapse.entry-header-row .site-header, .featured-content .collapse.featured-content-inner body:not(.no-max-width) .site-header, body:not(.no-max-width) .featured-content .collapse.featured-content-inner .site-header, .row.collapse body:not(.no-max-width) .site-content, body:not(.no-max-width) .row.collapse .site-content, .collapse.navigation body:not(.no-max-width) .site-content, body:not(.no-max-width) .collapse.navigation .site-content, body:not(.no-max-width) .collapse.site-header .site-content, body:not(.no-max-width) .collapse.site-content .site-content, body:not(.no-max-width) .collapse.site-footer-inner .site-content, body:not(.no-max-width) .collapse.site-info .site-content, .featured-content .entry-header .collapse.entry-header-row body:not(.no-max-width) .site-content, body:not(.no-max-width) .featured-content .entry-header .collapse.entry-header-row .site-content, .featured-content .collapse.featured-content-inner body:not(.no-max-width) .site-content, body:not(.no-max-width) .featured-content .collapse.featured-content-inner .site-content, .row.collapse body:not(.no-max-width) .site-footer-inner, body:not(.no-max-width) .row.collapse .site-footer-inner, .collapse.navigation body:not(.no-max-width) .site-footer-inner, body:not(.no-max-width) .collapse.navigation .site-footer-inner, body:not(.no-max-width) .collapse.site-header .site-footer-inner, body:not(.no-max-width) .collapse.site-content .site-footer-inner, body:not(.no-max-width) .collapse.site-footer-inner .site-footer-inner, body:not(.no-max-width) .collapse.site-info .site-footer-inner, .featured-content .entry-header .collapse.entry-header-row body:not(.no-max-width) .site-footer-inner, body:not(.no-max-width) .featured-content .entry-header .collapse.entry-header-row .site-footer-inner, .featured-content .collapse.featured-content-inner body:not(.no-max-width) .site-footer-inner, body:not(.no-max-width) .featured-content .collapse.featured-content-inner .site-footer-inner, .row.collapse body:not(.no-max-width) .site-info, body:not(.no-max-width) .row.collapse .site-info, .collapse.navigation body:not(.no-max-width) .site-info, body:not(.no-max-width) .collapse.navigation .site-info, body:not(.no-max-width) .collapse.site-header .site-info, body:not(.no-max-width) .collapse.site-content .site-info, body:not(.no-max-width) .collapse.site-footer-inner .site-info, body:not(.no-max-width) .collapse.site-info .site-info, .featured-content .entry-header .collapse.entry-header-row body:not(.no-max-width) .site-info, body:not(.no-max-width) .featured-content .entry-header .collapse.entry-header-row .site-info, .featured-content .collapse.featured-content-inner body:not(.no-max-width) .site-info, body:not(.no-max-width) .featured-content .collapse.featured-content-inner .site-info, .row.collapse .featured-content .entry-header .entry-header-row, .featured-content .entry-header .row.collapse .entry-header-row, .collapse.navigation .featured-content .entry-header .entry-header-row, .featured-content .entry-header .collapse.navigation .entry-header-row, body:not(.no-max-width) .collapse.site-header .featured-content .entry-header .entry-header-row, .featured-content .entry-header body:not(.no-max-width) .collapse.site-header .entry-header-row, body:not(.no-max-width) .collapse.site-content .featured-content .entry-header .entry-header-row, .featured-content .entry-header body:not(.no-max-width) .collapse.site-content .entry-header-row, body:not(.no-max-width) .collapse.site-footer-inner .featured-content .entry-header .entry-header-row, .featured-content .entry-header body:not(.no-max-width) .collapse.site-footer-inner .entry-header-row, body:not(.no-max-width) .collapse.site-info .featured-content .entry-header .entry-header-row, .featured-content .entry-header body:not(.no-max-width) .collapse.site-info .entry-header-row, .featured-content .entry-header .collapse.entry-header-row .entry-header-row, .featured-content .collapse.featured-content-inner .entry-header .entry-header-row, .featured-content .entry-header .collapse.featured-content-inner .entry-header-row, .row.collapse .featured-content .featured-content-inner, .featured-content .row.collapse .featured-content-inner, .collapse.navigation .featured-content .featured-content-inner, .featured-content .collapse.navigation .featured-content-inner, body:not(.no-max-width) .collapse.site-header .featured-content .featured-content-inner, .featured-content body:not(.no-max-width) .collapse.site-header .featured-content-inner, body:not(.no-max-width) .collapse.site-content .featured-content .featured-content-inner, .featured-content body:not(.no-max-width) .collapse.site-content .featured-content-inner, body:not(.no-max-width) .collapse.site-footer-inner .featured-content .featured-content-inner, .featured-content body:not(.no-max-width) .collapse.site-footer-inner .featured-content-inner, body:not(.no-max-width) .collapse.site-info .featured-content .featured-content-inner, .featured-content body:not(.no-max-width) .collapse.site-info .featured-content-inner, .featured-content .entry-header .collapse.entry-header-row .featured-content-inner, .featured-content .collapse.featured-content-inner .featured-content-inner {
@@ -879,16 +943,13 @@ img {
   .large-2 {
     width: 16.66667%; }
   .large-3, body.layout-three-column-default #secondary,
-  body.layout-three-column-reversed #secondary,
-  body.layout-three-column-center #secondary, #tertiary {
+  body.layout-three-column-reversed #secondary, body.layout-three-column-center #secondary, #tertiary {
     width: 25%; }
   .large-4, #secondary {
     width: 33.33333%; }
   .large-5 {
     width: 41.66667%; }
-  .large-6, body.layout-three-column-default .content-area,
-  body.layout-three-column-reversed .content-area,
-  body.layout-three-column-center .content-area {
+  .large-6, body.layout-three-column-default .content-area, body.layout-three-column-reversed .content-area, body.layout-three-column-center .content-area {
     width: 50%; }
   .large-7 {
     width: 58.33333%; }
@@ -2058,7 +2119,7 @@ textarea {
   /* Improves appearance and consistency in all browsers */
   font-family: "Roboto", sans-serif; }
 
-button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button),
+button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):not([class^="fl-"]),
 a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button),
 a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button),
 input[type="button"],
@@ -2076,10 +2137,9 @@ input[type="submit"] {
   font-size: 1rem;
   line-height: 1;
   background: transparent;
-  padding: .75em 0;
   padding: .75rem 0;
   display: inline-block; }
-  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):not([class^="fl-"])::after,
   a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
   a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after,
   input[type="button"]::after,
@@ -2094,14 +2154,14 @@ input[type="submit"] {
     position: relative;
     -webkit-transition: .2s all;
     transition: .2s all; }
-    .fl-lightbox button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
+    .fl-lightbox button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):not([class^="fl-"])::after, .fl-lightbox
     a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
     a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button)::after, .fl-lightbox
     input[type="button"]::after, .fl-lightbox
     input[type="reset"]::after, .fl-lightbox
     input[type="submit"]::after {
       content: ''; }
-  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover, button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):focus, button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):active,
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):not([class^="fl-"]):hover, button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):not([class^="fl-"]):focus, button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):not([class^="fl-"]):active,
   a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover,
   a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):focus,
   a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):active,
@@ -2118,7 +2178,7 @@ input[type="submit"] {
   input[type="submit"]:focus,
   input[type="submit"]:active {
     background: transparent !important; }
-  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
+  button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button):not([class^="fl-"]):hover:after,
   a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
   a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button):hover:after,
   input[type="button"]:hover:after,
@@ -2464,7 +2524,7 @@ body.no-max-width .main-navigation {
       color: #fefefe; }
     .navigation.pagination .nav-links {
       float: right; }
-      .navigation.pagination .nav-links .page-numbers:not(.prev):not(.next) {
+      .navigation.pagination .nav-links .page-numbers {
         display: none; } }
 
 .comment-navigation .nav-previous,
@@ -2943,14 +3003,14 @@ body.no-max-width .main-navigation {
   font-family: "Roboto", sans-serif; }
   .event-meta .genericon, .event-meta .social-menu a, .social-menu .event-meta a,
   .sermon-meta .genericon,
-  .sermon-meta .social-menu a, .social-menu
-  .sermon-meta a,
+  .sermon-meta .social-menu a,
+  .social-menu .sermon-meta a,
   .location-meta .genericon,
-  .location-meta .social-menu a, .social-menu
-  .location-meta a,
+  .location-meta .social-menu a,
+  .social-menu .location-meta a,
   .person-meta .genericon,
-  .person-meta .social-menu a, .social-menu
-  .person-meta a {
+  .person-meta .social-menu a,
+  .social-menu .person-meta a {
     line-height: 2; }
   .event-meta span,
   .sermon-meta span,
