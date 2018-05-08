@@ -11,12 +11,12 @@ textarea {
 	font-family: $sans-font-family;
 }
 
-button:not(.single_add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
-a.button:not(.wc-forward):not(.add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
-a.button:visited:not(.wc-forward):not(.add_to_cart_button):not( .customize-partial-edit-shortcut-button ),
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+#page button:not(.single_add_to_cart_button):not(.customize-partial-edit-shortcut-button),
+#page a.button:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button),
+#page a.button:visited:not(.wc-forward):not(.add_to_cart_button):not(.customize-partial-edit-shortcut-button),
+#page input[type="button"],
+#page input[type="reset"],
+#page input[type="submit"] {
 	border: none;
 	color: #181818;
 	text-transform: uppercase;
@@ -27,7 +27,6 @@ input[type="submit"] {
 	font-size: rem-calc(16);
 	line-height: 1;
 	background: transparent;
-	padding: .75em 0;
 	padding: .75rem 0;
 	display: inline-block;
 

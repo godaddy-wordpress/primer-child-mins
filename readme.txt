@@ -2,7 +2,7 @@
 Contributors:      godaddy, fjarrett, jonathanbardo, eherman24
 Tags:              custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, fixed-layout, flexible-header, fluid-layout, left-sidebar, light, one-column, responsive-layout, right-sidebar, rtl-language-support, sticky-post, threaded-comments, three-columns, translation-ready, two-columns
 Requires at least: 4.4
-Tested up to:      4.7
+Tested up to:      4.9
 Stable tag:        1.1.0
 License:           GPL-2.0
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -92,6 +92,11 @@ TODO
 TODO
 
 == Changelog ==
+
+= 1.1.1 =
+
+* Tweak: Update a/button/input styles to avoid inadvertently styling elements outside of the theme (Resolves various Beaver Builder style conflicts). @props [evanherman](https://github.com/EvanHerman)
+* Tweak: Update mobile navigation +/- buttons padding to prevent overflows and to unify navigation styles. @props [evanherman](https://github.com/EvanHerman)
 
 = 1.1.0 =
 
