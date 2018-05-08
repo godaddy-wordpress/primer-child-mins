@@ -93,6 +93,11 @@ TODO
 
 == Changelog ==
 
+= 1.1.1 =
+
+* Tweak: Update a/button/input styles to avoid inadvertently styling elements outside of the theme (Resolves various Beaver Builder style conflicts). @props [evanherman](https://github.com/EvanHerman)
+* Tweak: Update mobile navigation +/- buttons padding to prevent overflows and to unify navigation styles. @props [evanherman](https://github.com/EvanHerman)
+
 = 1.1.0 =
 
 * New: Added hook priorities for Primer 1.6.0 compatibility. @props [evanherman](https://github.com/EvanHerman)
