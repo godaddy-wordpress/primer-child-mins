@@ -54,7 +54,7 @@ You can fork and contribute to Mins by visiting [our public repo on GitHub](http
 
 ## Installation ##
 
-1. In your admin panel, nagivate to **Appearance > Themes** and click the **Add New** button.
+1. In your admin panel, navigate to **Appearance > Themes** and click the **Add New** button.
 2. Type **Mins** in the search form and press the **Enter** key on your keyboard.
 3. Click the **Activate** button to begin using Mins on your website.
 4. In your admin panel, navigate to **Appearance > Customize**.
@@ -62,8 +62,8 @@ You can fork and contribute to Mins by visiting [our public repo on GitHub](http
 
 ## Copyright ##
 
-Mins WordPress theme, Copyright 2016 GoDaddy Operating Company, LLC.
-Mins is distributed under the terms of the GNU GPL.
+Mins WordPress Theme is a child theme of Primer WordPress Theme, Copyright 2016 GoDaddy Operating Company, LLC.
+Primer WordPress Theme is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -84,14 +84,6 @@ Source: https://genericons.com/
 Stock photography, Unsplash
 License: Creative Commons Zero
 Source: https://unsplash.com/photos/rTZW4f02zY8/
-
-## Frequently Asked Questions ##
-
-TODO
-
-## Developer Tools ##
-
-TODO
 
 ## Changelog ##
 
