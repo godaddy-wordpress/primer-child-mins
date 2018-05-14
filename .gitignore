@@ -4,6 +4,7 @@
 bower_components/
 build/
 node_modules/
+package-lock.json
 svn-url
 svn-username
 tests/codeception/_output/*
