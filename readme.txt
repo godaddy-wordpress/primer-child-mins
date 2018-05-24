@@ -85,6 +85,10 @@ Source: https://unsplash.com/photos/rTZW4f02zY8/
 
 == Changelog ==
 
+= 1.1.2 =
+
+* New: Added styles for WordPress 4.9.6 privacy policy footer link & cookie comment checkbox. @props [evanherman](https://github.com/EvanHerman)
+
 = 1.1.1 =
 
 * Tweak: Update a/button/input styles to avoid inadvertently styling elements outside of the theme (Resolves various Beaver Builder style conflicts). @props [evanherman](https://github.com/EvanHerman)
