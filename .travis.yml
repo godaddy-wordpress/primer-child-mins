@@ -1,29 +1,58 @@
 sudo: false
 
+notifications:
+  email:
+    on_success: never
+    on_failure: change
+
+cache:
+  directories:
+    - node_modules
+    - vendor
+    - $HOME/.composer/cache
+    - $HOME/.wp-cli/cache
+    - $HOME/.wp-cli/packages/cache
+
 language:
   - php
   - node_js
 
+branches:
+  only:
+    - /^v\d.*$/
+    - master
+    - develop
+
+env:
+  global:
+    - WP_THEME=mins
+
+before_install:
+  - phpenv config-rm xdebug.ini
+
 before_script:
-  - curl -s https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
+  - curl https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli-nightly.phar > /tmp/wp-cli.phar
+  - chmod +x /tmp/wp-cli.phar
 
 script:
   - echo "Deploy only"
 
 before_deploy:
-  - export RELEASE_FOLDER=mins
-  - php /tmp/wp-cli.phar package install runcommand/dist-archive
-  - cp -rv ${TRAVIS_BUILD_DIR} /tmp/${RELEASE_FOLDER}
-  - mv /tmp/${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}
-  - php /tmp/wp-cli.phar dist-archive ${RELEASE_FOLDER} ${TRAVIS_BUILD_DIR}/${RELEASE_FOLDER}.zip --format=zip --debug
+  - mkdir -p /tmp/$WP_THEME
+  - rsync -av --exclude-from $TRAVIS_BUILD_DIR/.distignore --delete $TRAVIS_BUILD_DIR/ /tmp/$WP_THEME/
+  - cd /tmp
+  - zip -rT $TRAVIS_BUILD_DIR/$WP_THEME.zip $WP_THEME/
+  - sha256sum -b $TRAVIS_BUILD_DIR/$WP_THEME.zip | awk '{print $1}' | tee $TRAVIS_BUILD_DIR/$WP_THEME.zip.sha256
 
 deploy:
   provider: releases
   api_key:
     secure: pbxDPGPy0dl618HkkCZIkMPZcOM2ZDcQ9BHYs+V7TGFA71iOfVOX3oTg0Wr8LZF4VJxLjuTm248EYuPFgM7piK+/+b2XFJJF1fHiz+kaI5CzVQIMGRh5abiF2VqVn9xp5QAVs2LcNN58wH4IZ4FUhHklNJlxHLa7CI1FV29D1U9STzZGwNIX0wYDFIB+m7RBj9hmbHhe8bFcUAoY3W6lQIqKSZIHgakR9ZIk6HKI460ueY07c5x6Q5odx8Q46MQHq8cLcD9tUHgNRfrL70PowR3FahHnsxFSnP9gJ1tl8n/qQZp4JiqNcc9vnprTy22OwkpS+VNmgeOD7l6f8nzNaDum7iFPtVAtCjid/QIyGZ2zy1WNxm7Z3tTE/pxsUPAPpvzkJfB8O5Wp6+Ul0NXvWRGonVFxZPapcy0qGMAMVh2ifNIwdOWqYMRxJBUeAgVqcWC9APmASHbr/JdbOmnJMoVk3uA8bpxA5xMyPMXE+GKhWhfJFvb+DjJyCeOnDLOTQKm7xdhWJteNQubn6CZbaJ4Dc5/CMjXDlqXuqQlbRwOy2mLFwzUIpHJ5QlMUMX1UJQHj58LyBCaGYethrbC2ywg8CZ9Xf74IazVVOrxglPgkY11cWlEdKPNysaozpYZNm9EmutCee7t48cG+7c3Ef2xFHTBYJT8nFLhprl8AOnU=
-  file: mins.zip
+  file:
+    - "$TRAVIS_BUILD_DIR/$WP_THEME.zip"
+    - "$TRAVIS_BUILD_DIR/$WP_THEME.zip.sha256"
+  skip_cleanup: true
+  overwrite: true
   on:
     tags: true
     repo: godaddy/wp-mins-theme
-  skip_cleanup: true
-  overwrite: true
