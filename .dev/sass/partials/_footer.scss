@@ -115,6 +115,18 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 	}
 }
 
+.privacy-policy-link {
+	display: block;
+	margin-bottom: 20px;
+	line-height: 1.5;
+	text-align: center;
+
+	@media #{$large-up} {
+		text-align: left;
+		margin-bottom: 10px;
+	}
+}
+
 .site-info-wrapper {
 	padding: 0;
 	background: $site-footer-info-background;
