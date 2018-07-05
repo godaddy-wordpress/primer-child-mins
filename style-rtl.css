@@ -3672,8 +3672,7 @@ html {
 
 .privacy-policy-link {
   display: block;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin: 10px 0;
   text-align: center; }
   @media only screen and (min-width: 64.063em) {
     .privacy-policy-link {
@@ -3693,7 +3692,7 @@ html {
       .site-info-wrapper .site-info-text {
         text-align: right;
         float: right;
-        width: 50%; } }
+        width: 100%; } }
   .site-info-wrapper .site-info {
     padding: 2.5rem 2rem; }
 
@@ -3723,6 +3722,17 @@ html {
         text-align: right; } }
     .footer-menu ul li a {
       color: #181818; }
+
+@media only screen and (min-width: 64.063em) {
+  .footer-menu + .privacy-policy-link {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: .875rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    color: #686868;
+    line-height: 1.9; } }
 
 .featured-content {
   -webkit-background-size: cover;
