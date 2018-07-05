@@ -85,6 +85,10 @@ Source: https://unsplash.com/photos/rTZW4f02zY8/
 
 == Changelog ==
 
+= 1.1.3 =
+
+* Tweak: Adjust styles for the privacy policy footer link when footer nav is used. @props [evanherman](https://github.com/EvanHerman)
+
 = 1.1.2 =
 
 * New: Added styles for WordPress 4.9.6 privacy policy footer link & cookie comment checkbox. @props [evanherman](https://github.com/EvanHerman)
