@@ -192,14 +192,9 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 
 	@media #{$large-up} {
 		+ .privacy-policy-link {
-			display: inline-block;
-			margin: 0 10px;
-			font-size: .875rem;
-			font-weight: 600;
-			text-align: center;
-			text-transform: uppercase;
-			color: #686868;
-			line-height: 1.9;
+			float: left;
+			display: block;
+			width: 100%;
 		}
 	}
 }

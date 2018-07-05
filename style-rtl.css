@@ -3725,14 +3725,9 @@ html {
 
 @media only screen and (min-width: 64.063em) {
   .footer-menu + .privacy-policy-link {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: .875rem;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    color: #686868;
-    line-height: 1.9; } }
+    float: right;
+    display: block;
+    width: 100%; } }
 
 .featured-content {
   -webkit-background-size: cover;
