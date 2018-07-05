@@ -117,8 +117,7 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 
 .privacy-policy-link {
 	display: block;
-	margin-bottom: 20px;
-	line-height: 1.5;
+	margin: 10px 0;
 	text-align: center;
 
 	@media #{$large-up} {
@@ -141,7 +140,7 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 		@media #{$large-up} {
 			text-align: left;
 			float: left;
-			width: 50%;
+			width: 100%;
 		}
 	}
 
@@ -188,6 +187,14 @@ $site-footer-info-anchor-color-hover: contrast-color($site-footer-info-backgroun
 			a {
 				color: $body-font-color;
 			}
+		}
+	}
+
+	@media #{$large-up} {
+		+ .privacy-policy-link {
+			float: left;
+			display: block;
+			width: 100%;
 		}
 	}
 }
