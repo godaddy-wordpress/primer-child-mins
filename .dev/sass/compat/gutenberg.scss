@@ -1,52 +1,63 @@
 /*--------------------------------------------------------------
 >>> Gutenberg:
 --------------------------------------------------------------*/
-body.customize-support {
-	.alignfull {
-		width: 100vw;
-		position: relative;
-		left: 50%;
-		right: 50%;
-		margin-left: -50vw;
-		margin-right: -50vw;
+.alignfull {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+
+	img {
+		width: 100%;
+	}
+}
+
+.alignwide {
+	margin-left: -1.6875em;
+	margin-right: -1.6875em;
+	width: calc( 100% + 3.375em );
+}
+
+.wp-block-image,
+.wp-block-gallery,
+.wp-block-video,
+.wp-block-quote,
+.wp-block-text-columns,
+.entry-content ul,
+.entry-content ol,
+.wp-block-cover-text {
+	&.alignleft {
+		margin: 0 1em 0.5em 0;
+	}
+
+	&.alignright {
+		margin: 0 0 0.5em 1em;
+	}
+
+	&.alignleft,
+	&.alignright {
+		max-width: 40%;
+		width: 100%;
 
 		img {
+			max-width: 100%;
 			width: 100%;
 		}
 	}
+}
 
-	.alignwide {
-		margin-left: -1.6875em;
-		margin-right: -1.6875em;
-		width: calc( 100% + 3.375em );
+.wp-block-button.aligncenter {
+	margin-bottom: 1.5em;
+}
+
+.wp-block-audio {
+	audio {
+		width: 100%;
 	}
+}
 
-	.wp-block-image,
-	.wp-block-gallery,
-	.wp-block-video,
-	.wp-block-quote,
-	.wp-block-text-columns,
-	.entry-content ul,
-	.entry-content ol,
-	.wp-block-cover-text {
-		&.alignleft {
-			margin: 0 1em 0.5em 0;
-		}
-
-		&.alignright {
-			margin: 0 0 0.5em 1em;
-		}
-
-		@media #{$small-only} {
-			&.alignleft,
-			&.alignright {
-				width: 100%;
-
-				img {
-					max-width: 100%;
-					width: 100%;
-				}
-			}
-		}
-	}
+.wp-block-verse {
+	padding: .5rem;
 }
