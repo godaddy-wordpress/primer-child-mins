@@ -87,6 +87,11 @@ Source: https://unsplash.com/photos/rTZW4f02zY8/
 
 ## Changelog ##
 
+### 1.1.4 ###
+
+* New: Introduce styles for Gutenberg. @props [evanherman](https://github.com/EvanHerman)
+* Tweak: Tweak search-nav.js dependency array to include jQuery. @props [evanherman](https://github.com/EvanHerman)
+
 ### 1.1.3 ###
 
 * Tweak: Adjust styles for the privacy policy footer link when footer nav is used. @props [evanherman](https://github.com/EvanHerman)
