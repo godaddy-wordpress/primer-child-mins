@@ -4507,17 +4507,17 @@ body.woocommerce-cart .primer-wc-cart-sub-menu {
 /*--------------------------------------------------------------
 >>> Gutenberg:
 --------------------------------------------------------------*/
-.alignfull {
+[class^="wp-block-"].alignfull {
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw; }
-  .alignfull img {
+  [class^="wp-block-"].alignfull img {
     width: 100%; }
 
-.alignwide {
+[class^="wp-block-"].alignwide {
   margin-left: -1.6875em;
   margin-right: -1.6875em;
   width: -webkit-calc( 100% + 3.375em);
