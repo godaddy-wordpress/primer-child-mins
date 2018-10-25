@@ -299,7 +299,7 @@ img {
   width: 100%;
   float: right; }
 
-[class*="column"] + [class*="column"]:last-child:not(.wp-block-columns) {
+[class*="column"] + [class*="column"]:last-child:not(.wp-block-column):not(.wp-block-columns) {
   float: left; }
 
 [class*="column"] + [class*="column"].end {
@@ -4601,9 +4601,9 @@ body.woocommerce-cart .primer-wc-cart-sub-menu {
   -moz-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  margin: 0 20px; }
+  margin: 0 5px; }
 
-@media (max-width: 764px) {
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
   .wp-block-columns.has-3-columns {
     -webkit-flex-flow: row wrap;
     -ms-flex-flow: row wrap;
@@ -4613,11 +4613,9 @@ body.woocommerce-cart .primer-wc-cart-sub-menu {
     -ms-flex-preferred-size: 100%;
     flex-basis: 100%; } }
 
-@media (max-width: 478px) {
-  .wp-block-columns.has-3-columns {
-    display: block; }
-  .wp-block-column {
-    margin: 20px 0; } }
+@media only screen and (max-width: 40em) {
+  .wp-block-columns.has-1-columns, .wp-block-columns.has-2-columns, .wp-block-columns.has-3-columns, .wp-block-columns.has-4-columns {
+    display: block; } }
 
 .wp-block-columns.has-1-columns .wp-block-column {
   -webkit-flex-basis: 100%;
