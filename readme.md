@@ -78,10 +78,6 @@ GNU General Public License for more details.
 
 Mins bundles the following third-party resources:
 
-Genericons icon font, Copyright 2013 Automattic, Inc.
-License: GPL-2.0 (or later)
-Source: https://genericons.com/
-
 Stock photography, Unsplash
 License: Creative Commons Zero
 Source: https://unsplash.com/photos/rTZW4f02zY8/
