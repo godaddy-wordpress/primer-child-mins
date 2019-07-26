@@ -36,19 +36,6 @@ function mins_move_elements() {
 add_action( 'template_redirect', 'mins_move_elements' );
 
 /**
- * Add search nav toggle.
- *
- * @action wp_enqueue_scripts
- * @since  1.0.0
- */
-function mins_search_toggle() {
-
-	wp_enqueue_script( 'mins-search-nav', get_stylesheet_directory_uri() . '/assets/js/search-nav.js', array( 'jquery' ), PRIMER_VERSION );
-
-}
-add_action( 'wp_enqueue_scripts', 'mins_search_toggle' );
-
-/**
  * Set hero image target element.
  *
  * @filter primer_hero_image_selector
