@@ -182,8 +182,9 @@ install_db
 if [ "$CIRCLE_JOB" == 'theme-check' ]; then
 	php -d memory_limit=1024M "$(which wp)" package install anhskohbo/wp-cli-themecheck
 	wp plugin install theme-check --activate --path=$WP_CORE_DIR
+	wp theme install primer --path=$WP_CORE_DIR
 fi
 
-export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/primer
+export INSTALL_PATH=$WP_CORE_DIR/wp-content/themes/mins
 mkdir -p $INSTALL_PATH
 rsync -av --exclude-from ~/project/.distignore --delete ~/project/. $INSTALL_PATH/
