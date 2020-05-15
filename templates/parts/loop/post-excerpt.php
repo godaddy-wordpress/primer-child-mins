@@ -4,6 +4,7 @@
  *
  * @package Primer
  */
+
 ?>
 
 <div class="entry-summary">
