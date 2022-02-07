@@ -100,18 +100,6 @@ jobs:
           name: Install rsync
           command: sudo apt install rsync
       - run:
-          name: Install Grunt.js
-          command: sudo npm install -g grunt-cli
-      - restore_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-      - run:
-          name: Install node packages
-          command: npm install
-      - save_cache:
-          key: dependency-cache-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - run:
           name: Install WPCLI
           command: |
             curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
