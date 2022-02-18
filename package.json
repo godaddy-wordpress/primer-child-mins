@@ -1,7 +1,7 @@
 {
   "name": "mins",
   "title": "Mins",
-  "description": "Mins is a modern WordPress theme based on _s.",
+  "description": "Mins is a Primer child theme with a minimal design.",
   "version": "1.1.4",
   "author": "GoDaddy",
   "license": "GPL-2.0",
@@ -14,6 +14,9 @@
     "php": ">= 5.2",
     "wordpress": ">= 4.4"
   },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "badges": [
     "[![CircleCI](https://circleci.com/gh/godaddy-wordpress/primer-child-mins.svg?style=svg)](https://circleci.com/gh/godaddy-wordpress/primer-child-mins)",
     "[![License](https://img.shields.io/badge/license-GPL--2.0-brightgreen.svg)](https://github.com/<%= pkg.repository %>/blob/master/license.txt)",
@@ -33,13 +36,11 @@
     "grunt-text-replace": "^0.4.0",
     "grunt-wp-readme-to-markdown": "^2.0.1",
     "load-grunt-tasks": "^5.1.0",
-    "matchdep": "^2.0.0"
+    "matchdep": "^2.0.0",
+    "node-sass": "^7.0.1"
   },
   "scripts": {
     "version": "grunt version && git add -A .",
     "postversion": "git push && git push --tags"
-  },
-  "dependencies": {
-    "grunt-dev-update": "^2.3.0"
   }
 }
